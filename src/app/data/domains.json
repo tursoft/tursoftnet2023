@@ -1,0 +1,10 @@
+{
+    "items": [
+       { "name": "healthcareit", "title": "Healthcare Informatics", "value":100, "iconCss": "" },
+       { "name": "elearning", "title": "E-Learning", "value":100, "iconCss": "" },
+       { "name": "ecommerce", "title": "E-Commerce", "value":100, "iconCss": "" },
+       { "name": "video", "title": "Video Streaming", "value":100, "iconCss": "" },
+       { "name": "cms", "title": "Content Management Systems", "value":100, "iconCss": "" },
+       { "name": "gaming", "title": "Game Development", "value":100, "iconCss": "" }
+   ]
+}

@@ -1,0 +1,46 @@
+.section-projects {
+    display: flex;
+    flex-direction: column;
+
+    .section-title {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .section-summary {
+        font-size: 12px;
+    }
+
+    .section-items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .section-item {
+            flex: 0 0 20%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            font-size: 12px;
+            
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                cursor: pointer;
+                border-color: blue;
+            }
+
+            .section-item-icon {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .section-item-title {
+                
+            }
+        }
+    }
+}

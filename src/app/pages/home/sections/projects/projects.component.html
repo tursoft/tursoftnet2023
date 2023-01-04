@@ -1,0 +1,20 @@
+<div class="section-projects">
+    <div class="section-title">
+        {{ data.general.title }}
+    </div>
+    <div class="section-summary">
+        {{ data.general.summary }}
+    </div>
+
+    <div class="section-items">
+        <div class="section-item"
+            *ngFor="let item of data.items">
+            <div class="section-item-icon" *ngIf="item.icon">
+                <img [src]="'/assets/files/projects/logos/' + item.icon">
+            </div>
+            <div class="section-item-title">
+                {{ item.title }}
+            </div>
+        </div>
+    </div>
+</div>
