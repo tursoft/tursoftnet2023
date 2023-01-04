@@ -13,7 +13,7 @@ jobs:
       with:
         # Github access token token used to deploy on gh_pages. You can find it on Github.   
         github_access_token: ${{ github.token }}
-        angular_project_dir: ./
+        # angular_project_dir: ./
         build_configuration: production
         base_href: /
         deploy_branch: prod
