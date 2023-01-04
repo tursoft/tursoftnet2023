@@ -1,10 +1,20 @@
-- name: Angular Deploy gh-pages Actions
-  uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
-  with:
-    # Github access token token used to deploy on gh_pages. You can find it on Github.
-    github_access_token: ${{ github.token }}
-    angular_project_dir: ./
-    build_configuration: production
-    base_href: /
-    deploy_branch: prod
-    angular_dist_build_folder: dist
+name:
+    Build and Deploy
+on:
+  push:
+    branches: [ master, prod ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Angular Deploy gh-pages Actions
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      with:
+        # Github access token token used to deploy on gh_pages. You can find it on Github.   
+        github_access_token: ${{ github.token }}
+        angular_project_dir: ./
+        build_configuration: production
+        base_href: /
+        deploy_branch: prod
+        angular_dist_build_folder: dist
