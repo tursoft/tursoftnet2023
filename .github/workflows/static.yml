@@ -39,6 +39,11 @@ jobs:
         with:
           run: npm install -g @angular/cli
           
+      - name: Angular Version Check
+        uses: mathiasvr/command-output@v1.1.0
+        with:
+          run: ng version
+          
       - name: Build Angular
         uses: mathiasvr/command-output@v1.1.0
         with:
