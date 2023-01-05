@@ -16,7 +16,7 @@ import { ExperienceComponent } from './pages/experience/experience.component';
 import { Notfound404Component } from './pages/notfound404/notfound404.component';
 
 /* home - sections */
-import { IntroComponent } from './pages/home/sections/intro/intro.component';
+import { WelcomeComponent } from './pages/home/sections/welcome/welcome.component';
 import { ProfileComponent } from './pages/home/sections/profile/profile.component';
 import { StatisticsComponent } from './pages/home/sections/statistics/statistics.component';
 import { ProjectsComponent } from './pages/home/sections/projects/projects.component';
@@ -42,7 +42,7 @@ import { LoadingComponent } from './sections/loading/loading.component';
     Notfound404Component,
 
     /* home - sections */
-    IntroComponent, 
+    WelcomeComponent, 
     ProfileComponent,
     ProjectsComponent,
     EducationsComponent,

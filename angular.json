@@ -96,6 +96,7 @@
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "semantic/dist/semantic.min.css",
+              "@fortawesome/fontawesome-free/css/fontawesome.min.css",
               "src/styles.scss"
             ],
             "scripts": [

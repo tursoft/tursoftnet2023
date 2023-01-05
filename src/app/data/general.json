@@ -2,7 +2,9 @@
     "general": {
         "sitename": "tursoft",
         "year": 2015,
-        "name": "Muhammet TURŞAK",
+        "fullname": "Muhammet TURŞAK",
+        "firstname": "Muhammet",
+        "lastname": "TURŞAK",
         "title": "Senior Software Architect / .NET, Java, Web and Mobile",
         "title_short": "Senior Software Architect",
 

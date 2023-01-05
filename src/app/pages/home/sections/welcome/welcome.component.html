@@ -1,0 +1,53 @@
+<div class="section-welcome">
+    <div class="section-content">
+        <div class="top-menu">
+            <div class="logo">
+                <a href="/">tursoft</a>
+            </div>
+
+            <div class="mainmenu">
+                <div class="menu-hamburger">
+                    <button type="button"
+                            class="navbar-toggle" 
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="menu-items">
+                    <a class="menu-item smoth-scroll" href="#about">About Me</a>
+                    <a class="menu-item smoth-scroll" href="#experiences">Experiences</a>
+                    <a class="menu-item smoth-scroll" href="#education">Academic Background</a>
+                    <a class="menu-item smoth-scroll" href="#portfolio">Portfolio</a>
+                    <a class="menu-item smoth-scroll" href="#references">References</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="owner-container">
+            <div class="owner-name">
+                <span class="firstname">{{data.general.firstname}}</span>
+                <span class="lastname">{{data.general.lastname}}</span>
+            </div>
+
+            <div class="owner-title">
+                {{data.general.title}}
+            </div>
+
+            <a class="owner-cv-button wow bounceIn"
+            href="/assets/files/downloads/CV/CV_MuhammetTursak_v52.20200304.pdf" 
+            target="_blank"
+            data-wow-delay=".2s"
+            style="visibility: visible; animation-delay: 0.2s; animation-name: bounceIn;">
+                <i class="fa fa-download"></i>
+                DOWNLOAD CV
+            </a>
+        </div>
+    </div>
+
+    <div class="section-bg"></div>
+</div>
