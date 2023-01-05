@@ -1,1 +1,18 @@
-<p>references works!</p>
+<div class="section-references">
+    <div class="section-title">
+        References
+    </div>
+
+    <div class="section-items">
+        <div *ngFor="let item of data.items" class="section-item">
+            <img class="section-item-image" [src]="'/assets/images/references/' + item.icon">
+            <div class="section-item-name">
+                {{ item.name }}
+            </div>
+            <div class="section-item-reference_text">
+                {{ item.reference_text }}
+            </div>
+        </div>
+    </div>
+
+</div>

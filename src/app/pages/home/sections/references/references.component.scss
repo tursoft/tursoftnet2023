@@ -1,0 +1,30 @@
+.section-references {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    background-color: white;
+
+    .section-title {
+        font-weight: bold;
+        font-size: 36px;
+        padding: 10px 0px;
+    }
+
+    .section-items {
+        .section-item {
+            .section-item-image {
+                width: 200px;
+            }
+            
+            .section-item-name {
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .section-item-reference_text {
+                font-weight: normal;
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import referenceData from '../../../../data/references.json';
 
 @Component({
   selector: 'app-references',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./references.component.scss']
 })
 export class ReferencesComponent {
-
+  data = referenceData;
 }
