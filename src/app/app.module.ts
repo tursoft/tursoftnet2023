@@ -17,7 +17,7 @@ import { Notfound404Component } from './pages/notfound404/notfound404.component'
 
 /* home - sections */
 import { WelcomeComponent } from './pages/home/sections/welcome/welcome.component';
-import { ProfileComponent } from './pages/home/sections/profile/profile.component';
+import { AboutMeComponent } from './pages/home/sections/aboutme/aboutme.component';
 import { StatisticsComponent } from './pages/home/sections/statistics/statistics.component';
 import { ProjectsComponent } from './pages/home/sections/projects/projects.component';
 import { ExperiencesComponent } from './pages/home/sections/experiences/experiences.component';
@@ -43,7 +43,7 @@ import { LoadingComponent } from './sections/loading/loading.component';
 
     /* home - sections */
     WelcomeComponent, 
-    ProfileComponent,
+    AboutMeComponent,
     ProjectsComponent,
     EducationsComponent,
     StatisticsComponent,
