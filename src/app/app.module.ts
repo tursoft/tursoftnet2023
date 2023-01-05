@@ -1,6 +1,11 @@
+/* modules */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularMaterialModule } from './angularmaterial.module';
+
 import { AppComponent } from './app.component';
 
 /* pages */
@@ -53,7 +58,10 @@ import { LoadingComponent } from './sections/loading/loading.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
