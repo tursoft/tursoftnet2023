@@ -1,7 +1,14 @@
-:host {
-}
-
 .home {
     display: flex;
     flex-direction: column;
+}
+
+::ng-deep {
+    .section-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 36px;
+        padding: 30px 0px 30px 0px;
+        text-transform: uppercase;
+    }
 }
