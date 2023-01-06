@@ -6,23 +6,33 @@
         {{ data.general.summary }}
     </div>
 
-    <div class="filter-input-row">
-      <div class="filter-input ui icon input">
-        <input type="text" placeholder="Filter..."
-               [(ngModel)]="filterText"
-               (ngModelChange)="filterItems()">
-        <i class="search icon"></i>
+    <div class="section-groups" *ngIf="data.general.groups.length>0">
+      <div *ngFor="let group of groups"
+           [ngClass]="{
+             'section-group': true, 
+             'selected': group.name == filter.group, 
+             'no-select': true
+            }"
+           (click)="setGroup(group.name)">
+        {{group.title}}
       </div>
     </div>
 
+    <!-- <div class="filter-input-row">
+      <div class="filter-input ui icon input">
+        <input type="text" placeholder="Filter..."
+               [(ngModel)]="filter.filterText"
+               (ngModelChange)="filterItems()">
+        <i class="search icon"></i>
+      </div>
+    </div> -->
+
     <div class="section-items">
         <mat-card *ngFor="let item of filteredItems" class="section-item">
-            <img mat-card-image [src]="'/assets/files/projects/_logos/' + item.icon">
-            <mat-card-content>
-              <p>
-                {{ item.title }}
-              </p>
-            </mat-card-content>
+            <img class="item-image" mat-card-image [src]="'/assets/files/projects/_logos/' + item.icon">
+            <div class="item-title">
+              {{ item.title }}
+            </div>
           </mat-card>
     </div>
 </div>
