@@ -31,6 +31,9 @@ import { FooterComponent } from './sections/footer/footer.component';
 import { LoadingComponent } from './sections/loading/loading.component';
 import { Utils } from './sections/services/utils';
 
+/* components */
+import { VerticaltimelineComponent } from './components/verticaltimeline/verticaltimeline.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +59,9 @@ import { Utils } from './sections/services/utils';
     HeaderComponent,
     FooterComponent,
     LoadingComponent,
+
+    /* components */
+    VerticaltimelineComponent
   ],
   imports: [
     BrowserModule,
