@@ -34,7 +34,7 @@
               "@fortawesome/fontawesome-free/css/fontawesome.min.css",
               "@fortawesome/fontawesome-free/css/brands.min.css",
               "@fortawesome/fontawesome-free/css/solid.min.css",
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -100,7 +100,7 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "semantic/dist/semantic.min.css",
               "@fortawesome/fontawesome-free/css/fontawesome.min.css",
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": [
               "semantic/dist/semantic.min.js"
