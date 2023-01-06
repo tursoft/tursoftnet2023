@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 20px 30px;
     background-color: white;
+    align-items: center;
 
     .section-title {
         font-weight: bold;
@@ -11,19 +12,96 @@
     }
 
     .section-items {
+        margin-top: 30px;
+        width: 80%;
+
+        display: flex;
+        flex-direction: row;
+
+        .section-button-prev,
+        .section-button-next {
+            flex: 0 0 40px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: lightgray;
+            &:hover {
+                color: black;
+            }
+            &.disabled {
+                cursor: initial;
+                i {
+                    visibility: hidden;
+                }
+            }
+        }
+
         .section-item {
-            .section-item-image {
-                width: 200px;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            border: 1px solid gray;
+            margin-top: 0px 5px;
+            border-radius: 10px;
+            background-color: black;
+
+            .col1 {
+                flex: 0 0 200px;
+                height: 200px;
+                border-radius: 10px 0px 0px 10px;
+                display: flex;
+
+                .section-item-image {
+                    width: 100%;
+                    align-self: center;
+                    border-radius: 10px 0px 0px 10px;
+                }
             }
             
-            .section-item-name {
-                font-weight: bold;
-                font-size: 14px;
-            }
+            .col2 {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                padding-left: 25px;
+                padding: 20px 30px 0px 30px;
+                background-color: white;
+                border-radius: 0px 10px 10px 0px;
+                position: relative;
+                padding-bottom: 70px;
 
-            .section-item-reference_text {
-                font-weight: normal;
-                font-size: 12px;
+                .reference-name {
+                    font-weight: bold;
+                    font-size: 22px;
+                    margin-bottom: 15px;
+                }
+    
+                .reference-text {
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+
+                .contacts {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row;
+                    bottom: 0px;
+                    padding: 15px 0px 0px 0px;
+
+                    .contact {
+                        margin: 0px 1px;
+                        padding: 4px;
+                        min-width: 40px;
+                        height: 50px;
+                        text-align: center;
+                        color: gray;
+                        &:hover {
+                            background-color: rgba(163, 163, 163, 0.5);
+                            color: white;
+                        }
+                    }
+                }
             }
         }
     }

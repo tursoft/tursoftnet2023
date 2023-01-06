@@ -3,15 +3,36 @@
         References
     </div>
 
-    <div class="section-items">
-        <div *ngFor="let item of data.items" class="section-item">
-            <img class="section-item-image" [src]="'/assets/images/references/' + item.icon">
-            <div class="section-item-name">
-                {{ item.name }}
+    <div class="section-items" *ngIf="item">
+        <div [ngClass]="{'section-button-prev':true, 'disabled':!getPrev()}" (click)="prev()">
+            <i class="fa fa-chevron-left"></i>
+        </div>
+
+        <div class="section-item">
+            <div class="col1">
+                <img class="section-item-image" [src]="'/assets/images/references/' + item.icon">
             </div>
-            <div class="section-item-reference_text">
-                {{ item.reference_text }}
+            <div class="col2">
+                <div class="reference-name">
+                    {{ item.name }}
+                </div>
+                <div class="reference-text">
+                    {{ item.reference_text }}
+                </div>
+                <div class="contacts">
+                    <a *ngFor="let contact of item.contacts"
+                       class="contact tooltip-toggle"
+                       href="{{contact.value}}"
+                       [attr.aria-label]="contact.code"
+                       target="_blank">
+                       <i [ngClass]="getIconCss(contact.code)"></i>
+                    </a>
+                </div>
             </div>
+        </div>
+
+        <div [ngClass]="{'section-button-next':true, 'disabled':!getNext()}" (click)="next()">
+            <i class="fa fa-chevron-right"></i>
         </div>
     </div>
 

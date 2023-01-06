@@ -1,0 +1,16 @@
+{
+    "iconCss" : {
+        "website"       : "fa-brands fa-dribbble",
+        "email"         : "fa fa-envelope",
+        "phone"         : "fa fa-phone",
+    
+        "linkedin"      : "fa-brands fa-linkedin",
+        "github"        : "fa-brands fa-github",
+        "youtube"       : "fa-brands fa-youtube",
+        "instagram"     : "fa-brands fa-instagram",
+        "twitter"       : "fa-brands fa-twitter",
+        "skype"         : "fa-brands fa-skype",
+        "facebook"      : "fa-brands fa-facebook-f",
+        "stack-exchange": "fa-brands fa-stack-exchange"            
+}   
+}

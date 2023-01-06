@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ReferenceDto, ReferencesDto } from 'src/app/models/referenceDto';
 import referenceData from '../../../../data/references.json';
+import utilsData from '../../../../data/utils.json';
 
 @Component({
   selector: 'app-references',
@@ -7,5 +9,55 @@ import referenceData from '../../../../data/references.json';
   styleUrls: ['./references.component.scss']
 })
 export class ReferencesComponent {
-  data = referenceData;
+  utilsData = utilsData;
+
+  items: ReferenceDto[]=[];
+  item?: ReferenceDto;
+
+  constructor() {
+    this.items = referenceData.items
+                    //.filter(p => p.isactive ?? false)
+                    .sort((r1, r2) => r1.orderIndex==r2.orderIndex ? 0 : r1.orderIndex>r2.orderIndex ? 1 : -1);
+    this.item = this.items[0];
+  }
+
+  getPrev() {
+    if (!this.item)
+      return;
+    const prevItem = this.items[this.items.indexOf(this.item)-1];
+    if (prevItem) {
+      return prevItem;
+    }
+    return null;
+  }
+
+  getNext() {
+    if (!this.item)
+      return null;
+    const nextItem = this.items[this.items.indexOf(this.item)+1];
+    if (nextItem) {
+      return nextItem;
+    }
+
+    return null;
+  }
+
+  prev() {
+    const prevItem = this.getPrev();
+    if (!prevItem)
+      return;
+    this.item = prevItem;
+  }
+
+  next() {
+    const nextItem = this.getNext();
+    if (!nextItem)
+      return;
+    this.item = nextItem;
+  }
+
+  getIconCss(code: string) {
+    const iconCss: any = this.utilsData.iconCss
+    return iconCss[code];
+  }
 }
