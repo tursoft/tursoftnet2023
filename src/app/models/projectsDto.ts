@@ -41,16 +41,19 @@ export interface ProjectItemDto {
     type: string
   }[]
 }
+
+export interface ProjectGroupDto {
+  name?: string;
+  title: string;
+  value?: number;
+  iconCss?: string;
+}
+
 export interface ProjectsDto {
     general: {
         title: string,
         summary?: string,
-        groups: { 
-            name: string,
-            title: string, 
-            value: number, 
-            iconCss?: string
-        }[]
+        groups: ProjectGroupDto[]
       },
       
     items: ProjectItemDto[]
