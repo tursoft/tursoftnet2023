@@ -1,11 +1,17 @@
 <div class="footer">
     <div class="col1">
-        <div class="contact-box" *ngFor="let contact of general.contacts">
-            {{ contact.name }}
+        <div class="contacts">
+            <a *ngFor="let contact of data.contacts"
+               class="contact tooltip-toggle"
+               href="{{contact.value}}"
+               [attr.aria-label]="contact.code"
+               target="_blank">
+               <i [ngClass]="utils.getIconCss(contact.code)"></i>
+            </a>
         </div>
     </div>
 
     <div class="col2">
-        © 2023 Muhammet TURŞAK. All Right Reserved.
+        © 2023 {{data.fullname}}. All Right Reserved.
     </div>
 </div>

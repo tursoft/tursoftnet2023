@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import generalData from '../../data/general.json';
+import { Utils } from '../services/utils';
 
 @Component({
   selector: 'app-footer',
@@ -7,5 +8,9 @@ import generalData from '../../data/general.json';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  general = generalData.general;
+  data = generalData.general;
+
+  constructor(public utils: Utils) {
+
+  }
 }

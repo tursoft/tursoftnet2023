@@ -29,6 +29,7 @@ import { ReferencesComponent } from './pages/home/sections/references/references
 import { HeaderComponent } from './sections/header/header.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { LoadingComponent } from './sections/loading/loading.component';
+import { Utils } from './sections/services/utils';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,9 @@ import { LoadingComponent } from './sections/loading/loading.component';
     BrowserAnimationsModule,
     AngularMaterialModule
   ],
-  providers: [],
+  providers: [
+    Utils
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

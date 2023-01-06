@@ -44,35 +44,48 @@
         ],
     
         "contacts": [
-            { "isactive":false, "name": "website", "value": "http://www.tursoft.net" },
-            { "isactive":false, "name": "email", "value": "tursoft@gmail.com" },
-    
+            { 
+                "isactive":false,
+                "code": "website",
+                "value": "http://www.tursoft.net"
+            },
+            { 
+                "isactive":false,
+                "code": "email",
+                "value": "tursoft@gmail.com"
+            },
             {
-                "name": "linkedin",
+                "code": "linkedin",
                 "value": "https://www.linkedin.com/in/tursoft/"
             },
             {
-                "name": "github",
+                "code": "github",
                 "value": "https://github.com/tursoft"
             },
-    
-            { "isactive":false, "name": "youtube", "value": "https://www.youtube.com/channel/UCn3G4uKhXkpwwmrh3Lzu7ww?view_as=subscriber" },
-            { "isactive":false, "name": "instagram", "value": "https://www.instagram.com/mtursak" },
-    
+            { 
+                "isactive":false,
+                "code": "youtube",
+                "value": "https://www.youtube.com/channel/UCn3G4uKhXkpwwmrh3Lzu7ww?view_as=subscriber" 
+            },
+            { 
+                "isactive":false,
+                "code": "instagram",
+                "value": "https://www.instagram.com/mtursak"
+            },
             {
-                "name": "twitter",
+                "code": "twitter",
                 "value": "https://twitter.com/muhammettursak"
             },
             {
-                "name": "skype",
+                "code": "skype",
                 "value": "https://www.skype.com/profile/tursoft"
             },
             {
-                "name": "facebook",
+                "code": "facebook",
                 "value": "https://www.facebook.com/tursoft"
             },
             {
-                "name": "stack-exchange",
+                "code": "stack-exchange",
                 "value": "https://stackoverflow.com/users/1949367/muhammet-tur%C5%9Eak"
             }        
         ]        

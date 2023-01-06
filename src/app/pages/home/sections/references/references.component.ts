@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ReferenceDto, ReferencesDto } from 'src/app/models/referenceDto';
+import { Utils } from 'src/app/sections/services/utils';
 import referenceData from '../../../../data/references.json';
-import utilsData from '../../../../data/utils.json';
 
 @Component({
   selector: 'app-references',
@@ -9,12 +9,11 @@ import utilsData from '../../../../data/utils.json';
   styleUrls: ['./references.component.scss']
 })
 export class ReferencesComponent {
-  utilsData = utilsData;
 
   items: ReferenceDto[]=[];
   item?: ReferenceDto;
 
-  constructor() {
+  constructor(public utils: Utils) {
     this.items = referenceData.items
                     //.filter(p => p.isactive ?? false)
                     .sort((r1, r2) => r1.orderIndex==r2.orderIndex ? 0 : r1.orderIndex>r2.orderIndex ? 1 : -1);
@@ -54,10 +53,5 @@ export class ReferencesComponent {
     if (!nextItem)
       return;
     this.item = nextItem;
-  }
-
-  getIconCss(code: string) {
-    const iconCss: any = this.utilsData.iconCss
-    return iconCss[code];
   }
 }
