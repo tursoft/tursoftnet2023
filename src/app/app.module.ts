@@ -34,6 +34,9 @@ import { Utils } from './sections/services/utils';
 /* components */
 import { VerticaltimelineComponent } from './components/verticaltimeline/verticaltimeline.component';
 
+/* directivrs */
+import { ObserveElementDirective } from './directives/observe-element-directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,10 @@ import { VerticaltimelineComponent } from './components/verticaltimeline/vertica
     LoadingComponent,
 
     /* components */
-    VerticaltimelineComponent
+    VerticaltimelineComponent,
+
+    /* directives */
+    ObserveElementDirective
   ],
   imports: [
     BrowserModule,
