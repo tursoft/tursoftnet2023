@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@knight-lab/timelinejs": "^3.9.1",
     "animate.css": "^4.1.1",
+    "intersection-observer": "^0.12.2",
     "linq-to-typescript": "^10.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
