@@ -4,7 +4,7 @@
 html, body {
     margin: 0px;
     padding: 0px;
-    height: 100%; 
+    height: auto !important;
 }
 
 body { 
@@ -16,4 +16,12 @@ body {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-  }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}

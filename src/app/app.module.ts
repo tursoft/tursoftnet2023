@@ -16,6 +16,7 @@ import { ExperienceComponent } from './pages/experience/experience.component';
 import { Notfound404Component } from './pages/notfound404/notfound404.component';
 
 /* home - sections */
+import { TopMenuComponent } from './sections/topmenu/topmenu.component';
 import { WelcomeComponent } from './pages/home/sections/welcome/welcome.component';
 import { AboutMeComponent } from './pages/home/sections/aboutme/aboutme.component';
 import { StatisticsComponent } from './pages/home/sections/statistics/statistics.component';
@@ -49,6 +50,7 @@ import { ObserveElementDirective } from './directives/observe-element-directive'
     Notfound404Component,
 
     /* home - sections */
+    TopMenuComponent,
     WelcomeComponent, 
     AboutMeComponent,
     ProjectsComponent,
