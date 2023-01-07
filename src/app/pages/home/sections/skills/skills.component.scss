@@ -1,3 +1,108 @@
 .section-skills {
-    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    background-color: white;
+
+    .section-summary {
+        font-size: 14px;
+        padding: 5px 0px 10px 0px;
+        text-align: center;
+    }
+
+    .filter-input-row {
+        margin: 0px 0px 10px 0px;
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        width: 70%;
+        flex: 0 0 70%;
+
+        .filter-input {
+            justify-items: center;
+            justify-content: center;
+            justify-self: center;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            flex: 0 0 100%;
+            &:focus-within {
+                flex: 0 0 100%;
+            }
+        }
+    }
+
+    .section-groups {
+        align-self: center;
+        margin: 8px 0px 15px 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .section-group {
+            min-width: 80px;
+            text-align: center;
+            padding: 6px 10px;
+            margin: 0px 1px;
+            border: 1px solid lightgray;
+            color: gray;
+            cursor: pointer;
+
+            &.selected {
+                background-color: black;
+                color: white; 
+            }
+
+            &:hover {
+                background-color: rgba(163, 163, 163, 0.5);
+                color: black;
+            }
+        }
+    }
+
+    .section-items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .section-item {
+            max-width: 100px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+            position: relative;
+            margin: 10px;
+            border-top: 3px solid lightgray;
+            border-bottom: 1px solid rgba(163, 163, 163, 0.1);
+            border-left: 1px solid rgba(163, 163, 163, 0.1);
+            border-right: 1px solid rgba(163, 163, 163, 0.1);
+
+            .item-image {
+                margin: 20px;
+            }
+
+            .item-title {
+                display: flex;
+                width: 100%;
+                min-height: 40px;
+                position: absolute;
+                bottom: 0px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                padding: 3px 5px 6px 5px;
+                background-color: rgba(163, 163, 163, 0.1);
+            }
+
+            &:hover {
+                cursor: pointer;
+                border-top: 4px solid gray;
+                border-bottom: 1px solid gray;
+                border-left: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+        }
+    }
 }
