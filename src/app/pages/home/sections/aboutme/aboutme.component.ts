@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Utils } from 'src/app/sections/services/utils';
 import generalData from '../../../../data/general.json';
 
 @Component({
@@ -8,4 +9,11 @@ import generalData from '../../../../data/general.json';
 })
 export class AboutMeComponent {
   data = generalData;
+  
+  constructor(public utils: Utils){
+  }
+
+  isIntersecting (status: boolean,) {
+    console.log('Element is intersecting ' + status)
+  }
 }

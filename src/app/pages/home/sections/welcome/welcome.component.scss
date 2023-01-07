@@ -1,5 +1,7 @@
 .section-welcome {
     color: white;
+    background-color: black;
+    height: calc( 100vh );
 
     .section-bg {
         position: relative;
@@ -14,54 +16,6 @@
         z-index: 2;
         position: absolute;
         width: 100%;
-
-        .top-menu {
-            display: flex;
-            color: white !important;
-            padding-top: 25px;
-            padding-left: 200px;
-
-            .logo {
-                flex: 1;
-                padding: 5px;
-                a, a:hover, a:visited {
-                    color: white;
-                    font-size: 18px;
-                    text-transform: uppercase;
-                }
-            }
-    
-            .mainmenu {
-                flex: 0 0 auto;
-    
-                .menu-hamburger {
-                    display: none;
-                }
-    
-                .menu-items {
-                    display: flex;
-                    flex-direction: row;
-                    margin-right: 35px;
-                    
-                    .menu-item,
-                    a, a:visited, a:hover
-                    {
-                        color: white !important;
-                        margin: 5px 15px;
-                        padding: 5px 10px;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        text-decoration: none;
-                        line-height: 150%;
-    
-                        &:hover {
-                            background-color: rgba(255, 255, 255, 0.5);
-                            color: black !important;
-                        }
-                    }
-                }
-            }
-        }
     
         .owner-container {
             padding-left: 200px;
