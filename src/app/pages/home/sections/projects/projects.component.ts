@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { from } from 'linq-to-typescript';
 import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from 'src/app/models/projectsDto';
 import projectsData from '../../../../data/projects.json';
 
