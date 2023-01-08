@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./topmenu.component.scss']
 })
 export class TopMenuComponent {
-
+  scrollToElement(id: string): void {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
