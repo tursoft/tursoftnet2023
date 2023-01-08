@@ -30,13 +30,16 @@ import { ReferencesComponent } from './pages/home/sections/references/references
 import { HeaderComponent } from './sections/header/header.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { LoadingComponent } from './sections/loading/loading.component';
-import { Utils } from './services/utils';
 
 /* components */
 import { VerticaltimelineComponent } from './components/verticaltimeline/verticaltimeline.component';
 
-/* directivrs */
+/* directives */
 import { ObserveElementDirective } from './directives/observe-element-directive';
+
+/* services */
+import { Session } from './services/session';
+import { Utils } from './services/utils';
 
 @NgModule({
   declarations: [
@@ -79,6 +82,7 @@ import { ObserveElementDirective } from './directives/observe-element-directive'
     AngularMaterialModule
   ],
   providers: [
+    Session,
     Utils
   ],
   bootstrap: [AppComponent]
