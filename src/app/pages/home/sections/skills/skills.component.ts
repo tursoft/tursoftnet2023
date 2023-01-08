@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { from } from 'linq-to-typescript';
-import { IHoverable, IOrderable } from 'src/app/models/shared';
+import { IHoverable } from 'src/app/models/shared';
 import { SkillGroupDto, SkillItemDto, SkillsDto } from 'src/app/models/skillsDto';
 import { Utils } from 'src/app/services/utils';
 import skillsData from '../../../../data/skills.json';
