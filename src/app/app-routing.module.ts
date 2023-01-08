@@ -8,6 +8,9 @@ import { ExperienceComponent } from './pages/experience/experience.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'projects/:id', component: ProjectComponent },
+  { path: 'educations/:id', component: EducationComponent },
+  { path: 'experiences/:id', component: ExperienceComponent },
   { path: '**', pathMatch: 'full', component: Notfound404Component }
 ];
 

@@ -29,14 +29,17 @@
     </div> -->
 
     <div class="section-items">
-        <div *ngFor="let item of filteredItems"
-                  class="section-item"
-                  (mouseenter)="item.hover = true"
-                  (mouseout)="item.hover = false">
-            <img class="item-image" mat-card-image [src]="'/assets/files/projects/_logos/' + item.icon">
+        <a *ngFor="let item of filteredItems"
+             class="section-item"
+             (mouseenter)="item.hover = true"
+             (mouseout)="item.hover = false"
+             [routerLink]="['/projects', item.id]">
+            <img class="item-image"
+                 mat-card-image
+                 [src]="'/assets/files/projects/_logos/' + item.icon">
             <div [ngClass]="{'item-title': true, 'hovered': item.hover, 'animate__animated': true, 'animate__fadeIn': true }">
               {{ item.title }}
             </div>
-        </div>
+        </a>
     </div>
 </div>
