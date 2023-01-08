@@ -5,14 +5,14 @@
     position: sticky;
     display: flex;
     color: white !important;
-    padding-top: 25px;
-    padding-bottom: 15px;
+    padding-top: 0px;
+    padding-bottom: 2px;
     padding-left: 200px;
     background-color: black;
 
     .logo {
         flex: 1;
-        padding: 5px;
+        padding: 45px 5px 5px 5px;
         a, a:hover, a:visited {
             color: white;
             font-size: 18px;
@@ -37,7 +37,7 @@
             {
                 color: white !important;
                 margin: 5px 15px;
-                padding: 5px 10px;
+                padding: 35px 10px 10px 10px;
                 text-transform: uppercase;
                 font-weight: bold;
                 text-decoration: none;
