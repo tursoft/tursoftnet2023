@@ -1,9 +1,56 @@
-<div class="project-title">
-
+<div class="page-header">
+    <div class="header-buttons">
+        <a class="btn-back" href="/">
+            <i class="icon fa-solid fa-chevron-left"></i>
+            <span>Back</span>
+        </a>
+    </div>
+    <div class="page-header-text">
+        {{ item?.title }}
+    </div>
+    <div class="site-owner">Muhammet Turşak</div>
 </div>
 
-<div class="project-team">
+<div class="project" *ngIf="item">
+    <div class="project-title-container">
+        <div class="project-logo">
+            <img [src]="'/assets/files/projects/_logos/' + item.name + '.png'">
+        </div>
+        <div class="project-date">
+            {{ item?.datePeriod?.startDate }} - {{ item?.datePeriod?.endDate ?? 'Present' }}
+        </div>
+        <div class="project-title">
+            {{ item.title }}
+        </div>
+    </div>
+
+    <div class="project-summary">
+        {{item.summary}}
+    </div>
+    
+    <div class="project-team-section" *ngIf="item.team">
+        <div class="header">Team</div>
+        <div class="project-team-members">
+            <div class="project-team-member"
+                *ngFor="let teamMember of item.team">
+                {{ teamMember.name }} <small>({{teamMember.position}})</small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="project-technologies-section" *ngIf="item.technologies">
+        <div class="header">Technologies <span class="badge">{{item.technologies.length}}</span></div>
+
+        <div class="project-technologies">
+            <div class="project-technology"
+                *ngFor="let technology of item.technologies">
+                <img [src]="utils.getTechnologyImageName(technology.name, true)">
+                <span>{{ technology.name }}</span>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="project-technologies">
+<div class="not-found" *ngIf="!item">
+    Project not found!
 </div>
