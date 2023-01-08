@@ -1,18 +1,17 @@
-<div class="section-aboutme">
-    <mat-card class="section-aboutme-content hidden"
+<div class="section section-aboutme">
+    <div class="section-aboutme-content hidden"
                 appObserveElement
                 #intersection="intersection"
                 [class.animate__animated]="intersection._isIntersecting"
                 [class.animate__fadeInRight]="intersection._isIntersecting"
                 [class.visible]="intersection._isIntersecting"
                 (isIntersecting)="isIntersecting($event)">
+
         <div class="col-left">
             <div>
                 <div class="profile-left-content">
                     <img class="profile-img" src="/assets/images/about/about-me.jpg" alt="">
                     <div class="profile-left-content-details text-center">
-                        <div class="fullname">{{data.general.fullname}}</div>
-                        <div class="title">{{data.general.title_short}}</div>
 
                         <div class="contacts">
                             <a *ngFor="let contact of data.general.contacts"
@@ -21,15 +20,6 @@
                                [attr.title]="contact.code">
                                <i [ngClass]="utils.getIconCss(contact.code)"></i>
                             </a>
-<!--                             
-                            <a href="https://www.linkedin.com/in/tursoft/" target="_blank" title="linkedin"><i class="fa fa-linkedin"></i></a>
-                            <a href="https://github.com/tursoft" target="_blank" title="github"><i class="fa fa-github"></i></a>
-                            <a href="https://www.youtube.com/channel/UCn3G4uKhXkpwwmrh3Lzu7ww?view_as=subscriber" target="_blank" title="youtube"><i class="fa fa-youtube"></i></a>
-                            <a href="https://www.instagram.com/mtursak" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="https://twitter.com/muhammettursak" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.skype.com/profile/tursoft" target="_blank" title="skype"><i class="fa fa-skype"></i></a>
-                            <a href="https://www.facebook.com/tursoft" target="_blank" title="facebook"><i class="fa fa-facebook-f"></i></a>
-                            <a href="https://stackoverflow.com/users/1949367/muhammet-tur%C5%9Eak" target="_blank" title="stack-exchange"><i class="fa fa-stack-exchange"></i></a> -->
                         </div>
 
                         <div class="profile-contacts">
@@ -56,40 +46,41 @@
                 target="_blank">
                 DOWNLOAD CV
             </a>
-    
-            <div style="margin-top: 15px;"
-                 data-wow-delay=".4s">
-                <h4><strong>Positions</strong></h4>	
-                <ul>
-                    <li class="simple" *ngFor="let position of data.general.positions">
-                        <span>{{position.name}} <small style="font-size:9px;">({{position.experience}})</small>
-                        </span>
-                    </li>                                              
-                </ul>
-            </div>
+
+            <!-- <div class="profile-title">{{data.general.fullname}}</div>
+            <div class="profile-position">{{data.general.title_short}}</div> -->
         </div>
     
         <div class="col-right">
-            <div class="profile-info section-border-bottom">
-                <h1 class="profile-title">{{data.general.fullname}}</h1>
-                <h2 class="profile-position">{{data.general.title_short}}</h2>
-    
+            <div class="profile-info section-border-bottom">    
                 <p class="short-des animate__animated animate__fadeInUp" 
                    data-wow-delay=".2s"
                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    </p><h4><strong>Background</strong></h4>
+                    </p>
+                    
+                    <div class="header">Background</div>
                     <p>{{data.general.biography}}</p>
                     <br>
     
-                    <h4><strong>Vision</strong></h4>
+                    <div class="header">Vision</div>
                     <p>{{data.general.vision}}</p>
                     <br>
     
-                    <h4><strong>Mission</strong></h4>					
+                    <div class="header">Mission</div>					
                     <p>{{data.general.mission}}</p>																	
                     <br>
+
+                    <div>
+                        <div class="header"><strong>Positions</strong></div>	
+                        <ul>
+                            <li class="simple" *ngFor="let position of data.general.positions">
+                                <span>{{position.name}} <small style="font-size:9px;">({{position.experience}})</small>
+                                </span>
+                            </li>                                              
+                        </ul>
+                    </div>
                 <p></p>
             </div>
         </div>
-    </mat-card>
+    </div>
 </div>
