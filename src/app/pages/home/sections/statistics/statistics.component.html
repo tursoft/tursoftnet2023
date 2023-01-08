@@ -6,7 +6,7 @@
         </div>
         <div class="item-value-cells">
             <div class="item-value-cell">
-                <div class="item-value">{{item.value}}</div>
+                <div class="item-value counterbox" [style.--num]="item.value"></div>
                 <div class="item-subtitle">{{item.subTitle}}</div>
             </div>
             <div class="item-title">{{item.title}}</div>
