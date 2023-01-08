@@ -2,7 +2,16 @@ import { Injectable } from "@angular/core";
 import utilsData from '../data/utils.json';
 
 @Injectable()
-export class Utils {
+export class Utils
+{
+    public getTechnologyImageName(name: string, small: boolean) {
+        const imageName = name.replaceAll(' ','')
+                            .replace('.', '')
+                            .replace('#', 'sharp')
+                            .toLowerCase();
+        return `/assets/images/technologies/${small?'small_50x50':'original'}/${imageName}.png`;
+    }
+
     public getIconCss(code: string) {
         const iconCss: any = utilsData.iconCss
         return iconCss[code];

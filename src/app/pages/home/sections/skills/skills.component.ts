@@ -40,13 +40,6 @@ export class SkillsComponent {
     this.filterItems();
   }
 
-  qetItemIconName(item: SkillItem) {
-    return item.name.replaceAll(' ','')
-                    .replace('.', '')
-                    .replace('#', 'sharp')
-                    .toLowerCase() + '.png';
-  }
-
   filterItems = () => {
     const { filter: { filterText, group: filterGroup }, allItems} = this;
     
