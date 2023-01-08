@@ -42,7 +42,8 @@
             border: 1px solid gray;
             margin-top: 0px 5px;
             border-radius: 10px;
-            background-color: black;
+            background: rgb(0,0,0);
+            background: linear-gradient(180deg, rgba(0,0,0,1) 60%, rgba(85,85,85,1) 80%, rgba(255,255,255,1) 100%);
             min-height: 350px;
 
             .col1 {
