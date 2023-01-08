@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import generalData from '../../data/general.json';
-import { Utils } from '../services/utils';
+import { Utils } from '../../services/utils';
 
 @Component({
   selector: 'app-footer',

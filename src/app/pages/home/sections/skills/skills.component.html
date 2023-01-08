@@ -28,7 +28,7 @@
     </div>
 
     <div class="section-items">
-        <mat-card *ngFor="let item of filteredItems"
+        <div *ngFor="let item of filteredItems"
                   class="section-item"
                   (mouseenter)="item.hover = true"
                   (mouseout)="item.hover = false">
@@ -36,6 +36,6 @@
             <div [ngClass]="{'item-title': true, 'hovered': item.hover, 'animate__animated': true, 'animate__fadeIn': true }">
               {{ item.title }}
             </div>
-          </mat-card>
+        </div>
     </div>
 </div>

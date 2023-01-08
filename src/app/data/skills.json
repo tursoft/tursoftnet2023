@@ -2,41 +2,173 @@
 	"general": {
 		"title": "Skills",
 		"summary": "I had experience on various tech stacks in my long career.",
+
 		"groups": [
-			{ "name": "Framework", "title": "Framework", "value":0, "iconCss": "" }, 
-			{ "name": "Programming Language", "title": "Programming Language", "value":1, "iconCss": "" }, 
-			{ "name": "Language", "title": "Language", "value":2, "iconCss": "" }, 
-			{ "name": "Frontend", "title": "Frontend", "value":3, "iconCss": "" }, 
-			{ "name": "Virtualization", "title": "Virtualization", "value":4, "iconCss": "" }, 
-			{ "name": "Source Control", "title": "Source Control", "value":5, "iconCss": "" }, 
-			{ "name": "DevOps", "title": "DevOps", "value":6, "iconCss": "" }, 
-			{ "name": "Database", "title": "Database", "value":7, "iconCss": "" }, 
-			{ "name": "Project Management", "title": "Project Management", "value":8, "iconCss": "" }, 
-			{ "name": "Backend", "title": "Backend", "value":9, "iconCss": "" }, 
-			{ "name": "Graphics Design", "title": "Graphics Design", "value":10, "iconCss": "" }, 
-			{ "name": "Web", "title": "Web", "value":11, "iconCss": "" }, 
-			{ "name": "Scheduled Tasks", "title": "Scheduled Tasks", "value":12, "iconCss": "" }, 
-			{ "name": "ORM", "title": "ORM", "value":13, "iconCss": "" }, 
-			{ "name": "Dependency Management", "title": "Dependency Management", "value":14, "iconCss": "" }, 
-			{ "name": "IDE", "title": "IDE", "value":15, "iconCss": "" }, 
-			{ "name": "Webservices", "title": "Webservices", "value":16, "iconCss": "" }, 
-			{ "name": "Sniffing Tool", "title": "Sniffing Tool", "value":17, "iconCss": "" }, 
-			{ "name": "File Format", "title": "File Format", "value":18, "iconCss": "" }, 
-			{ "name": "Design Pattern", "title": "Design Pattern", "value":19, "iconCss": "" }, 
-			{ "name": "Cloud Hosting", "title": "Cloud Hosting", "value":20, "iconCss": "" }, 
-			{ "name": "Web Services", "title": "Web Services", "value":21, "iconCss": "" }, 
-			{ "name": "Scripting", "title": "Scripting", "value":22, "iconCss": "" }, 
-			{ "name": "OS", "title": "OS", "value":23, "iconCss": "" }, 
-			{ "name": "Task Runner", "title": "Task Runner", "value":24, "iconCss": "" }, 
-			{ "name": "3D Modeling Tool", "title": "3D Modeling Tool", "value":25, "iconCss": "" }, 
-			{ "name": "E-Learning Standart", "title": "E-Learning Standart", "value":26, "iconCss": "" }, 
-			{ "name": "Reporting", "title": "Reporting", "value":27, "iconCss": "" }, 
-			{ "name": "Business Intelligence", "title": "Business Intelligence", "value":28, "iconCss": "" }, 
-			{ "name": "Desktop", "title": "Desktop", "value":29, "iconCss": "" }, 
-			{ "name": "E-Commerce", "title": "E-Commerce", "value":30, "iconCss": "" }, 
-			{ "name": "ERP", "title": "ERP", "value":31, "iconCss": "" }, 
-			{ "name": "Gaming Engine", "title": "Gaming Engine", "value":32, "iconCss": "" }, 
-			{ "name": "Approach", "title": "Approach", "value":33, "iconCss": "" }
+			{
+				"name": "Programming Language",
+				"title": "Programming Language",
+				"orderIndex": 1
+			},
+			{
+				"name": "Framework",
+				"title": "Framework",
+				"orderIndex": 2
+			},
+			{
+				"name": "Frontend",
+				"title": "Frontend",
+				"orderIndex": 3
+			},
+			{
+				"name": "Backend",
+				"title": "Backend",
+				"orderIndex": 4
+			},
+			{
+				"name": "Web",
+				"title": "Web",
+				"orderIndex": 5
+			},
+			{
+				"name": "ORM",
+				"title": "ORM",
+				"orderIndex": 6
+			},
+			{
+				"name": "IDE",
+				"title": "IDE",
+				"orderIndex": 7
+			},
+			{
+				"name": "Database",
+				"title": "Database",
+				"orderIndex": 8
+			},
+			{
+				"name": "Source Control",
+				"title": "Source Control",
+				"orderIndex": 9
+			},
+			{
+				"name": "DevOps",
+				"title": "DevOps",
+				"orderIndex": 10
+			},
+			{
+				"name": "Scheduled Tasks",
+				"title": "Scheduled Tasks",
+				"orderIndex": 11
+			},
+			{
+				"name": "Dependency Management",
+				"title": "Dependency Management",
+				"orderIndex": 12
+			},
+			{
+				"name": "Virtualization",
+				"title": "Virtualization",
+				"orderIndex": 13
+			},
+			{
+				"name": "Graphics Design",
+				"title": "Graphics Design",
+				"orderIndex": 14
+			},
+			{
+				"name": "File Format",
+				"title": "File Format",
+				"orderIndex": 15
+			},
+			{
+				"name": "Webservices",
+				"title": "Webservices",
+				"orderIndex": 16
+			},
+			{
+				"name": "Sniffing Tool",
+				"title": "Sniffing Tool",
+				"orderIndex": 17
+			},
+			{
+				"name": "Project Management",
+				"title": "Project Management",
+				"orderIndex": 18
+			},
+			{
+				"name": "Cloud Hosting",
+				"title": "Cloud Hosting",
+				"orderIndex": 19
+			},
+			{
+				"name": "Web Services",
+				"title": "Web Services",
+				"orderIndex": 20
+			},
+			{
+				"name": "Scripting",
+				"title": "Scripting",
+				"orderIndex": 21
+			},
+			{
+				"name": "OS",
+				"title": "OS",
+				"orderIndex": 22
+			},
+			{
+				"name": "Task Runner",
+				"title": "Task Runner",
+				"orderIndex": 23
+			},
+			{
+				"name": "3D Modeling Tool",
+				"title": "3D Modeling Tool",
+				"orderIndex": 24
+			},
+			{
+				"name": "E-Learning Standart",
+				"title": "E-Learning Standart",
+				"orderIndex": 25
+			},
+			{
+				"name": "Reporting",
+				"title": "Reporting",
+				"orderIndex": 26
+			},
+			{
+				"name": "Business Intelligence",
+				"title": "Business Intelligence",
+				"orderIndex": 27
+			},
+			{
+				"name": "Desktop",
+				"title": "Desktop",
+				"orderIndex": 28
+			},
+			{
+				"name": "E-Commerce",
+				"title": "E-Commerce",
+				"orderIndex": 29
+			},
+			{
+				"name": "ERP",
+				"title": "ERP",
+				"orderIndex": 30
+			},
+			{
+				"name": "Gaming Engine",
+				"title": "Gaming Engine",
+				"orderIndex": 31
+			},
+			{
+				"name": "Design Pattern",
+				"title": "Design Pattern",
+				"orderIndex": 32
+			},
+			{
+				"name": "Approach",
+				"title": "Approach",
+				"orderIndex": 33
+			}
 		]
 	},
 
@@ -49,8 +181,8 @@
 			"iconCss": "",
 			"projects": 26,
 			"jobs": 0,
-			"orderindex": 1,
-			"ismajor": true
+			"orderIndex": 1,
+			"isMajor": true
 		},
 		{
 			"name": ".NETCore",
@@ -60,8 +192,8 @@
 			"iconCss": "",
 			"projects": 8,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 1
+			"isMajor": true,
+			"orderIndex": 1
 		},
 		{
 			"name": "Java",
@@ -71,19 +203,19 @@
 			"iconCss": "",
 			"projects": 3,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 2
+			"isMajor": true,
+			"orderIndex": 2
 		},
 		{
 			"name": "C#",
 			"title": "C#",
-			"group": "Language",
+			"group": "Programming Language",
 			"value": 0,
 			"iconCss": "",
 			"projects": 32,
 			"jobs": 0,
-			"orderindex": 3,
-			"ismajor": true
+			"orderIndex": 3,
+			"isMajor": true
 		},
 		{
 			"name": "Typescript",
@@ -93,8 +225,8 @@
 			"iconCss": "",
 			"projects": 3,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 4
+			"isMajor": true,
+			"orderIndex": 4
 		},
 		{
 			"name": "AngularJS",
@@ -104,8 +236,8 @@
 			"iconCss": "",
 			"projects": 10,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 5
+			"isMajor": true,
+			"orderIndex": 5
 		},
 		{
 			"name": "Angular",
@@ -115,8 +247,19 @@
 			"iconCss": "",
 			"projects": 3,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 5
+			"isMajor": true,
+			"orderIndex": 5
+		},
+		{
+			"name": "Kubernetes",
+			"title": "Kubernetes",
+			"group": "Virtualization",
+			"value": 0,
+			"iconCss": "",
+			"projects": 8,
+			"jobs": 0,
+			"isMajor": true,
+			"orderIndex": 6
 		},
 		{
 			"name": "Docker",
@@ -126,8 +269,8 @@
 			"iconCss": "",
 			"projects": 8,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 6
+			"isMajor": true,
+			"orderIndex": 6
 		},
 		{
 			"name": "Gitlab",
@@ -137,8 +280,8 @@
 			"iconCss": "",
 			"projects": 11,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 7
+			"isMajor": true,
+			"orderIndex": 7
 		},
 		{
 			"name": "Jenkins",
@@ -148,8 +291,8 @@
 			"iconCss": "",
 			"projects": 11,
 			"jobs": 0,
-			"ismajor": true,
-			"orderindex": 8
+			"isMajor": true,
+			"orderIndex": 8
 		},
 		{
 			"name": "HTML5",
@@ -159,7 +302,7 @@
 			"iconCss": "",
 			"projects": 45,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "JS",
@@ -169,7 +312,7 @@
 			"iconCss": "",
 			"projects": 45,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "CSS",
@@ -179,7 +322,7 @@
 			"iconCss": "",
 			"projects": 33,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "MS SQL",
@@ -189,7 +332,7 @@
 			"iconCss": "",
 			"projects": 29,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "MS Project",
@@ -199,7 +342,7 @@
 			"iconCss": "",
 			"projects": 3,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "Nodejs",
@@ -209,7 +352,7 @@
 			"iconCss": "",
 			"projects": 2,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "Ionic",
@@ -219,7 +362,7 @@
 			"iconCss": "",
 			"projects": 2,
 			"jobs": 0,
-			"ismajor": true
+			"isMajor": true
 		},
 		{
 			"name": "Photoshop",
@@ -753,6 +896,17 @@
 			"jobs": 0
 		},
 		{
+			"name": "Maven",
+			"title": "Maven",
+			"group": "Dependency Management",
+			"value": 0,
+			"iconCss": "",
+			"projects": 3,
+			"jobs": 1,
+			"isMajor": false,
+			"orderIndex": 2
+		},
+		{
 			"name": "Oracle BI",
 			"title": "Oracle BI",
 			"group": "Business Intelligence",
@@ -986,177 +1140,6 @@
 			"projects": 1,
 			"jobs": 0
 		}
-	],
-	"types": [
-		{
-			"name": "Frontend",
-			"title": "Frontend",
-			"items": 19
-		},
-		{
-			"name": "Graphics Design",
-			"title": "Graphics Design",
-			"items": 3
-		},
-		{
-			"name": "Language",
-			"title": "Language",
-			"items": 1
-		},
-		{
-			"name": "Database",
-			"title": "Database",
-			"items": 8
-		},
-		{
-			"name": "Framework",
-			"title": "Framework",
-			"items": 5
-		},
-		{
-			"name": "Web",
-			"title": "Web",
-			"items": 4
-		},
-		{
-			"name": "Source Control",
-			"title": "Source Control",
-			"items": 7
-		},
-		{
-			"name": "DevOps",
-			"title": "DevOps",
-			"items": 1
-		},
-		{
-			"name": "ORM",
-			"title": "ORM",
-			"items": 3
-		},
-		{
-			"name": "Scheduled Tasks",
-			"title": "Scheduled Tasks",
-			"items": 1
-		},
-		{
-			"name": "Backend",
-			"title": "Backend",
-			"items": 5
-		},
-		{
-			"name": "Dependency Management",
-			"title": "Dependency Management",
-			"items": 4
-		},
-		{
-			"name": "Virtualization",
-			"title": "Virtualization",
-			"items": 3
-		},
-		{
-			"name": "IDE",
-			"title": "IDE",
-			"items": 2
-		},
-		{
-			"name": "Design Pattern",
-			"title": "Design Pattern",
-			"items": 1
-		},
-		{
-			"name": "File Format",
-			"title": "File Format",
-			"items": 3
-		},
-		{
-			"name": "Webservices",
-			"title": "Webservices",
-			"items": 1
-		},
-		{
-			"name": "Sniffing Tool",
-			"title": "Sniffing Tool",
-			"items": 1
-		},
-		{
-			"name": "Programming Language",
-			"title": "Programming Language",
-			"items": 5
-		},
-		{
-			"name": "Project Management",
-			"title": "Project Management",
-			"items": 3
-		},
-		{
-			"name": "Cloud Hosting",
-			"title": "Cloud Hosting",
-			"items": 6
-		},
-		{
-			"name": "Web Services",
-			"title": "Web Services",
-			"items": 1
-		},
-		{
-			"name": "Scripting",
-			"title": "Scripting",
-			"items": 1
-		},
-		{
-			"name": "OS",
-			"title": "OS",
-			"items": 1
-		},
-		{
-			"name": "Task Runner",
-			"title": "Task Runner",
-			"items": 1
-		},
-		{
-			"name": "3D Modeling Tool",
-			"title": "3D Modeling Tool",
-			"items": 1
-		},
-		{
-			"name": "E-Learning Standart",
-			"title": "E-Learning Standart",
-			"items": 1
-		},
-		{
-			"name": "Reporting",
-			"title": "Reporting",
-			"items": 2
-		},
-		{
-			"name": "Business Intelligence",
-			"title": "Business Intelligence",
-			"items": 2
-		},
-		{
-			"name": "Desktop",
-			"title": "Desktop",
-			"items": 1
-		},
-		{
-			"name": "E-Commerce",
-			"title": "E-Commerce",
-			"items": 1
-		},
-		{
-			"name": "ERP",
-			"title": "ERP",
-			"items": 1
-		},
-		{
-			"name": "Gaming Engine",
-			"title": "Gaming Engine",
-			"items": 2
-		},
-		{
-			"name": "Approach",
-			"title": "Approach",
-			"items": 1
-		}
 	]
+
 }

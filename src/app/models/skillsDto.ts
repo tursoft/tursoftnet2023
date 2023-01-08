@@ -6,15 +6,15 @@ export interface SkillItemDto {
     iconCss?: string;
     projects?: number;
     jobs?: number;
-    orderindex?: number;
-    ismajor?: boolean;
+    orderIndex?: number;
+    isMajor?: boolean;
   }
   
   export interface SkillGroupDto {
     name?: string;
     title: string;
     value?: number;
-    iconCss?: string;
+    orderIndex: number;
   }
   
   export interface SkillsDto {

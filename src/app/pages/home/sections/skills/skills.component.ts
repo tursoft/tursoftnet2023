@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { from } from 'linq-to-typescript';
-import { IHoverable } from 'src/app/models/shared';
+import { IHoverable, IOrderable } from 'src/app/models/shared';
 import { SkillGroupDto, SkillItemDto, SkillsDto } from 'src/app/models/skillsDto';
+import { Utils } from 'src/app/services/utils';
 import skillsData from '../../../../data/skills.json';
 
 interface FilterDto {
@@ -20,15 +21,23 @@ export class SkillsComponent {
   data: SkillsDto = skillsData;
   
   groups: SkillGroupDto[] = [];
+  allItems: SkillItem[] = [];
   filteredItems: SkillItem[] = [];
   filter: FilterDto = {};
 
-  constructor() {
+  constructor(public utils: Utils) {
     const groupAll: SkillGroupDto = {
-      name: undefined,
-      title: 'All'
+        name: undefined,
+        title: 'All',
+        orderIndex: -1
     };
+
     this.groups = [groupAll, ...this.data.general.groups];
+
+    // prepare items
+    const allItems = this.data.items.map(i => <SkillItem>i);
+    this.allItems = allItems;
+    
     this.filterItems();
   }
 
@@ -40,22 +49,14 @@ export class SkillsComponent {
   }
 
   filterItems = () => {
-    const { filter, filter: { filterText }, data: { items }} = this;
-    let filteredItems: SkillItem[] = (items ?? []);
+    const { filter: { filterText, group: filterGroup }, allItems} = this;
+    
+    var filteredItems = this.utils.filterItemsByText(allItems, ['name', 'title', 'group'], filterText);
+    
+    if (!this.utils.isEmptyString(filterGroup)) {
+      filteredItems = filteredItems.filter(i => i.group == filterGroup);
+    }
 
-    if (filterText && filterText.trim() != '') {
-      filteredItems = filteredItems.filter(i => 
-                                    (i.name ?? '').includes(filterText) ||
-                                    (i.name ?? '').toLowerCase().includes(filterText.toLowerCase()) ||
-                                    (i.title ?? '').includes(filterText) ||
-                                    (i.title ?? '').toLowerCase().includes(filterText.toLowerCase())
-                                  );
-    }
-    
-    if ((filter.group ?? '') != '') {
-      filteredItems = filteredItems.filter(i => i.group == filter.group);
-    }
-    
     this.filteredItems = filteredItems;
   }
 

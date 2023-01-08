@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from 'src/app/models/projectsDto';
 import { IHoverable } from 'src/app/models/shared';
+import { Utils } from 'src/app/services/utils';
 import projectsData from '../../../../data/projects.json';
 
 interface FilterDto {
@@ -21,7 +22,7 @@ export class ProjectsComponent
   filteredItems: ProjectItem[] = [];
   filter: FilterDto = {};
 
-  constructor() {
+  constructor(public utils: Utils) {
     const groupAll: ProjectGroupDto = {
       name: undefined,
       title: 'All'
@@ -34,18 +35,9 @@ export class ProjectsComponent
     const { filter, filter: { filterText }, data: { items }} = this;
     let filteredItems: ProjectItem[] = (items ?? []);
 
-    if (filterText && filterText.trim() != '') {
-      filteredItems = filteredItems.filter(i => 
-                                    (i.name ?? '').includes(filterText) ||
-                                    (i.name ?? '').toLowerCase().includes(filterText.toLowerCase()) ||
-                                    (i.title ?? '').includes(filterText) ||
-                                    (i.title ?? '').toLowerCase().includes(filterText.toLowerCase()) ||
-                                    (i.company ?? '').includes(filterText) ||
-                                    (i.company ?? '').toLowerCase().includes(filterText.toLowerCase())
-                                  );
-    }
+    filteredItems = this.utils.filterItemsByText(filteredItems, ['name', 'title', 'company'], filterText);
     
-    if ((filter.group ?? '') != '') {
+    if (!this.utils.isEmptyString(filter.group)) {
       filteredItems = filteredItems.filter(i => i.group == filter.group);
     }
     

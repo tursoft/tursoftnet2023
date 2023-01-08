@@ -30,7 +30,7 @@ import { ReferencesComponent } from './pages/home/sections/references/references
 import { HeaderComponent } from './sections/header/header.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { LoadingComponent } from './sections/loading/loading.component';
-import { Utils } from './sections/services/utils';
+import { Utils } from './services/utils';
 
 /* components */
 import { VerticaltimelineComponent } from './components/verticaltimeline/verticaltimeline.component';
