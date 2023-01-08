@@ -8,10 +8,7 @@ import { ExperienceComponent } from './pages/experience/experience.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'project/:id', component: ProjectComponent },
-  { path: 'education/:id', component: EducationComponent },
-  { path: 'experience/:id', component: ExperienceComponent },
-  { path: '404', component: Notfound404Component },
+  { path: '**', pathMatch: 'full', component: Notfound404Component }
 ];
 
 @NgModule({

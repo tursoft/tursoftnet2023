@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Session } from 'src/app/services/session';
 
 @Component({
   selector: 'app-notfound404',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./notfound404.component.scss']
 })
 export class Notfound404Component {
-
+  constructor(public session: Session) {
+    this.session.showTopMenu=false;
+  }
 }
