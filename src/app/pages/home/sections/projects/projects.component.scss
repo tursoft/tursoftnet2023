@@ -76,13 +76,14 @@
             border-bottom: 1px solid rgba(163, 163, 163, 0.1);
             border-left: 1px solid rgba(163, 163, 163, 0.1);
             border-right: 1px solid rgba(163, 163, 163, 0.1);
+            pointer-events: auto;
 
             .item-image {
                 margin: 20px;
+                pointer-events: none;
             }
 
             .item-title {
-                display: flex;
                 width: 100%;
                 min-height: 60px;
                 position: absolute;
@@ -93,6 +94,11 @@
                 font-size: 16px;
                 padding: 5px 5px 10px 5px;
                 background-color: rgba(163, 163, 163, 0.1);
+                display: none;
+                pointer-events: none;
+                &.hovered {
+                    display: flex;
+                }
             }
 
             &:hover {

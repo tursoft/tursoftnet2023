@@ -70,16 +70,18 @@
             width: 100px;
             display: flex;
             flex-direction: column;
-            height: 150px;
+            height: 120px;
             position: relative;
             margin: 10px;
             border-top: 3px solid lightgray;
             border-bottom: 1px solid rgba(163, 163, 163, 0.1);
             border-left: 1px solid rgba(163, 163, 163, 0.1);
             border-right: 1px solid rgba(163, 163, 163, 0.1);
+            pointer-events: auto;
 
             .item-image {
                 margin: 20px;
+                pointer-events: none;
             }
 
             .item-title {
@@ -94,6 +96,11 @@
                 font-size: 16px;
                 padding: 3px 5px 6px 5px;
                 background-color: rgba(163, 163, 163, 0.1);
+                display: none;
+                pointer-events: none;
+                &.hovered {
+                    display: flex;
+                }
             }
 
             &:hover {

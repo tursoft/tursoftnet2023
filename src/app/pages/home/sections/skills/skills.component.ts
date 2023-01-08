@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { from } from 'linq-to-typescript';
+import { IHoverable } from 'src/app/models/shared';
 import { SkillGroupDto, SkillItemDto, SkillsDto } from 'src/app/models/skillsDto';
 import skillsData from '../../../../data/skills.json';
 
@@ -7,6 +8,9 @@ interface FilterDto {
   filterText?: string,
   group?: string
 }
+
+type SkillItem = SkillItemDto & IHoverable;
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
@@ -16,7 +20,7 @@ export class SkillsComponent {
   data: SkillsDto = skillsData;
   
   groups: SkillGroupDto[] = [];
-  filteredItems: SkillItemDto[] = [];
+  filteredItems: SkillItem[] = [];
   filter: FilterDto = {};
 
   constructor() {
@@ -28,7 +32,7 @@ export class SkillsComponent {
     this.filterItems();
   }
 
-  qetItemIconName(item: SkillItemDto) {
+  qetItemIconName(item: SkillItem) {
     return item.name.replaceAll(' ','')
                     .replace('.', '')
                     .replace('#', 'sharp')
@@ -37,7 +41,7 @@ export class SkillsComponent {
 
   filterItems = () => {
     const { filter, filter: { filterText }, data: { items }} = this;
-    let filteredItems: SkillItemDto[] = items ?? [];
+    let filteredItems: SkillItem[] = (items ?? []);
 
     if (filterText && filterText.trim() != '') {
       filteredItems = filteredItems.filter(i => 

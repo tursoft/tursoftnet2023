@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from 'src/app/models/projectsDto';
+import { IHoverable } from 'src/app/models/shared';
 import projectsData from '../../../../data/projects.json';
 
 interface FilterDto {
   filterText?: string,
   group?: string
 }
+
+type ProjectItem = ProjectItemDto & IHoverable;
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -15,7 +18,7 @@ export class ProjectsComponent
 {
   data: ProjectsDto = projectsData;
   groups: ProjectGroupDto[] = [];
-  filteredItems: ProjectItemDto[] = [];
+  filteredItems: ProjectItem[] = [];
   filter: FilterDto = {};
 
   constructor() {
@@ -29,7 +32,7 @@ export class ProjectsComponent
 
   filterItems = () => {
     const { filter, filter: { filterText }, data: { items }} = this;
-    let filteredItems: ProjectItemDto[] = items ?? [];
+    let filteredItems: ProjectItem[] = (items ?? []);
 
     if (filterText && filterText.trim() != '') {
       filteredItems = filteredItems.filter(i => 

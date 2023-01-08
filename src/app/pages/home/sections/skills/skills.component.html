@@ -28,9 +28,12 @@
     </div>
 
     <div class="section-items">
-        <mat-card *ngFor="let item of filteredItems" class="section-item">
+        <mat-card *ngFor="let item of filteredItems"
+                  class="section-item"
+                  (mouseenter)="item.hover = true"
+                  (mouseout)="item.hover = false">
             <img class="item-image" mat-card-image [src]="'/assets/images/technologies/original/' + qetItemIconName(item)">
-            <div class="item-title">
+            <div [ngClass]="{'item-title': true, 'hovered': item.hover, 'animate__animated': true, 'animate__fadeIn': true }">
               {{ item.title }}
             </div>
           </mat-card>
