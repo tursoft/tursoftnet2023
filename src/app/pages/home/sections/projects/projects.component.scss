@@ -105,6 +105,7 @@
                 background-color: rgba(163, 163, 163, 0.1);
                 display: none;
                 pointer-events: none;
+                border-top: 1px solid lightgray;
 
                 &.hovered {
                     display: flex;
