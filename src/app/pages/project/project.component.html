@@ -48,15 +48,15 @@
         </div>
     </div>
     
-    <div class="project-partners" *ngIf="item.partners">
-        <div class="header">Screenshots</div>
-        <div class="project-team-members">
+    <!-- <div class="project-partners" *ngIf="item.partners">
+        <div class="header">Partners</div>
+        <div class="project-partner">
             <div class="project-team-member"
                 *ngFor="let teamMember of item.team">
                 {{ teamMember.name }} <small>({{teamMember.position}})</small>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="project-technologies-section" *ngIf="item.technologies">
         <div class="header">Technologies <span class="badge">{{item.technologies.length}}</span></div>
