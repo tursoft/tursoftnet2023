@@ -9,7 +9,7 @@ export interface ProjectItemDto {
   summary?: string,
   fulltext?: string | string[],
 
-  datePeriod?: { 
+  datePeriod: { 
     startDate: string,
     endDate?: string | null
   },

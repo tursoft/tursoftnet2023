@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Session } from 'src/app/services/session';
+import { Session } from 'src/app/modules/sharedmodule/services/session';
 
 @Component({
   selector: 'app-notfound404',

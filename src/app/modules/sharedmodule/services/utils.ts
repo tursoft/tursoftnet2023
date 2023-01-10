@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import utilsData from '../data/utils.json';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class Utils
 {
     public getTechnologyImageName(name: string, small: boolean) {

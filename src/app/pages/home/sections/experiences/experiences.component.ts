@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { from } from 'linq-to-typescript';
-import { TimelineItem } from 'src/app/components/verticaltimeline/verticaltimeline.component';
+import { TimelineItem } from '../../../../modules/componentsmodule';
 import experiencesData from '../../../../data/experiences.json';
 
 @Component({

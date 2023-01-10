@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ReferenceDto, ReferencesDto } from 'src/app/models/referenceDto';
-import { Utils } from 'src/app/services/utils';
+import { ReferenceDto } from '../../../../models/referenceDto';
+import { Utils } from '../../../../modules/sharedmodule';
 import referenceData from '../../../../data/references.json';
 
 @Component({

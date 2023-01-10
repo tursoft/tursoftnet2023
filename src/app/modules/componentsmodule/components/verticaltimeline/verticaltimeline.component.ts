@@ -1,11 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-
-export interface TimelineItem {
-  code: string;
-  title1: string;
-  title2: string;
-  content: string;
-}
+import { BaseComponent } from '../../../sharedmodule';
+import { TimelineItem } from './models/timelineitem';
 
 @Component({
   selector: 'app-verticaltimeline',
@@ -13,6 +8,10 @@ export interface TimelineItem {
   styleUrls: ['./verticaltimeline.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class VerticaltimelineComponent {
+export class VerticaltimelineComponent extends BaseComponent {
   @Input() items: TimelineItem[] = [];
+
+  constructor() {
+    super();
+  }
 }

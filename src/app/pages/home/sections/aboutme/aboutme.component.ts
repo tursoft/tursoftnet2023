@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Utils } from 'src/app/services/utils';
+import { Utils } from '../../../../modules/sharedmodule';
 import generalData from '../../../../data/general.json';
 
 @Component({

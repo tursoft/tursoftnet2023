@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Session } from './services/session';
+import { Session } from './modules/sharedmodule/services/session';
 
 @Component({
   selector: 'app-root',

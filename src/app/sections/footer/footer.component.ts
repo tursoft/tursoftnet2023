@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import generalData from '../../data/general.json';
-import { Utils } from '../../services/utils';
+import { Utils } from '../../modules/sharedmodule/services/utils';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +9,6 @@ import { Utils } from '../../services/utils';
 })
 export class FooterComponent {
   data = generalData.general;
-
   constructor(public utils: Utils) {
 
   }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TimelineItem } from 'src/app/components/verticaltimeline/verticaltimeline.component';
+import { TimelineItem } from '../../../../modules/componentsmodule';
 import educationData from '../../../../data/education.json';
 
 @Component({

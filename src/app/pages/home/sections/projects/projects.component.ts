@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from 'src/app/models/projectsDto';
-import { IHoverable } from 'src/app/models/shared';
-import { Utils } from 'src/app/services/utils';
+import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from '../../../../models/projectsDto';
+import { IHoverable } from '../../../../models/shared';
+import { Utils } from '../../../../modules/sharedmodule';
 import projectsData from '../../../../data/projects.json';
 
 interface FilterDto {

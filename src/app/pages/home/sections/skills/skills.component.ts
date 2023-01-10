@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IHoverable } from 'src/app/models/shared';
-import { SkillGroupDto, SkillItemDto, SkillsDto } from 'src/app/models/skillsDto';
-import { Utils } from 'src/app/services/utils';
+import { SkillGroupDto, SkillItemDto, SkillsDto } from '../../../../models/skillsDto';
+import { Utils } from '../../../../modules/sharedmodule';
 import skillsData from '../../../../data/skills.json';
 
 interface FilterDto {

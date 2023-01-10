@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProjectItemDto, ProjectsDto } from 'src/app/models/projectsDto';
-import { Session } from 'src/app/services/session';
-import { Utils } from 'src/app/services/utils';
+import { ProjectItemDto, ProjectsDto } from '../../models/projectsDto';
+import { Session } from '../../modules/sharedmodule/services/session';
+import { Utils } from '../../modules/sharedmodule';
 import projectsData from '../../data/projects.json';
 
 @Component({
@@ -11,7 +11,7 @@ import projectsData from '../../data/projects.json';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent {
-  data: ProjectsDto = projectsData;
+  projects: ProjectsDto = projectsData;
   item?: ProjectItemDto;
   id?: number;
 
@@ -25,8 +25,13 @@ export class ProjectComponent {
 
   ngOnInit(){
     this.route.paramMap.subscribe( paramMap => {
-      this.id = parseInt(paramMap.get('id') ?? '0');
-      this.item = this.data.items.find(p => p.id == this.id);
+      const id = parseInt(paramMap.get('id') ?? '0');
+      this.setProjectById(id);
     });
+  }
+
+  setProjectById(id: number) {
+    this.id = id;
+    this.item = this.projects.items.find(p => p.id == this.id);
   }
 }

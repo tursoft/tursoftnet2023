@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './angularmaterial.module';
+
+import { SharedModule } from './modules/sharedmodule';
+import { ComponentsModule } from './modules/componentsmodule';
 
 import { AppComponent } from './app.component';
 
@@ -30,16 +34,6 @@ import { ReferencesComponent } from './pages/home/sections/references/references
 import { HeaderComponent } from './sections/header/header.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { LoadingComponent } from './sections/loading/loading.component';
-
-/* components */
-import { VerticaltimelineComponent } from './components/verticaltimeline/verticaltimeline.component';
-
-/* directives */
-import { ObserveElementDirective } from './directives/observe-element-directive';
-
-/* services */
-import { Session } from './services/session';
-import { Utils } from './services/utils';
 
 @NgModule({
   declarations: [
@@ -67,24 +61,18 @@ import { Utils } from './services/utils';
     HeaderComponent,
     FooterComponent,
     LoadingComponent,
-
-    /* components */
-    VerticaltimelineComponent,
-
-    /* directives */
-    ObserveElementDirective
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    SharedModule,
+    ComponentsModule
   ],
-  providers: [
-    Session,
-    Utils
-  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
