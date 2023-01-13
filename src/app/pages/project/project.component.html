@@ -27,8 +27,7 @@
     <div class="project-summary">
         {{item.summary}}
     </div>
-
-
+<!-- 
     <div class="project-domains-section" *ngIf="item.domains">
         <div class="header">Domains</div>
         <div class="project-domains">
@@ -37,29 +36,27 @@
                 {{ domain.title }}
             </div>
         </div>
-    </div>
+    </div> -->
 
     <app-grid *ngIf="item.domains"
                title="Domains"
                [config]="{ viewMode: 'list' }"
                [items]="item.domains">
          <app-grid-column name="col1" title="Col1">
-            <div gridTemplate="header">
-                header 1
-            </div> 
-            <div gridTemplate="title">
-                 col title 1
-             </div>
+            
+            <ng-template #cellTemplate let-domain="item" let-column="column">
+                 colname: {{column.name}}, col-title: {{column.title}}, domain: {{domain?.title}}
+             </ng-template>
          </app-grid-column>
 
-         <app-grid-column name="col2" title="Col2">
+         <!-- <app-grid-column name="col2" title="Col2">
             <div gridTemplate="header">
                 header 2
             </div> 
             <div gridTemplate="title">
                  col title 1
              </div>
-         </app-grid-column>
+         </app-grid-column> -->
      </app-grid>
     
     <!-- <div class="project-team-section" *ngIf="item.team">

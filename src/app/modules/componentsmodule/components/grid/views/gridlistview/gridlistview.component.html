@@ -7,12 +7,12 @@
     <div class="grid-list-rows">
         <div class="grid-list-row" *ngFor="let item of items">
             <div class="cell" *ngFor="let column of columns">
-                <!-- <ng-container *ngIf="column.cellTemplate">
-                    <ng-container *ngTemplateOutlet="column.cellTemplate"></ng-container>
-                </ng-container> -->
+                <ng-container *ngIf="column.cellTemplate">
+                    <ng-container *ngTemplateOutlet="column.cellTemplate; context: { column, item }"></ng-container>
+                </ng-container>
 
                 <div *ngIf="!column.cellTemplate">
-                    {{column.name}}: {{ item }}
+                    default col - {{column.name}}: {{ item }}
                 </div>
             </div>
         </div>
