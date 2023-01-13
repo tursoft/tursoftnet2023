@@ -40,12 +40,23 @@
 
     <app-grid *ngIf="item.domains"
                title="Domains"
-               [config]="{ viewMode: 'list' }"
+               [config]="{ viewMode: 'list', showColumnHeaders: true }"
                [items]="item.domains">
-         <app-grid-column name="col1" title="Col1">
-            
-            <ng-template #cellTemplate let-domain="item" let-column="column">
-                 colname: {{column.name}}, col-title: {{column.title}}, domain: {{domain?.title}}
+         <app-grid-column name="name" title="Name">
+            <ng-template #headerTemplate let-column="column">
+                {{column.title}}
+            </ng-template>
+            <ng-template #cellTemplate let-item="item">
+                 {{item.name}}
+             </ng-template>
+         </app-grid-column>
+
+         <app-grid-column name="title" title="Title">
+            <ng-template #headerTemplate let-column="column">
+                {{column.title}}
+            </ng-template>
+            <ng-template #cellTemplate let-item="item">
+                {{item.title}}
              </ng-template>
          </app-grid-column>
 

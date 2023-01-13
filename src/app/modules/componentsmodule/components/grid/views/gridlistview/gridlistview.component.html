@@ -4,15 +4,35 @@
         <span class="badge" *ngIf="config.showCount">{{items.length}}</span>
     </div>
 
-    <div class="grid-list-rows">
-        <div class="grid-list-row" *ngFor="let item of items">
+    <!-- rows //-->
+    <div class="rows">
+
+        <!-- row headers//-->
+        <ng-container *ngIf="config.showColumnHeaders">
+            <div class="header-row">
+                <div class="header-cell" *ngFor="let column of columns">
+                    <ng-container *ngIf="column.headerTemplate">
+                        <ng-container *ngTemplateOutlet="column.headerTemplate; context: { column }">
+                        </ng-container>
+                    </ng-container>
+
+                    <div *ngIf="!column.headerTemplate">
+                        {{ column.title }}
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- row cells //-->
+        <div class="row" *ngFor="let item of items">
             <div class="cell" *ngFor="let column of columns">
                 <ng-container *ngIf="column.cellTemplate">
-                    <ng-container *ngTemplateOutlet="column.cellTemplate; context: { column, item }"></ng-container>
+                    <ng-container *ngTemplateOutlet="column.cellTemplate; context: { column, item }">
+                    </ng-container>
                 </ng-container>
 
                 <div *ngIf="!column.cellTemplate">
-                    default col - {{column.name}}: {{ item }}
+                    {{ item?.toString() }}
                 </div>
             </div>
         </div>

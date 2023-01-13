@@ -1,28 +1,68 @@
-.title {
-    font-weight: bold;
-    background-color: rgb(243, 243, 243);
-    border-top: 1px solid lightgray;
-    padding: 4px 8px;
-    text-transform: uppercase;
-    font-size: 14px;
+// variables
+$title-bgcolor: lightgray;
+$header-bgcolor: rgb(243, 243, 243);
+$cell-bgcolor: white;
 
-    .badge {
-        background-color: white;
-        color: gray;
-        padding: 3px;
-        margin: 2px 2px 2px 10px;
-        font-size: 10px;
-        font-weight: normal;
-    }
-}
-
+//css
 .grid-list {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    
+    .title {
+        padding: 12px 16px;
+        font-weight: bold;
+        font-size: 14px;
+        background-color: $title-bgcolor;
+        text-transform: uppercase;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
 
-    .grid-list-rows {
-        .grid-list-row {
-            padding: 5px 10px;
-            border-bottom: 1px dashed lightgray;
+        .badge {
+            background-color: white;
+            color: gray;
+            padding: 3px;
+            margin: 2px 2px 2px 10px;
+            font-size: 10px;
+            font-weight: normal;
+        }
+    }
+
+    .rows {
+        .header-row {
+            padding: 8px 16px;
+            background-color: $header-bgcolor;
+            // border-bottom: 1px solid gray;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+
+            .header-cell {
+                flex: 1;
+            }
+        }
+
+        .row {
+            padding: 8px 16px;
+            background-color: $cell-bgcolor;
+            display: flex;
+            flex-direction: row;
+
+            &:not(:last-child) {
+                border-bottom: 1px dashed lightgray;
+            }
+
+            .cell {
+                flex: 1;
+            }
+
+            &:hover {
+                background-color: rgb(255, 255, 238);
+            }
         }
     }
 }
