@@ -38,37 +38,25 @@
         </div>
     </div> -->
 
-    <app-grid *ngIf="item.domains"
+    <grid *ngIf="item.domains"
                title="Domains"
-               [config]="{ viewMode: 'list', showColumnHeaders: true }"
+               [config]="{ viewMode: 'list', showColumnHeaders: true, showCountBadge: true }"
                [items]="item.domains">
-         <app-grid-column name="name" title="Name">
-            <ng-template #headerTemplate let-column="column">
-                {{column.title}}
-            </ng-template>
+         <grid-column name="name" title="Name">
             <ng-template #cellTemplate let-item="item">
                  {{item.name}}
              </ng-template>
-         </app-grid-column>
+         </grid-column>
 
-         <app-grid-column name="title" title="Title">
+         <grid-column name="title" title="Title">
             <ng-template #headerTemplate let-column="column">
-                {{column.title}}
+                <span style="color:blue">{{column.title}}</span>
             </ng-template>
             <ng-template #cellTemplate let-item="item">
                 {{item.title}}
              </ng-template>
-         </app-grid-column>
-
-         <!-- <app-grid-column name="col2" title="Col2">
-            <div gridTemplate="header">
-                header 2
-            </div> 
-            <div gridTemplate="title">
-                 col title 1
-             </div>
-         </app-grid-column> -->
-     </app-grid>
+         </grid-column>
+     </grid>
     
     <!-- <div class="project-team-section" *ngIf="item.team">
         <div class="header">Team</div>

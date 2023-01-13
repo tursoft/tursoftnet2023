@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BaseGridViewComponent } from '../basegridview';
 
 @Component({
-  selector: 'app-gridcardview',
+  selector: 'grid-cardview',
   templateUrl: './gridcardview.component.html',
   styleUrls: ['./gridcardview.component.scss']
 })

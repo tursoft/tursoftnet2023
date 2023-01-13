@@ -4,7 +4,7 @@ import { GridColumnComponent } from './components';
 import { BaseComponent } from '../../../sharedmodule';
 
 @Component({
-  selector: 'app-grid',
+  selector: 'grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.scss'],
 })

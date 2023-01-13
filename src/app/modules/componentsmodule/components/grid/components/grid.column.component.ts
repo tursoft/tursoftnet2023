@@ -1,7 +1,7 @@
 
 import { AfterContentInit, Component, ContentChild, Input, OnDestroy, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 @Component({
-  selector: 'app-grid-column',
+  selector: 'grid-column',
   template: ``
 })
 export class GridColumnComponent implements AfterContentInit, OnDestroy {
@@ -12,11 +12,6 @@ export class GridColumnComponent implements AfterContentInit, OnDestroy {
   @ContentChild('headerTemplate', { read: TemplateRef }) headerTemplate?: TemplateRef<any>;
 
   ngAfterContentInit() {
-    console.log('col:', { 
-        name: this.name, 
-        title: this.title, 
-        celltemplate: this.cellTemplate,
-    });
   }
 
   ngOnDestroy(): void {
