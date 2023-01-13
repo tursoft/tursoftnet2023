@@ -17,7 +17,7 @@
             <img [src]="'/assets/files/projects/_logos/' + item.name + '.png'">
         </div>
         <div class="project-date">
-            {{ item?.datePeriod?.startDate }} - {{ item?.datePeriod?.endDate ?? 'Present' }}
+            {{ item.datePeriod?.startDate }} - {{ item.datePeriod?.endDate ?? 'Present' }}
         </div>
         <div class="project-title">
             {{ item.title }}
@@ -28,6 +28,7 @@
         {{item.summary}}
     </div>
 
+
     <div class="project-domains-section" *ngIf="item.domains">
         <div class="header">Domains</div>
         <div class="project-domains">
@@ -37,8 +38,31 @@
             </div>
         </div>
     </div>
+
+    <app-grid *ngIf="item.domains"
+               title="Domains"
+               [config]="{ viewMode: 'list' }"
+               [items]="item.domains">
+         <app-grid-column name="col1" title="Col1">
+            <div gridTemplate="header">
+                header 1
+            </div> 
+            <div gridTemplate="title">
+                 col title 1
+             </div>
+         </app-grid-column>
+
+         <app-grid-column name="col2" title="Col2">
+            <div gridTemplate="header">
+                header 2
+            </div> 
+            <div gridTemplate="title">
+                 col title 1
+             </div>
+         </app-grid-column>
+     </app-grid>
     
-    <div class="project-team-section" *ngIf="item.team">
+    <!-- <div class="project-team-section" *ngIf="item.team">
         <div class="header">Team</div>
         <div class="project-team-members">
             <div class="project-team-member"
@@ -47,7 +71,31 @@
             </div>
         </div>
     </div>
-    
+     -->
+
+     <!-- <app-grid *ngIf="item.team"
+               title="Team"
+               [config]="{ viewMode: 'list' }"
+               [items]="item.team">
+         <app-grid-column name="col1" title="Col1">
+            <div gridTemplate="header">
+                header 1
+            </div> 
+            <div gridTemplate="title">
+                 col title 1
+             </div>
+         </app-grid-column>
+
+         <app-grid-column name="col2" title="Col2">
+            <div gridTemplate="header">
+                header 2
+            </div> 
+            <div gridTemplate="title">
+                 col title 1
+             </div>
+         </app-grid-column>
+     </app-grid> -->
+
     <!-- <div class="project-partners" *ngIf="item.partners">
         <div class="header">Partners</div>
         <div class="project-partner">

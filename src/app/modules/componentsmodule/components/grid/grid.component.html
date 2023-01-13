@@ -1,6 +1,19 @@
 <div class="grid">
     <div class="view-container" *ngIf="config">
-        <app-gridlistview *ngIf="config.viewMode == 'list'"></app-gridlistview>
-        <app-gridcardview *ngIf="config.viewMode == 'card'"></app-gridcardview>
+        <app-gridlistview
+                *ngIf="config.viewMode == 'list'" 
+                [title]="title"
+                [config]="config"
+                [columns]="columns"
+                [items]="items">
+        </app-gridlistview>
+
+        <app-gridcardview
+                *ngIf="config.viewMode == 'list'" 
+                [title]="title"
+                [config]="config"
+                [columns]="columns"
+                [items]="items">
+        </app-gridcardview>
     </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { GridConfig } from './models/gridconfig';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { GridConfig } from './models';
+import { GridColumnComponent } from './components';
 import { BaseComponent } from '../../../sharedmodule';
 
 @Component({
@@ -8,9 +9,12 @@ import { BaseComponent } from '../../../sharedmodule';
   styleUrls: ['./grid.component.scss'],
 })
 export class GridComponent extends BaseComponent {
+  @Input() title!: string;
   @Input() items!: any[];
-  @Input() config!: GridConfig;
+  @Input() config!: GridConfig
   
+  @ContentChildren(GridColumnComponent) columns!: QueryList<GridColumnComponent>;
+
   constructor() {
     super();
   }

@@ -1,1 +1,20 @@
-<p>list works!</p>
+<div class="grid-list" *ngIf="items && columns">
+    <div class="title">
+        <span>{{title}}</span>
+        <span class="badge" *ngIf="config.showCount">{{items.length}}</span>
+    </div>
+
+    <div class="grid-list-rows">
+        <div class="grid-list-row" *ngFor="let item of items">
+            <div class="cell" *ngFor="let column of columns">
+                <!-- <ng-container *ngIf="column.cellTemplate">
+                    <ng-container *ngTemplateOutlet="column.cellTemplate"></ng-container>
+                </ng-container> -->
+
+                <div *ngIf="!column.cellTemplate">
+                    {{column.name}}: {{ item }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
