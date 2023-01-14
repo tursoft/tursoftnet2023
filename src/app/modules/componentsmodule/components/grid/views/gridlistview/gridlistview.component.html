@@ -27,7 +27,7 @@
                 </ng-container>
 
                 <div *ngIf="!column.cellTemplate">
-                    {{ item?.toString() }}
+                    {{ getFieldValue(item, column.name)?.toString() }}
                 </div>
             </div>
         </div>

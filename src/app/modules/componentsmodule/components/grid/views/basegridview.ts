@@ -11,4 +11,8 @@ export abstract class BaseGridViewComponent extends BaseComponent {
   constructor(@Inject('viewType') public viewType: GridViewType) {
     super();
   }
+
+  getFieldValue(item: any, columnName: string) {
+    return item[columnName];
+  }
 }

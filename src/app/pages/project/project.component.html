@@ -29,14 +29,14 @@
     </div>
 
     <!-- Domains //-->
-    <grid *ngIf="item.domains"
+    <grid *ngIf="(item.domains ?? []).length>0"
           title="Domains"
           [viewTypes]="['list']"
           viewType="list"
           [showFilterRow]="false"
           [showHeaderRow]="true"
           [showCountBadge]="true"
-          [items]="item.domains"
+          [items]="item.domains ?? []"
           [filterFields]="['name','title']">
         
         <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
@@ -52,14 +52,14 @@
      </grid>
 
      <!-- Team //-->
-     <grid *ngIf="item.team"
+     <grid *ngIf="(item.team ?? []).length>0"
            title="Team"
            [viewTypes]="['list']"
            viewType="list"
            [showFilterRow]="false"
            [showHeaderRow]="true"
            [showCountBadge]="true"
-           [items]="item.team"
+           [items]="item.team ?? []"
            [filterFields]="['name','position']">
         
         <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
@@ -76,14 +76,14 @@
      </grid>
 
      <!-- Partners //-->
-     <grid *ngIf="item.partners"
+     <grid *ngIf="(item.partners ?? []).length>0"
            title="Partners"
            [viewTypes]="['list']"
            viewType="list"
            [showFilterRow]="false"
            [showHeaderRow]="true"
            [showCountBadge]="true"
-           [items]="item.partners"
+           [items]="item.partners ?? []"
            [filterFields]="['name','position']">
         
         <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
@@ -97,14 +97,14 @@
      </grid>
 
      <!-- Customers //-->
-     <grid *ngIf="item.customers"
+     <grid *ngIf="(item.customers ?? []).length>0"
            title="Customers"
            [viewTypes]="['list']"
            viewType="list"
            [showFilterRow]="false"
            [showHeaderRow]="true"
            [showCountBadge]="true"
-           [items]="item.customers"
+           [items]="item.customers ?? []"
            [filterFields]="['name']">
         
         <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
@@ -121,14 +121,14 @@
      </grid>
 
     <!-- Technologies //-->
-    <grid *ngIf="item.technologies"
+    <grid *ngIf="(item.technologies ?? []).length>0"
           title="Technologies"
           [viewTypes]="['card']"
           viewType="card"
           [showFilterRow]="true"
           [showHeaderRow]="true"
           [showCountBadge]="true"
-          [items]="item.technologies"
+          [items]="item.technologies ?? []"
           [filterFields]="['name','title']">
     
         <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
