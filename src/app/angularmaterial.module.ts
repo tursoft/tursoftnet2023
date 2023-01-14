@@ -1,16 +1,19 @@
 import { NgModule } from "@angular/core";
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
     declarations: [
     ],
     imports: [
-        MatCardModule
+        MatCardModule,
+        MatTabsModule
     ],
     providers: [],
     bootstrap: [],
     exports: [
-        MatCardModule
+        MatCardModule,
+        MatTabsModule
     ]
   })
   export class AngularMaterialModule { }

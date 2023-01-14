@@ -24,139 +24,185 @@
         </div>
     </div>
 
-    <div class="project-summary">
-        {{item.summary}}
+    <div class="project-content">
+        <div class="project-summary">
+            <div class="project-summary-text">
+                {{item.summary}}
+            </div>
+
+            <mat-tab-group>
+                <!-- Screenshots //-->
+                <mat-tab label="Screenshots">
+                </mat-tab>
+                
+                <!-- Technologies //-->
+                <mat-tab label="Technologies" *ngIf="(item.technologies ?? []).length>0">
+                    <grid 
+                        title="Technologies"
+                        [viewTypes]="['card']"
+                        viewType="card"
+                        [showFilterRow]="true"
+                        [showHeaderRow]="true"
+                        [showCountBadge]="true"
+                        [items]="item.technologies ?? []"
+                        [filterFields]="['name','title']">
+
+                    <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                        <!-- List View //-->
+                        <grid-listview [showColumnHeaders]="true" [items]="filteredItems" *ngIf="viewType=='list'">
+                            <grid-column name="name" title="Name">
+                                <ng-template #cellTemplate let-item="item">
+                                    {{item.name}}
+                                </ng-template>
+                            </grid-column>
+                    
+                            <grid-column name="title" title="Title">
+                                <ng-template #cellTemplate let-item="item">
+                                    {{item.title}}
+                                </ng-template>
+                            </grid-column>
+                        </grid-listview>
+
+                        <!-- Card View //-->
+                        <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
+                                        [getImageSrc]="getTechnologyImageName">
+                            <ng-template #titleTemplate let-item="item">
+                                {{item.name}}
+                            </ng-template>
+                        </grid-cardview>
+
+                    </ng-template>
+                    </grid>
+                </mat-tab>
+
+                
+                <!-- Partners //-->
+                <mat-tab label="Partners" *ngIf="(item.partners ?? []).length>0">
+                    <grid 
+                        title="Partners"
+                        [viewTypes]="['list']"
+                        viewType="list"
+                        [showFilterRow]="false"
+                        [showHeaderRow]="true"
+                        [showCountBadge]="true"
+                        [items]="item.partners ?? []"
+                        [filterFields]="['name','position']">
+                    
+                        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                            <!-- List View //-->
+                            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                                <grid-column name="name" title="Name">
+                                </grid-column>
+                            </grid-listview>
+
+                        </ng-template>
+                    </grid>
+                </mat-tab>
+
+                 <!-- Modules //-->
+                <mat-tab label="Modules" *ngIf="(item.modules ?? []).length>0">
+                    <grid
+                        title="Modules"
+                        [viewTypes]="['list']"
+                        viewType="list"
+                        [showFilterRow]="false"
+                        [showHeaderRow]="true"
+                        [showCountBadge]="false"
+                        [items]="item.modules ?? []"
+                        [filterFields]="['name']">
+
+                        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                            <!-- List View //-->
+                            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                                <grid-column name="name" title="Name">
+                                    <ng-template #cellTemplate let-item="item">
+                                        {{ item }}
+                                    </ng-template>
+                                </grid-column>
+                            </grid-listview>
+
+                        </ng-template>
+                    </grid>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+        <div class="project-details">
+            <!-- Domains //-->
+            <grid *ngIf="(item.domains ?? []).length>0"
+                title="Domains"
+                [viewTypes]="['list']"
+                viewType="list"
+                [showFilterRow]="false"
+                [showHeaderRow]="true"
+                [showCountBadge]="false"
+                [items]="item.domains ?? []"
+                [filterFields]="['name','title']">
+            
+                <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                    <!-- List View //-->
+                    <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                        <grid-column name="title" title="Title">
+                            <ng-template #cellTemplate let-item="item">
+                                {{item.title}}
+                            </ng-template>
+                        </grid-column>
+                    </grid-listview>
+                </ng-template>
+            </grid>
+
+            <!-- Customers //-->
+            <grid *ngIf="(item.customers ?? []).length>0"
+                title="Customers"
+                [viewTypes]="['list']"
+                viewType="list"
+                [showFilterRow]="false"
+                [showHeaderRow]="true"
+                [showCountBadge]="false"
+                [items]="item.customers ?? []"
+                [filterFields]="['name']">
+            
+                <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                    <!-- List View //-->
+                    <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                        <grid-column name="name" title="Name">
+                            <ng-template #cellTemplate let-item="item">
+                                {{ item }}
+                            </ng-template>
+                        </grid-column>
+                    </grid-listview>
+
+                </ng-template>
+            </grid>
+
+            <!-- Team //-->
+            <grid *ngIf="(item.team ?? []).length>0"
+                title="Team"
+                [viewTypes]="['list']"
+                viewType="list"
+                [showFilterRow]="false"
+                [showHeaderRow]="true"
+                [showCountBadge]="true"
+                [items]="item.team ?? []"
+                [filterFields]="['name','position']">
+
+                <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                    <!-- List View //-->
+                    <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                        <grid-column name="name" title="Name">
+                            <ng-template #cellTemplate let-item="item">
+                                {{ item.name }}<br/><small>({{ item.position }})</small>
+                            </ng-template>
+                        </grid-column>
+                    </grid-listview>
+
+                </ng-template>
+            </grid>
+            
+        </div>
     </div>
 
-    <!-- Domains //-->
-    <grid *ngIf="(item.domains ?? []).length>0"
-          title="Domains"
-          [viewTypes]="['list']"
-          viewType="list"
-          [showFilterRow]="false"
-          [showHeaderRow]="true"
-          [showCountBadge]="true"
-          [items]="item.domains ?? []"
-          [filterFields]="['name','title']">
-        
-        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-            <!-- List View //-->
-            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
-                <grid-column name="title" title="Title">
-                    <ng-template #cellTemplate let-item="item">
-                        {{item.title}}
-                    </ng-template>
-                </grid-column>
-            </grid-listview>
-        </ng-template>
-     </grid>
-
-     <!-- Team //-->
-     <grid *ngIf="(item.team ?? []).length>0"
-           title="Team"
-           [viewTypes]="['list']"
-           viewType="list"
-           [showFilterRow]="false"
-           [showHeaderRow]="true"
-           [showCountBadge]="true"
-           [items]="item.team ?? []"
-           [filterFields]="['name','position']">
-        
-        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-            <!-- List View //-->
-            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
-                <grid-column name="name" title="Name">
-                </grid-column>
-        
-                <grid-column name="position" title="Position">
-                </grid-column>
-            </grid-listview>
-
-        </ng-template>
-     </grid>
-
-     <!-- Partners //-->
-     <grid *ngIf="(item.partners ?? []).length>0"
-           title="Partners"
-           [viewTypes]="['list']"
-           viewType="list"
-           [showFilterRow]="false"
-           [showHeaderRow]="true"
-           [showCountBadge]="true"
-           [items]="item.partners ?? []"
-           [filterFields]="['name','position']">
-        
-        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-            <!-- List View //-->
-            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
-                <grid-column name="name" title="Name">
-                </grid-column>
-            </grid-listview>
-
-        </ng-template>
-     </grid>
-
-     <!-- Customers //-->
-     <grid *ngIf="(item.customers ?? []).length>0"
-           title="Customers"
-           [viewTypes]="['list']"
-           viewType="list"
-           [showFilterRow]="false"
-           [showHeaderRow]="true"
-           [showCountBadge]="true"
-           [items]="item.customers ?? []"
-           [filterFields]="['name']">
-        
-        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-            <!-- List View //-->
-            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
-                <grid-column name="name" title="Name">
-                    <ng-template #cellTemplate let-item="item">
-                        {{ item }}
-                    </ng-template>
-                </grid-column>
-            </grid-listview>
-
-        </ng-template>
-     </grid>
-
-    <!-- Technologies //-->
-    <grid *ngIf="(item.technologies ?? []).length>0"
-          title="Technologies"
-          [viewTypes]="['card']"
-          viewType="card"
-          [showFilterRow]="true"
-          [showHeaderRow]="true"
-          [showCountBadge]="true"
-          [items]="item.technologies ?? []"
-          [filterFields]="['name','title']">
     
-        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-            <!-- List View //-->
-            <grid-listview [showColumnHeaders]="true" [items]="filteredItems" *ngIf="viewType=='list'">
-                <grid-column name="name" title="Name">
-                    <ng-template #cellTemplate let-item="item">
-                        {{item.name}}
-                    </ng-template>
-                </grid-column>
-        
-                <grid-column name="title" title="Title">
-                    <ng-template #cellTemplate let-item="item">
-                        {{item.title}}
-                    </ng-template>
-                </grid-column>
-            </grid-listview>
-
-            <!-- Card View //-->
-            <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
-                            [getImageSrc]="getTechnologyImageName">
-                <ng-template #titleTemplate let-item="item">
-                    {{item.name}}
-                </ng-template>
-            </grid-cardview>
-
-        </ng-template>
-    </grid>
 </div>
 
 <div class="not-found" *ngIf="!item">

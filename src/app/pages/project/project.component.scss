@@ -57,84 +57,24 @@
         }
     }
 
-    .project-summary {
-        font-size: 14px;
-        padding: 10px 0px 30px 0px;
-        text-align: justify;
-    }
+    .project-content {
+        display: flex;
+        flex-direction: row;
 
-    .project-domains-section {
-        padding-bottom: 30px;
+        .project-summary {
+            flex: 1;
+            font-size: 14px;
+            padding: 10px 30px 60px 0px;
+            text-align: justify;
 
-        .project-domains {
-            .project-domain {
-                padding: 5px 10px;
-                border-bottom: 1px dashed lightgray;
+            mat-tab-group {
+                margin-top: 80px;
             }
         }
-    }
 
-    .project-team-section {
-        padding-bottom: 30px;
-
-        .project-team-members {
-            .project-team-member {
-                padding: 5px 10px;
-                border-bottom: 1px dashed lightgray;
-            }
+        .project-details {
+            flex: 0 0 200px;
         }
     }
 
-    .project-technologies-section {
-        padding-bottom: 30px;
-
-        .project-technologies {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            .project-technology {
-                margin: 3px;
-                padding: 6px 10px;
-                border: 1px solid rgb(241, 241, 241);
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                width: 80px;
-
-                img {
-                    height: 50px;
-                    padding-right: 10px;
-                }
-
-                span {
-                    word-wrap: normal;
-                    font-size: 10px;
-                    line-height: 1;
-                    display: none;
-                }
-                &:hover {
-                    background-color: rgb(236, 243, 255);
-                }
-            }
-        }
-    }
-
-    .header {
-        font-weight: bold;
-        background-color: rgb(243, 243, 243);
-        border-top: 1px solid lightgray;
-        padding: 4px 8px;
-        text-transform: uppercase;
-        font-size: 14px;
-
-        .badge {
-            background-color: white;
-            color: gray;
-            padding: 3px;
-            margin: 2px 2px 2px 10px;
-            font-size: 10px;
-            font-weight: normal;
-        }
-    }
 }
