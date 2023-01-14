@@ -1,37 +1,15 @@
 // variables
-$title-bgcolor: lightgray;
 $header-bgcolor: rgb(243, 243, 243);
 $cell-bgcolor: white;
 
 //css
 .grid-list {
     margin-bottom: 30px;
-    border-radius: 10px;
-    overflow: hidden;
+    // border-radius: 0px 0px 10px 10px;
     border: 1px solid lightgray;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    
-    .title {
-        padding: 12px 16px;
-        font-weight: bold;
-        font-size: 14px;
-        background-color: $title-bgcolor;
-        text-transform: uppercase;
-        font-size: 14px;
-        display: flex;
-        flex-direction: row;
-
-        .badge {
-            background-color: white;
-            color: gray;
-            padding: 2px 8px;
-            margin: -3px 2px 0px 15px;
-            font-size: 10px;
-            font-weight: bold;
-            border-radius: 15px;
-        }
-    }
 
     .rows {
         .header-row {

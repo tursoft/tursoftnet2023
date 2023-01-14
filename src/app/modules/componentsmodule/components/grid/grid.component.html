@@ -1,19 +1,32 @@
 <div class="grid">
-    <div class="view-container" *ngIf="config">
-        <grid-listview
-                *ngIf="config.viewMode == 'list'" 
-                [title]="title"
-                [config]="config"
-                [columns]="columns"
-                [items]="items">
-        </grid-listview>
+    <!-- title //-->
+    <div class="title" *ngIf="showHeaderRow">
+        <span class="title-text">:: {{title}}</span>
+        <span class="badge" *ngIf="showCountBadge">{{items.length}}</span>
+        <span class="spacer"></span>
 
-        <grid-cardview
-                *ngIf="config.viewMode == 'card'" 
-                [title]="title"
-                [config]="config"
-                [columns]="columns"
-                [items]="items">
-        </grid-cardview>
+        <!-- filter row //-->
+        <div class="filter-input-row" *ngIf="showFilterRow">
+            <div class="filter-input ui icon input">
+                <input type="text" placeholder="Filter..."
+                        [(ngModel)]="filter.filterText"
+                        (ngModelChange)="filterItems()">
+                <i class="search icon"></i>
+            </div>
+        </div>
+
+        <div class="view-types" *ngIf="viewTypes.length>1">
+            <ng-container *ngFor="let viewType of viewTypes">
+                <div class="view-type" (click)="setViewType(viewType)">
+                    {{viewType}}
+                </div>
+            </ng-container>
+        </div>
+    </div>
+      
+    <!-- grid view //-->
+    <div class="view-container" *ngIf="viewsTemplate">
+        <ng-container *ngTemplateOutlet="viewsTemplate; context: { items, filteredItems, viewType }">
+        </ng-container>
     </div>
 </div>

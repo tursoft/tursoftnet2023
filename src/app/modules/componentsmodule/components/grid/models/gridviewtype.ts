@@ -1,0 +1,1 @@
+export type GridViewType = 'list' | 'card' | 'table';

@@ -1,19 +1,14 @@
-import { Component, Input, QueryList } from "@angular/core";
+import { Component, Inject, Input } from "@angular/core";
+import { GridViewType, ListItem } from "..";
 import { BaseComponent } from "../../../../sharedmodule";
-import { GridColumnComponent } from "../components/grid.column.component";
-import { GridConfig } from "../models/gridconfig";
 
 @Component({
-  selector: 'app-basegridview',
-  template: '<div></div>'
+  template: ''
 })
 export abstract class BaseGridViewComponent extends BaseComponent {
-  @Input() title!: string;
-  @Input() items!: any[];
-  @Input() config!: GridConfig;
-  @Input() columns!: QueryList<GridColumnComponent>;
+  @Input() items?: ListItem[];
   
-  constructor() {
+  constructor(@Inject('viewType') public viewType: GridViewType) {
     super();
   }
 }

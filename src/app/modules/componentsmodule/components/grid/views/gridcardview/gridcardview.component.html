@@ -1,1 +1,18 @@
-<p>card works!</p>
+<div class="card-list" *ngIf="items">
+    <div *ngFor="let item of items"
+         class="card-item"
+         (mouseenter)="item.hovered = true"
+         (mouseout)="item.hovered = false">
+        <img class="item-image" mat-card-image [src]="getImageSrc(item)">
+        <div [ngClass]="{'item-title': true, 'hovered': item.hovered ?? false, 'animate__animated': true, 'animate__fadeIn': true }">
+            <ng-container *ngIf="titleTemplate">
+                <ng-container *ngTemplateOutlet="titleTemplate; context: { item }">
+                </ng-container>
+            </ng-container>
+
+            <div *ngIf="!titleTemplate">
+                {{ item?.toString() }}
+            </div>
+        </div>
+    </div>
+</div>

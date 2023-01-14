@@ -1,14 +1,9 @@
 <div class="grid-list" *ngIf="items && columns">
-    <div class="title">
-        <span>:: {{title}}</span>
-        <span class="badge" *ngIf="config.showCountBadge">{{items.length}}</span>
-    </div>
-
     <!-- rows //-->
     <div class="rows">
 
         <!-- row headers//-->
-        <ng-container *ngIf="config.showColumnHeaders">
+        <ng-container *ngIf="showColumnHeaders">
             <div class="header-row">
                 <div class="header-cell" *ngFor="let column of columns">
                     <ng-container *ngIf="column.headerTemplate">
