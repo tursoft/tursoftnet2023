@@ -10,7 +10,7 @@ import generalData from '../../../../data/general.json';
 export class AboutMeComponent {
   data = generalData;
   
-  constructor(public utils: Utils){
+  constructor(public utils: Utils) {
   }
 
   isIntersecting (status: boolean,) {

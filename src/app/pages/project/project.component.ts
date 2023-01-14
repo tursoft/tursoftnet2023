@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProjectItemDto, ProjectsDto } from '../../models/projectsDto';
+import { ProjectItemDto, ProjectsDto, TechnologyDto } from '../../models/projectsDto';
 import { Session } from '../../modules/sharedmodule/services/session';
 import { Utils } from '../../modules/sharedmodule';
 import projectsData from '../../data/projects.json';
@@ -33,5 +33,13 @@ export class ProjectComponent {
   setProjectById(id: number) {
     this.id = id;
     this.item = this.projects.items.find(p => p.id == this.id);
+  }
+
+  getDomainImageName = (item: TechnologyDto) => {
+    return this.utils.getDomainImageName(item.name);
+  }  
+
+  getTechnologyImageName = (item: TechnologyDto) => {
+    return this.utils.getTechnologyImageName(item.name, true);
   }
 }

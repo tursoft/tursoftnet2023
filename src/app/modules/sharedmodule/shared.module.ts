@@ -6,6 +6,7 @@ import { GridTemplateDirective, ObserveElementDirective } from './directives';
 import { Session, Utils } from './services';
 
 import { BaseComponent } from './components';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BaseComponent } from './components';
   ],
   
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
 
   providers: [
@@ -25,6 +27,7 @@ import { BaseComponent } from './components';
 
   exports: [
     CommonModule,
+    FormsModule,
     
     BaseComponent,
 

@@ -4,6 +4,14 @@ import utilsData from '../data/utils.json';
 @Injectable({ providedIn: 'root' })
 export class Utils
 {
+    public getDomainImageName(name: string) {
+        const imageName = name.replaceAll(' ','')
+                            .replace('.', '')
+                            .replace('#', 'sharp')
+                            .toLowerCase();
+        return `/assets/images/domains/${imageName}.png`;
+    }
+
     public getTechnologyImageName(name: string, small: boolean) {
         const imageName = name.replaceAll(' ','')
                             .replace('.', '')

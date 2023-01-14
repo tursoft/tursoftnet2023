@@ -36,10 +36,7 @@ export interface ProjectItemDto {
   customers?: string[],
   partners?: string[],
 
-  technologies?: {
-    name:  string,
-    type: string
-  }[]
+  technologies?: TechnologyDto[]
 }
 
 export interface ProjectGroupDto {
@@ -57,4 +54,9 @@ export interface ProjectsDto {
       },
       
     items: ProjectItemDto[]
+}
+
+export interface TechnologyDto {
+  name: string;
+  type: string;
 }
