@@ -222,6 +222,11 @@
                 color: #fff;
                 font-weight: 400;
                 border-radius: 0px 0px 8px 8px;
+                text-decoration: none !important;
+                
+                a, a:hover, a:visited, a:-webkit-any-link {
+                    text-decoration: none !important;
+                }
 
                 .number-box {
                     display: inline;

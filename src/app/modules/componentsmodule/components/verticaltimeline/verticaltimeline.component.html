@@ -4,7 +4,7 @@
         <div class="demo-card-wrapper">
             <div *ngFor="let item of items; index as i;"
                  [ngClass]="['demo-card', 'demo-card--step'+(i+1)]">
-                <div class="head">
+                <a [href]="item.url" class="head">
                     <div class="number-box">
                         <span>{{i+1}}</span>
                     </div>
@@ -12,7 +12,7 @@
                         <span class="small">{{item.title1}}</span>
                         {{item.title2}}
                     </h2>
-                </div>
+                </a>
 
                 <div [ngClass]="{'body': true }"
                      [innerHtml]="item.content">
