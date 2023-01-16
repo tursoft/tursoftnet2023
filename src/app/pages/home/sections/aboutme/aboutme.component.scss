@@ -34,6 +34,7 @@
                     overflow: hidden;
                     bottom: 0px;
                     height: 50px;
+                    transition: height 0.2s ease-out;
 
                     &:hover {
                         height: 150px;
@@ -66,7 +67,7 @@
                         a, a:hover, a:visited {
                             height: 30px;
                             font-size: 12px;
-                            padding: 4px;
+                            padding: 4px 6px;
                             cursor: pointer;
                             color: white !important;
                         }
@@ -92,16 +93,13 @@
                 margin-top: 5px;
                 padding: 15px 30px;
                 width: 100%;
-                transition: all 0.3s ease-out;
                 text-align: center;
-
-                visibility: visible;
-                animation-delay: 0.4s; 
-                animation-name: fadeInUp;
+                transition: background-color 0.3s ease-out;
+                transition: color 0.3s ease-out;
 
                 &:hover {
                     background-color: white;
-                    color: darkgray;
+                    color: black;
                 }
             }
         }

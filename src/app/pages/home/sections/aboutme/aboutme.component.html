@@ -3,7 +3,7 @@
                 appObserveElement
                 #intersection="intersection"
                 [class.animate__animated]="intersection._isIntersecting"
-                [class.animate__fadeInRight]="intersection._isIntersecting"
+                [class.animate__fadeIn]="intersection._isIntersecting"
                 [class.visible]="intersection._isIntersecting"
                 (isIntersecting)="isIntersecting($event)">
 
@@ -41,7 +41,7 @@
                 </div>
             </div>
     
-            <a class="download-cv-button text-center"
+            <a class="download-cv-button"
                 href="/assets/files/downloads/CV/CV_MuhammetTursak_v52.20200304.pdf"
                 target="_blank">
                 DOWNLOAD CV
