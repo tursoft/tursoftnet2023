@@ -5,7 +5,8 @@
         <!-- row headers//-->
         <ng-container *ngIf="showColumnHeaders">
             <div class="header-row">
-                <div class="header-cell" *ngFor="let column of columns">
+                <div [ngClass]="'header-cell header-cell-' + column.name"
+                      *ngFor="let column of columns">
                     <ng-container *ngIf="column.headerTemplate">
                         <ng-container *ngTemplateOutlet="column.headerTemplate; context: { column }">
                         </ng-container>
@@ -20,7 +21,9 @@
 
         <!-- row cells //-->
         <div class="row" *ngFor="let item of items">
-            <div class="cell" *ngFor="let column of columns">
+            <div [ngClass]="['cell', 'cell-' + column.name]"
+                 *ngFor="let column of columns"
+                 (click)="onItemClick($event, item);">
                 <ng-container *ngIf="column.cellTemplate">
                     <ng-container *ngTemplateOutlet="column.cellTemplate; context: { column, item }">
                     </ng-container>

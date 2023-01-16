@@ -1,4 +1,4 @@
-<div class="grid">
+<div [ngClass]="'grid ' + (customClass ?? '')">
     <!-- title //-->
     <div class="title" *ngIf="showHeaderRow">
         <span class="title-text">:: {{title}}</span>
@@ -26,7 +26,7 @@
       
     <!-- grid view //-->
     <div class="view-container" *ngIf="viewsTemplate">
-        <ng-container *ngTemplateOutlet="viewsTemplate; context: { items, filteredItems, viewType }">
+        <ng-container *ngTemplateOutlet="viewsTemplate; context: { items, filteredItems, viewType, onItemClick }">
         </ng-container>
     </div>
 </div>

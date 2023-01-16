@@ -37,6 +37,10 @@ $cell-bgcolor: white;
 
             .cell {
                 flex: 1;
+                padding: 2px 5px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
             }
 
             &:hover {

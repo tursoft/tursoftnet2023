@@ -1,3 +1,3 @@
 export * from './basegridview'
-export * from './gridcardview/gridcardview.component';
-export * from './gridlistview/gridlistview.component';
+export * from './grid-cardview/grid-cardview.component';
+export * from './grid-listview/grid-listview.component';

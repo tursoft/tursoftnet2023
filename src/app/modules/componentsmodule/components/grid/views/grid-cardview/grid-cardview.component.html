@@ -2,7 +2,8 @@
     <div *ngFor="let item of items"
          class="card-item"
          (mouseenter)="item.hovered = true"
-         (mouseout)="item.hovered = false">
+         (mouseout)="item.hovered = false"
+         (click)="onItemClick($event, item);">
         <img class="item-image" mat-card-image [src]="getImageSrc(item)">
         <div [ngClass]="{'item-title': true, 'hovered': item.hovered ?? false, 'animate__animated': true, 'animate__fadeIn': true }">
             <ng-container *ngIf="titleTemplate">

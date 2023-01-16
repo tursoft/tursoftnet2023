@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GridListViewComponent } from './gridlistview.component';
+import { GridCardViewComponent } from './grid-cardview.component';
 
-describe('GridListViewComponent', () => {
-  let component: GridListViewComponent;
-  let fixture: ComponentFixture<GridListViewComponent>;
+describe('GridCardViewComponent', () => {
+  let component: GridCardViewComponent;
+  let fixture: ComponentFixture<GridCardViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GridListViewComponent ]
+      declarations: [ GridCardViewComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GridListViewComponent);
+    fixture = TestBed.createComponent(GridCardViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

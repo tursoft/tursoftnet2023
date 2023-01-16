@@ -4,8 +4,8 @@ import { BaseGridViewComponent } from "../basegridview";
 
 @Component({
   selector: 'grid-listview',
-  templateUrl: './gridlistview.component.html',
-  styleUrls: ['./gridlistview.component.scss'],
+  templateUrl: './grid-listview.component.html',
+  styleUrls: ['./grid-listview.component.scss'],
   providers: [{ provide: BaseGridViewComponent, useExisting: GridListViewComponent }]
 })
 export class GridListViewComponent extends BaseGridViewComponent {
