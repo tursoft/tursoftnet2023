@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectItemDto, ProjectsDto } from '../../models/projectsDto';
@@ -8,7 +8,7 @@ import { ProjectScreenshotDetailsComponent } from './screenshot-details/screensh
 import { ProjectUtils } from './project-utils';
 import projectsData from '../../data/projects.json';
 import projectFilesData from '../../data/project_files.json';
-import { fromEvent } from 'rxjs';
+
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -30,10 +30,6 @@ export class ProjectComponent {
     public route: ActivatedRoute
   ) {
     this.session.showTopMenu=false;
-
-    fromEvent(window, "scroll").subscribe(e => {
-      this.onWindowScroll();
-    });
   }
 
   ngOnInit(){
@@ -41,12 +37,6 @@ export class ProjectComponent {
       const id = parseInt(paramMap.get('id') ?? '0');
       this.setProjectById(id);
     });
-  }
-
-  // @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    console.log('window.pageYOffset:', window.pageYOffset);
-    this.isSticky = window.pageYOffset >= 250;
   }
 
   setProjectById(id: number) {
