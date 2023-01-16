@@ -7,11 +7,11 @@ import { EducationComponent } from './pages/education/education.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'projects/:id', component: ProjectComponent },
-  { path: 'educations/:id', component: EducationComponent },
-  { path: 'experiences/:id', component: ExperienceComponent },
-  { path: '**', pathMatch: 'full', component: Notfound404Component }
+  { path: '', component: HomeComponent, data: { animationState: 'Home' } },
+  { path: 'projects/:id', component: ProjectComponent, data: { animationState: 'Details' } },
+  { path: 'educations/:id', component: EducationComponent, data: { animationState: 'Details' } },
+  { path: 'experiences/:id', component: ExperienceComponent, data: { animationState: 'Details' } },
+  { path: '**', pathMatch: 'full', component: Notfound404Component, data: { animationState: 'NotFound' } },
 ];
 
 @NgModule({
