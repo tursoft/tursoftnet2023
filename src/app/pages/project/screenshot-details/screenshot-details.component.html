@@ -1,4 +1,4 @@
-<div mat-dialog-title>{{data.item.title }}</div>
+<!-- <div mat-dialog-title>{{data.item.title }}</div> -->
 
 <div mat-dialog-content [ngClass]="{fullscreenEnabled: fullscreenEnabled}">
    <img #img class="img"
@@ -7,6 +7,9 @@
 </div>
 
 <div mat-dialog-actions>
+  <div style="flex: 1; padding: 4px 10px;">
+    {{ data.item.title }}
+  </div>
   <button mat-stroked-button
           mat-dialog-close
           cdkFocusInitial>Close</button>
