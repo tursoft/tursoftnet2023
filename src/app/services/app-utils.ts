@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { ProjectFileScreenshotDto } from "src/app/models/projectFileDto";
-import { TechnologyDto } from "../../models/projectsDto";
-import { Utils } from "../../modules/sharedmodule";
+import { TechnologyDto } from "../models/projectsDto";
+import { Utils } from "../modules/sharedmodule";
 
 @Injectable()
-export class ProjectUtils {
+export class AppUtils {
     
   constructor(public utils: Utils) {
   }

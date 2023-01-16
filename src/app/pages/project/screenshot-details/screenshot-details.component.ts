@@ -1,6 +1,6 @@
 import { Component, Inject } from "@angular/core";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { ProjectUtils } from "../project-utils";
+import { AppUtils } from "../../../services/app-utils";
 
 export interface ProjectScreenshotDetailsData {
     item: any;
@@ -16,7 +16,7 @@ export class ProjectScreenshotDetailsComponent {
     isFullscreen: boolean = false;
 
     constructor(
-        public projectUtils: ProjectUtils,
+        public appUtils: AppUtils,
         public dialogRef: MatDialogRef<ProjectScreenshotDetailsData>,
         @Inject(MAT_DIALOG_DATA) public data: ProjectScreenshotDetailsData,
     ) {
@@ -26,6 +26,7 @@ export class ProjectScreenshotDetailsComponent {
     showFullscreen(element: Element) {
         if (!this.fullscreenEnabled)
             return;
+
         if (this.isFullscreen) {
             document.exitFullscreen();
             this.isFullscreen = false;

@@ -69,7 +69,7 @@
                             <!-- Card View //-->
                             <grid-cardview *ngIf="viewType=='card'"
                                         [items]="filteredItems"
-                                        [getImageSrc]="projectUtils.getProjectScreenshotPath"
+                                        [getImageSrc]="appUtils.getProjectScreenshotPath"
                                         (itemClick)="onItemClick($event)">
                                 <ng-template #titleTemplate let-item="item">
                                     {{item.title}}
@@ -98,7 +98,7 @@
                             <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
                                 <grid-column name="icon" title="">
                                     <ng-template #cellTemplate let-item="item">
-                                        <img [src]="projectUtils.getTechnologyImageName(item)">
+                                        <img [src]="appUtils.getTechnologyImageName(item)">
                                     </ng-template>
                                 </grid-column>
 
@@ -111,7 +111,7 @@
 
                             <!-- Card View //-->
                             <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
-                                        [getImageSrc]="projectUtils.getTechnologyImageName">
+                                        [getImageSrc]="appUtils.getTechnologyImageName">
                                 <ng-template #titleTemplate let-item="item">
                                     {{item.name}}
                                 </ng-template>

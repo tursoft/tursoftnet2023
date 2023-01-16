@@ -2,7 +2,7 @@
 
 <div mat-dialog-content [ngClass]="{fullscreenEnabled: fullscreenEnabled}">
    <img #img class="img"
-        [src]="projectUtils.getProjectScreenshotPath(data.item)"
+        [src]="appUtils.getProjectScreenshotPath(data.item)"
         (click)="showFullscreen(img)">
 </div>
 

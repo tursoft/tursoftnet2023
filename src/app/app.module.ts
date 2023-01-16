@@ -35,7 +35,7 @@ import { LoadingComponent } from './sections/loading/loading.component';
 import { AngularMaterialModule } from './modules/angularmaterial.module';
 
 /* providers */
-import { ProjectUtils } from './pages/project/project-utils';
+import { AppUtils } from './services/app-utils';
 import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-details/screenshot-details.component';
 
 @NgModule({
@@ -80,7 +80,7 @@ import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-de
   ],
 
   providers: [
-    ProjectUtils
+    AppUtils
   ],
 
   bootstrap: [AppComponent]

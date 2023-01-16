@@ -5,7 +5,7 @@ import { ProjectItemDto, ProjectsDto } from '../../models/projectsDto';
 import { ProjectFileScreenshotDto, ProjectFilesDto } from '../../models/projectFileDto';
 import { Session } from '../../modules/sharedmodule/services/session';
 import { ProjectScreenshotDetailsComponent } from './screenshot-details/screenshot-details.component';
-import { ProjectUtils } from './project-utils';
+import { AppUtils } from '../../services/app-utils';
 import projectsData from '../../data/projects.json';
 import projectFilesData from '../../data/project_files.json';
 
@@ -25,7 +25,7 @@ export class ProjectComponent {
 
   constructor(
     public matDialog: MatDialog,
-    public projectUtils: ProjectUtils,
+    public appUtils: AppUtils,
     public session: Session,
     public route: ActivatedRoute
   ) {
