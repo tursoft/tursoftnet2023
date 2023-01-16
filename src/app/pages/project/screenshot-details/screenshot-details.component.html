@@ -1,0 +1,13 @@
+<div mat-dialog-title>{{data.item.title }}</div>
+
+<div mat-dialog-content [ngClass]="{fullscreenEnabled: fullscreenEnabled}">
+   <img #img class="img"
+        [src]="projectUtils.getProjectScreenshotPath(data.item)"
+        (click)="showFullscreen(img)">
+</div>
+
+<div mat-dialog-actions>
+  <button mat-stroked-button
+          mat-dialog-close
+          cdkFocusInitial>Close</button>
+</div>

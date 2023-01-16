@@ -1,26 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProjectItemDto, ProjectsDto, TechnologyDto } from '../../models/projectsDto';
+import { MatDialog } from '@angular/material/dialog';
+import { ProjectItemDto, ProjectsDto } from '../../models/projectsDto';
+import { ProjectFileScreenshotDto, ProjectFilesDto } from '../../models/projectFileDto';
 import { Session } from '../../modules/sharedmodule/services/session';
-import { Utils } from '../../modules/sharedmodule';
+import { ProjectScreenshotDetailsComponent } from './screenshot-details/screenshot-details.component';
+import { ProjectUtils } from './project-utils';
 import projectsData from '../../data/projects.json';
-
+import projectFilesData from '../../data/project_files.json';
+import { fromEvent } from 'rxjs';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent {
-  projects: ProjectsDto = projectsData;
+  allProjects: ProjectsDto = projectsData;
+  allProjectFiles: ProjectFilesDto = projectFilesData;
+  projectScreenshots: ProjectFileScreenshotDto[] = [];
   item?: ProjectItemDto;
   id?: number;
 
+  isSticky: boolean = false;
+
   constructor(
-    public utils: Utils,
+    public matDialog: MatDialog,
+    public projectUtils: ProjectUtils,
     public session: Session,
     public route: ActivatedRoute
   ) {
     this.session.showTopMenu=false;
+
+    fromEvent(window, "scroll").subscribe(e => {
+      this.onWindowScroll();
+    });
   }
 
   ngOnInit(){
@@ -30,16 +43,19 @@ export class ProjectComponent {
     });
   }
 
-  setProjectById(id: number) {
-    this.id = id;
-    this.item = this.projects.items.find(p => p.id == this.id);
+  // @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    console.log('window.pageYOffset:', window.pageYOffset);
+    this.isSticky = window.pageYOffset >= 250;
   }
 
-  getDomainImageName = (item: TechnologyDto) => {
-    return this.utils.getDomainImageName(item.name);
-  }  
+  setProjectById(id: number) {
+    this.id = id;
+    this.item = this.allProjects.items.find(p => p.id == this.id);
+    this.projectScreenshots = this.allProjectFiles.general[this.item?.name ?? '']?.screenshoots ?? [];
+  }
 
-  getTechnologyImageName = (item: TechnologyDto) => {
-    return this.utils.getTechnologyImageName(item.name, true);
+  onScreenshotClick(screenshot: ProjectFileScreenshotDto) {
+    ProjectScreenshotDetailsComponent.showDialog(this.matDialog, screenshot);
   }
 }

@@ -1,80 +1,120 @@
-.page-header {
-    display: flex;
-    flex-direction: row;
-    background-color: black;
-    color: white;
-    padding: 15px 20px;
-    font-size: 20px;
+.project-page {
+    position: relative;
 
-    .header-buttons {
-        flex: 0 0 auto;
-
-        a, a:hover, a:visited {
-            color: white;
-        }
-
-        .icon {
-            font-size: 14px;
-            padding-right: 10px;
-        }
-    }
-
-    .page-header-text {
+    .page-header {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        color: white;
+        padding: 15px 20px;
         font-size: 20px;
-        flex: 1;
-        text-align: center;
+        position: sticky;
+
+        .header-buttons {
+            flex: 0 0 auto;
+
+            a, a:hover, a:visited {
+                color: white;
+            }
+
+            .icon {
+                font-size: 14px;
+                padding-right: 10px;
+            }
+
+            .btn-back {
+                cursor: pointer;
+                &:hover {
+                    color: orange;
+                }
+            }
+        }
+
+        .page-header-text {
+            font-size: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .site-owner {
+            flex: 0 0 auto;    
+        }
     }
 
-    .site-owner {
-        flex: 0 0 auto;    
+    .project {
+        padding: 40px;
+
+        .project-title-container {
+            height: 90px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid lightgray;
+
+            .project-logo {
+                position: absolute;
+                right: 40px;
+                img {
+                    height: 80px;
+                }
+            }
+
+            .project-date {
+                font-size: 12px;
+                color: gray;
+                padding-bottom: 5px;
+            }
+
+            .project-title {
+                font-size: 30px;
+            }
+        }
+
+        .project-content {
+            display: flex;
+            flex-direction: row;
+
+            .project-summary {
+                flex: 1;
+                font-size: 14px;
+                padding: 10px 30px 60px 0px;
+                text-align: justify;
+
+                mat-tab-group {
+                    margin-top: 80px;
+                }
+            }
+
+            .project-details {
+                flex: 0 0 250px;
+            }
+        }
     }
 }
 
-.project {
-    padding: 40px;
-
-    .project-title-container {
-        height: 90px;
-        margin-bottom: 15px;
-        border-bottom: 1px solid lightgray;
-
-        .project-logo {
-            position: absolute;
-            right: 40px;
+:host ::ng-deep { 
+    .grid-technologies {
+        .cell-icon {
+            flex: 0 0 50px !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             img {
-                height: 80px;
+                width: 30px;
             }
         }
 
-        .project-date {
-            font-size: 12px;
-            color: gray;
-            padding-bottom: 5px;
-        }
-
-        .project-title {
-            font-size: 30px;
+        .cell-name {
+            padding-left: 30px !important;
         }
     }
 
-    .project-content {
-        display: flex;
-        flex-direction: row;
-
-        .project-summary {
-            flex: 1;
-            font-size: 14px;
-            padding: 10px 30px 60px 0px;
-            text-align: justify;
-
-            mat-tab-group {
-                margin-top: 80px;
+    .grid-screenshots {
+        .card-item {
+            max-width: unset !important;
+            width: unset !important;
+            height: unset !important;
+            img {
+                height: 150px !important;
             }
         }
-
-        .project-details {
-            flex: 0 0 200px;
-        }
     }
-
 }
