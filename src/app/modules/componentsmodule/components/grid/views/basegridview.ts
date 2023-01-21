@@ -9,7 +9,9 @@ export abstract class BaseGridViewComponent extends BaseComponent {
   get items():ListItem[] { return this.getPropertyValue<ListItem[]>('items', null); }
   @Input() set items(value:ListItem[]) { this.setPropertyValue<ListItem[]>('items', value); }
   
-  item?: ListItem;
+  get item():ListItem { return this.getPropertyValue<ListItem>('item', null); }
+  set item(value:ListItem ) { this.setPropertyValue<ListItem>('item', value); }
+
   @Output() itemClick = new EventEmitter<any>();
   
   constructor(@Inject('viewType') public viewType: GridViewType) {
@@ -52,17 +54,21 @@ export abstract class BaseGridViewComponent extends BaseComponent {
     return null;
   }
 
+  setItem(item: ListItem) {
+    this.item = item;
+  }
+  
   prev() {
     const prevItem = this.getPrev();
     if (!prevItem)
       return;
-    this.item = prevItem;
+    this.setItem(prevItem);
   }
 
   next() {
     const nextItem = this.getNext();
     if (!nextItem)
       return;
-    this.item = nextItem;
+    this.setItem(nextItem);
   }
 }

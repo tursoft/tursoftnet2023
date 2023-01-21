@@ -68,6 +68,11 @@ $title-bgcolor: lightgray;
                 text-align: center;
                 justify-content: center;
                 align-items: center;
+                min-width: 30px;
+
+                &.active {
+                    background-color: white;
+                }
 
                 &:hover {
                     background-color: white;

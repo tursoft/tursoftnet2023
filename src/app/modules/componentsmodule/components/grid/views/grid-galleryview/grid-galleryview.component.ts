@@ -14,15 +14,42 @@ export class GridGalleryViewComponent extends BaseGridViewComponent {
   @ContentChild('titleTemplate', { read: TemplateRef }) titleTemplate?: TemplateRef<any>;
   @ContentChild('bodyTemplate', { read: TemplateRef }) bodyTemplate?: TemplateRef<any>;
 
-  itemsSmall: ListItem[] = [
-    {},
-    {},
-    {},
-    {},
-    {}
-  ]
+  maxVisibleItemCount = 5;
+  visibleSmallItems: ListItem[] = [];
 
   constructor() {
     super('gallery');
+
+    this.addPropertyChangedListener(['items', 'item'], () => {
+      this.updateVisibleItems();
+    });
+
+    this.updateVisibleItems();
+  }
+
+  updateVisibleItems() {
+    const { maxVisibleItemCount } = this;
+    const items = this.items ?? [];
+    const currentItem = this.item;
+
+    let visibleSmallItems: ListItem[] = [];
+    if (currentItem) {
+      let index = items.indexOf(currentItem);
+      if (index + maxVisibleItemCount>items.length) {
+        index = Math.max(items.length-maxVisibleItemCount-1, 0);
+      }
+      
+      for(let i=index; i<items.length; i++) {
+        if (visibleSmallItems.length>=maxVisibleItemCount) {
+          break;
+        }
+
+        visibleSmallItems.push(items[i]);
+      }
+
+      console.log('updateVisibleItems:', { currentItem, index, items, visibleSmallItems });
+    }
+
+    this.visibleSmallItems = visibleSmallItems;
   }
 }

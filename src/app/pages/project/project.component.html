@@ -37,12 +37,16 @@
 
                 <mat-tab-group>
                     <!-- Screenshots //-->
-                    <mat-tab label="Screenshots" *ngIf="(projectScreenshots ?? []).length>0">
+                    <mat-tab *ngIf="(projectScreenshots ?? []).length>0">
+                        <ng-template mat-tab-label>
+                            <i class="fa-icon fa-solid fa-panorama"></i>
+                            Screenshots
+                        </ng-template>
                         <grid 
                             title="Screenshots"
                             customClass="grid-screenshots"
-                            [viewTypes]="['card']"
-                            viewType="card"
+                            [viewTypes]="['gallery','card']"
+                            viewType="gallery"
                             [showFilterRow]="true"
                             [showHeaderRow]="true"
                             [showCountBadge]="true"
@@ -76,16 +80,47 @@
                                 </ng-template>
                             </grid-cardview>
 
-                        </ng-template>
+                            <!-- SingleCard View //-->
+                            <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
+                                                [getImageSrc]="appUtils.getProjectScreenshotPath"
+                                                (itemClick)="onItemClick($event)">
+                                    <ng-template #titleTemplate let-item="item">
+                                        {{item.title}}
+                                    </ng-template>
+    
+                                    <ng-template #bodyTemplate let-item="item">
+                                        {{item.title}}
+                                    </ng-template>
+                                </grid-singlecardview>
+    
+                                <!-- Gallery View //-->
+                                <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
+                                                [getImageSrc]="appUtils.getProjectScreenshotPath"
+                                                (itemClick)="onItemClick($event)">
+                                    <ng-template #titleTemplate let-item="item">
+                                        {{item.title}}
+                                    </ng-template>
+    
+                                    <ng-template #bodyTemplate let-item="item">
+                                        {{item.title}}
+                                    </ng-template>
+                                </grid-galleryview>
+
+                            </ng-template>
                         </grid>
                     </mat-tab>
                     
                     <!-- Technologies //-->
-                    <mat-tab label="Technologies" *ngIf="(item.technologies ?? []).length>0">
+                    <mat-tab *ngIf="(item.technologies ?? []).length>0">
+                        <ng-template mat-tab-label>
+                            <i class="fa-icon fa-solid fa-code"></i>
+                            Technologies
+                        </ng-template>
+
                         <grid 
                             title="Technologies"
                             customClass="grid-technologies"
-                            [viewTypes]="['list', 'card', 'singlecard', 'gallery']"
+                            [viewTypes]="['list', 'card']"
                             viewType="list"
                             [showFilterRow]="true"
                             [showHeaderRow]="true"
@@ -147,7 +182,11 @@
 
                     
                     <!-- Partners //-->
-                    <mat-tab label="Partners" *ngIf="(item.partners ?? []).length>0">
+                    <mat-tab *ngIf="(item.partners ?? []).length>0">
+                        <ng-template mat-tab-label>
+                            <i class="fa-icon fa-solid fa-building"></i>
+                            Partners
+                        </ng-template>
                         <grid 
                             title="Partners"
                             [viewTypes]="['list']"
@@ -170,7 +209,11 @@
                     </mat-tab>
 
                     <!-- Modules //-->
-                    <mat-tab label="Modules" *ngIf="(item.modules ?? []).length>0">
+                    <mat-tab *ngIf="(item.modules ?? []).length>0">
+                        <ng-template mat-tab-label>
+                            <i class="fa-icon fa-solid fa-puzzle-piece"></i>
+                            Modules
+                        </ng-template>
                         <grid
                             title="Modules"
                             [viewTypes]="['list']"

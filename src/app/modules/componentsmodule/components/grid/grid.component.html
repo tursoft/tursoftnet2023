@@ -16,9 +16,12 @@
         </div>
 
         <div class="view-types" *ngIf="viewTypes.length>1">
-            <ng-container *ngFor="let viewType of viewTypes">
-                <div class="view-type" (click)="setViewType(viewType)">
-                    <i [ngClass]="getViewTypeIconCssClass(viewType)" [title]="viewType"></i>
+            <ng-container *ngFor="let viewTypeItem of viewTypes">
+                <div [ngClass]="{'view-type': true, 'active': viewTypeItem==viewType }"
+                     (click)="setViewType(viewTypeItem)">
+                    <i [ngClass]="getViewTypeIconCssClass(viewTypeItem)"
+                       [title]="viewTypeItem">
+                    </i>
                 </div>
             </ng-container>
         </div>
