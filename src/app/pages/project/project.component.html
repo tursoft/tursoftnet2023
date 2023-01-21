@@ -37,7 +37,7 @@
 
                 <mat-tab-group>
                     <!-- Screenshots //-->
-                    <mat-tab label="Screenshots">
+                    <mat-tab label="Screenshots" *ngIf="(projectScreenshots ?? []).length>0">
                         <grid 
                             title="Screenshots"
                             customClass="grid-screenshots"
@@ -85,7 +85,7 @@
                         <grid 
                             title="Technologies"
                             customClass="grid-technologies"
-                            [viewTypes]="['list', 'card']"
+                            [viewTypes]="['list', 'card', 'singlecard', 'gallery']"
                             viewType="list"
                             [showFilterRow]="true"
                             [showHeaderRow]="true"
@@ -98,7 +98,7 @@
                             <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
                                 <grid-column name="icon" title="">
                                     <ng-template #cellTemplate let-item="item">
-                                        <img [src]="appUtils.getTechnologyImageName(item)">
+                                        <img [src]="appUtils.getTechnologyImage(item)">
                                     </ng-template>
                                 </grid-column>
 
@@ -111,11 +111,35 @@
 
                             <!-- Card View //-->
                             <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
-                                        [getImageSrc]="appUtils.getTechnologyImageName">
+                                           [getImageSrc]="appUtils.getTechnologyImage">
                                 <ng-template #titleTemplate let-item="item">
                                     {{item.name}}
                                 </ng-template>
                             </grid-cardview>
+
+                            <!-- SingleCard View //-->
+                            <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
+                                              [getImageSrc]="appUtils.getTechnologyImage">
+                                <ng-template #titleTemplate let-item="item">
+                                    {{item.name}}
+                                </ng-template>
+
+                                <ng-template #bodyTemplate let-item="item">
+                                    {{item.name}}
+                                </ng-template>
+                            </grid-singlecardview>
+
+                            <!-- Gallery View //-->
+                            <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
+                                              [getImageSrc]="appUtils.getTechnologyImageBig">
+                                <ng-template #titleTemplate let-item="item">
+                                    {{item.name}}
+                                </ng-template>
+
+                                <ng-template #bodyTemplate let-item="item">
+                                    {{item.name}}
+                                </ng-template>
+                            </grid-galleryview>
 
                         </ng-template>
                         </grid>

@@ -32,7 +32,7 @@
                   class="section-item"
                   (mouseenter)="item.hover = true"
                   (mouseout)="item.hover = false">
-            <img class="item-image" mat-card-image [src]="utils.getTechnologyImageName(item.name, false)">
+            <img class="item-image" mat-card-image [src]="appUtils.getTechnologyImageByName(item.name, false)">
             <div [ngClass]="{'item-title': true, 'hovered': item.hover, 'animate__animated': true, 'animate__fadeIn': true }">
               {{ item.title }}
             </div>

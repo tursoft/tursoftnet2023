@@ -1,1 +1,1 @@
-export type GridViewType = 'list' | 'card' | 'table';
+export type GridViewType = 'list' | 'card' | 'singlecard' | 'gallery';

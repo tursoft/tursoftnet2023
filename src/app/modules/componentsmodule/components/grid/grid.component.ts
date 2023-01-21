@@ -16,7 +16,7 @@ export class GridComponent extends BaseComponent implements AfterViewInit, After
   @Input() showFilterRow?: boolean = false;
   @Input() showCountBadge: boolean = true;
 
-  @Input() viewTypes:GridViewType[] = ['card', 'list'];
+  @Input() viewTypes:GridViewType[] = ['card', 'list', 'singlecard', 'gallery'];
   @Input() viewType: GridViewType = 'list';
 
   @Input() items!: any[];
@@ -63,6 +63,15 @@ export class GridComponent extends BaseComponent implements AfterViewInit, After
 
   setViewType(viewType: GridViewType) {
     this.viewType = viewType;
+  }
+
+  getViewTypeIconCssClass(viewType: GridViewType) {
+    switch(viewType) {
+      case 'list': return 'fa-regular fa-bars';
+      case 'card': return 'fa-solid fa-grip'; // 'fa-regular fa-grid';
+      case 'singlecard': return 'fa-solid fa-rug'; // 'fa-regular fa-grid';
+      case 'gallery': return 'fa-solid fa-tv'; // 'fa-regular fa-gallery-thumbnails';
+    }
   }
 
   onItemClick = async (item: ListItem) => {

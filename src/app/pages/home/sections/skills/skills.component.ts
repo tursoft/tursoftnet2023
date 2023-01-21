@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IHoverable } from 'src/app/models/shared';
 import { SkillGroupDto, SkillItemDto, SkillsDto } from '../../../../models/skillsDto';
-import { Utils } from '../../../../modules/sharedmodule';
 import skillsData from '../../../../data/skills.json';
+import { AppUtils } from 'src/app/services/app-utils';
+import { Utils } from 'src/app/modules/sharedmodule';
 
 interface FilterDto {
   filterText?: string,
@@ -24,7 +25,10 @@ export class SkillsComponent {
   filteredItems: SkillItem[] = [];
   filter: FilterDto = {};
 
-  constructor(public utils: Utils) {
+  constructor(
+    public utils: Utils,
+    public appUtils: AppUtils)
+  {
     const groupAll: SkillGroupDto = {
         name: undefined,
         title: 'All',

@@ -1,0 +1,1 @@
+export type getImageSrcDelegate = (item: any) => string;

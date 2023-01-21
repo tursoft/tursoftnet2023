@@ -1,0 +1,41 @@
+<div class="singlecardview-items" *ngIf="items">
+    <div [ngClass]="{'singlecardview-button-prev':true, 'disabled':!getPrev()}" (click)="prev()">
+        <i class="fa fa-chevron-left"></i>
+    </div>
+
+    <div class="singlecardview-item">
+        <div class="col1">
+            <img class="singlecardview-item-image"
+                 [src]="getImageSrc(item)">
+        </div>
+        <div class="col2">
+            <div class="item-title">
+                <ng-container *ngIf="titleTemplate">
+                    <ng-container *ngTemplateOutlet="titleTemplate; context: { item }">
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            <div class="item-body">
+                <ng-container *ngIf="bodyTemplate">
+                    <ng-container *ngTemplateOutlet="bodyTemplate; context: { item }">
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            <!-- <div class="item-buttons">
+                <a *ngFor="let contact of item.contacts"
+                   class="contact tooltip-toggle"
+                   href="{{contact.value}}"
+                   [attr.aria-label]="contact.code"
+                   target="_blank">
+                   <i [ngClass]="utils.getIconCss(contact.code)"></i>
+                </a>
+            </div> -->
+        </div>
+    </div>
+
+    <div [ngClass]="{'singlecardview-button-next':true, 'disabled':!getNext()}" (click)="next()">
+        <i class="fa fa-chevron-right"></i>
+    </div>
+</div>

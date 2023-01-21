@@ -9,12 +9,32 @@ export class AppUtils {
   constructor(public utils: Utils) {
   }
 
-  getDomainImageName = (item: TechnologyDto) => {
-    return this.utils.getDomainImageName(item.name);
+  getDomainImageByName(name: string) {
+    const imageName = name.replaceAll(' ','')
+                        .replace('.', '')
+                        .replace('#', 'sharp')
+                        .toLowerCase();
+    return `/assets/images/domains/${imageName}.png`;
+  }
+
+  getTechnologyImageByName(name: string, small: boolean) {
+      const imageName = name.replaceAll(' ','')
+                          .replace('.', '')
+                          .replace('#', 'sharp')
+                          .toLowerCase();
+      return `/assets/images/technologies/${small?'small_50x50':'original'}/${imageName}.png`;
+  }
+
+  getDomainImage = (item: TechnologyDto) => {
+    return this.getDomainImageByName(item.name);
   }  
 
-  getTechnologyImageName = (item: TechnologyDto) => {
-    return this.utils.getTechnologyImageName(item.name, true);
+  getTechnologyImage = (item: TechnologyDto) => {
+    return this.getTechnologyImageByName(item.name, true);
+  }
+
+  getTechnologyImageBig = (item: TechnologyDto) => {
+    return this.getTechnologyImageByName(item.name, false);
   }
 
   getProjectScreenshotPath = (fileDto: ProjectFileScreenshotDto) => {

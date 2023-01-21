@@ -1,7 +1,7 @@
 import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
+import { getImageSrcDelegate } from '../../models';
 import { BaseGridViewComponent } from '../basegridview';
 
-export type getImageSrcDelegate = (item: any) => string;
 @Component({
   selector: 'grid-cardview',
   templateUrl: './grid-cardview.component.html',
