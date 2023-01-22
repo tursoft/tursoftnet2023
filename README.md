@@ -5,7 +5,7 @@ This is the new version of my personal website.
 # Roadmap
 * add repository for each data types and user them in components
 * add repo for projects
-
+* highlight top menu if content for menu item is visible
 * fix transition animation from home to details page
 * add skills detail page
 * add linkedin and email links to first page, below cv button
