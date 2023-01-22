@@ -1,131 +1,99 @@
-<div class="education-page">
-    <div class="page-header">
-        <div class="header-buttons">
-            <a class="btn-back" [routerLink]="['/']">
-                <i class="icon fa-solid fa-chevron-left"></i>
-                <span>Back</span>
-            </a>
-        </div>
-        <div class="page-header-text">
-            {{ item?.name }}
-        </div>
-        <div class="site-owner">Muhammet Turşak</div>
-    </div>
+<app-details-page
+    header="Edcuation"
+    [title]="item?.name ?? ''"
+    [subTitle]="!item ? '' : (item.datePeriod.startDate + ' - ' + (item.datePeriod.endDate ?? 'Present'))"
+    [item]="item"
+    [getImgSrc]="appUtils.getEducationImageSrcByDto">
 
-    <div class="education" *ngIf="item">
-        <div class="education-title-container">
-            <div class="education-logo">
-                <img [src]="'/assets/images/academic/' + item.icon">
-            </div>
-            <div class="education-date">
-                {{ item.datePeriod.startDate }} - {{ item.datePeriod.endDate ?? 'Present' }}
-            </div>
-            <div class="education-title">
-                {{ item.name }}
-            </div>
-        </div>
-
-        <div class="education-content">
-            <div class="education-summary">
-                <div class="education-summary-text">
-                    <div class="table-props">
-                        <div class="prop">
-                            <div class="prop-header">City</div>
-                            <div class="prop-value">{{item.city}}</div>
-                        </div>
-                        <div class="prop">
-                            <div class="prop-header">Level</div>
-                            <div class="prop-value">{{item.level}}</div>
-                        </div>
-                        <div class="prop">
-                            <div class="prop-header">Graduation Score</div>
-                            <div class="prop-value">{{item.graduateScore}}</div>
-                        </div>
-                        <div class="prop">
-                            <div class="prop-header">Graduation Date</div>
-                            <div class="prop-value">{{item.graduateDate}}</div>
-                        </div>
-                    </div>
+    <div class="education-page" *ngIf="item">
+        <div class="education-summary-text">
+            <div class="table-props">
+                <div class="prop">
+                    <div class="prop-header">City</div>
+                    <div class="prop-value">{{item.city}}</div>
                 </div>
-
-                <!-- Courses //-->
-                <grid *ngIf="item.courses.length>0"
-                    title="Courses"
-                    [viewTypes]="['list']"
-                    viewType="list"
-                    [showFilterRow]="false"
-                    [showHeaderRow]="true"
-                    [showCountBadge]="false"
-                    [items]="item.courses"
-                    [filterFields]="['name', 'content']">
-
-                    <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-                        <!-- List View //-->
-                        <grid-listview [showColumnHeaders]="true" [items]="filteredItems" *ngIf="viewType=='list'">
-                            <grid-column name="name" title="Name">
-                                <ng-template #cellTemplate let-item="item">
-                                    {{ item.name }}
-                                </ng-template>
-                            </grid-column>
-
-                            <grid-column name="content" title="Content">
-                                <ng-template #cellTemplate let-item="item">
-                                    {{ item.content }}
-                                </ng-template>
-                            </grid-column>
-                        </grid-listview>
-
-                    </ng-template>
-                </grid>
-
-                <!-- Technologies //-->
-                <grid *ngIf="(item.technologies ?? []).length>0"
-                    title="Technologies"
-                    customClass="grid-technologies"
-                    [viewTypes]="['list', 'card']"
-                    viewType="list"
-                    [showFilterRow]="true"
-                    [showHeaderRow]="true"
-                    [showCountBadge]="true"
-                    [items]="item.technologies ?? []"
-                    [filterFields]="['name','title']">
-
-                    <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
-                        <!-- List View //-->
-                        <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
-                            <grid-column name="icon" title="">
-                                <ng-template #cellTemplate let-item="item">
-                                    <img [src]="appUtils.getTechnologyImage(item)">
-                                </ng-template>
-                            </grid-column>
-
-                            <grid-column name="name" title="Name">
-                                <ng-template #cellTemplate let-item="item">
-                                    {{item.name}}
-                                </ng-template>
-                            </grid-column>
-                        </grid-listview>
-
-                        <!-- Card View //-->
-                        <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
-                                    [getImageSrc]="appUtils.getTechnologyImage">
-                            <ng-template #titleTemplate let-item="item">
-                                {{item.name}}
-                            </ng-template>
-                        </grid-cardview>
-                    </ng-template>
-                </grid>
-            </div>
-
-            <div class="education-details">
-
+                <div class="prop">
+                    <div class="prop-header">Level</div>
+                    <div class="prop-value">{{item.level}}</div>
+                </div>
+                <div class="prop">
+                    <div class="prop-header">Graduation Score</div>
+                    <div class="prop-value">{{item.graduateScore}}</div>
+                </div>
+                <div class="prop">
+                    <div class="prop-header">Graduation Date</div>
+                    <div class="prop-value">{{item.graduateDate}}</div>
+                </div>
             </div>
         </div>
 
-        
-    </div>
+        <!-- Courses //-->
+        <grid *ngIf="(item?.courses ?? []).length>0"
+            title="Courses"
+            [viewTypes]="['list']"
+            viewType="list"
+            [showFilterRow]="false"
+            [showHeaderRow]="true"
+            [showCountBadge]="false"
+            [items]="item.courses"
+            [filterFields]="['name', 'content']">
 
-    <div class="not-found" *ngIf="!item">
-        Education not found!
+            <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                <!-- List View //-->
+                <grid-listview [showColumnHeaders]="true" [items]="filteredItems" *ngIf="viewType=='list'">
+                    <grid-column name="name" title="Name">
+                        <ng-template #cellTemplate let-item="item">
+                            {{ item.name }}
+                        </ng-template>
+                    </grid-column>
+
+                    <grid-column name="content" title="Content">
+                        <ng-template #cellTemplate let-item="item">
+                            {{ item.content }}
+                        </ng-template>
+                    </grid-column>
+                </grid-listview>
+
+            </ng-template>
+        </grid>
+
+        <!-- Technologies //-->
+        <grid *ngIf="(item?.technologies ?? []).length>0"
+            title="Technologies"
+            customClass="grid-technologies"
+            [viewTypes]="['list', 'card']"
+            viewType="list"
+            [showFilterRow]="true"
+            [showHeaderRow]="true"
+            [showCountBadge]="true"
+            [items]="item.technologies ?? []"
+            [filterFields]="['name','title']">
+
+            <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                <!-- List View //-->
+                <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                    <grid-column name="icon" title="">
+                        <ng-template #cellTemplate let-item="item">
+                            <img [src]="appUtils.getTechnologyImageSrcByDto(item)">
+                        </ng-template>
+                    </grid-column>
+
+                    <grid-column name="name" title="Name">
+                        <ng-template #cellTemplate let-item="item">
+                            {{item.name}}
+                        </ng-template>
+                    </grid-column>
+                </grid-listview>
+
+                <!-- Card View //-->
+                <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
+                            [getImageSrc]="appUtils.getTechnologyImageSrcByDto">
+                    <ng-template #titleTemplate let-item="item">
+                        {{item.name}}
+                    </ng-template>
+                </grid-cardview>
+            </ng-template>
+        </grid>
     </div>
-</div>
+    
+</app-details-page>

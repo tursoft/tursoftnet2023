@@ -14,7 +14,8 @@ export interface ExperienceDto {
     orderIndex?: number;
     icon?: string;
     companyCode?: string;
-    companyName?: string;                        
+    companyName?: string;
+    summary?: string;
     positions: ExperiencePositionDto[];
 }
 

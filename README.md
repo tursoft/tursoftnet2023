@@ -3,13 +3,16 @@
 This is the new version of my personal website.
 
 # Roadmap
-* develop grid component (list and card view modes)
-* add screenshots section to project details page
-* add partners, clients etc. lists to project detail page
-* add experince list section on home page
-* add experiences detail page
+* fix transition animation from home to details page
 * add skills detail page
 * add linkedin and email links to first page, below cv button
+* add group filter support on grid component
+* add single filter row to grid with parameter
+* add animations to numbers
+* add repository for each data types and user them in components
+* convert home sections to grid component
+* convert references to grid with gallery view
+* add cross links
 
 * register website to google
 * add blog / medium articles page

@@ -1,1 +1,115 @@
-<p>experience works!</p>
+<app-details-page
+    header="Experience"
+    [topTitle]="appUtils.getDateRangeText(utils.parseDateText(item?.position?.startDate), utils.parseDateText(item?.position?.endDate))"
+    [title]="item?.position?.title ?? ''"
+    [subTitle]="item?.experience?.companyName ?? ''"
+    [item]="item?.experience"
+    [getImgSrc]="appUtils.getExperienceImageSrcByDto">
+    
+    <div class="experience-page" *ngIf="item">
+        <div class="summary">{{ item.position.summary ?? '' }}</div>
+
+        <mat-tab-group>
+            
+            <!-- Technologies //-->
+            <mat-tab *ngIf="(item.position.technologies ?? []).length>0">
+                <ng-template mat-tab-label>
+                    <i class="fa-icon fa-solid fa-code"></i>
+                    Technologies
+                </ng-template>
+
+                <grid 
+                    title="Technologies"
+                    customClass="grid-technologies"
+                    [viewTypes]="['list', 'card']"
+                    viewType="list"
+                    [showFilterRow]="true"
+                    [showHeaderRow]="true"
+                    [showCountBadge]="true"
+                    [items]="item?.position?.technologies ?? []"
+                    [filterFields]="['name','title']">
+
+                    <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                        <!-- List View //-->
+                        <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                            <grid-column name="icon" title="">
+                                <ng-template #cellTemplate let-item="item">
+                                    <img [src]="appUtils.getTechnologyImageSrcByDto(item)">
+                                </ng-template>
+                            </grid-column>
+
+                            <grid-column name="name" title="Name">
+                                <ng-template #cellTemplate let-item="item">
+                                    {{item.name}}
+                                </ng-template>
+                            </grid-column>
+                        </grid-listview>
+
+                        <!-- Card View //-->
+                        <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
+                                    [getImageSrc]="appUtils.getTechnologyImageSrcByDto">
+                            <ng-template #titleTemplate let-item="item">
+                                {{item.name}}
+                            </ng-template>
+                        </grid-cardview>
+
+                        <!-- SingleCard View //-->
+                        <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
+                                        [getImageSrc]="appUtils.getTechnologyImageSrcByDto">
+                            <ng-template #titleTemplate let-item="item">
+                                {{item.name}}
+                            </ng-template>
+
+                            <ng-template #bodyTemplate let-item="item">
+                                {{item.name}}
+                            </ng-template>
+                        </grid-singlecardview>
+
+                        <!-- Gallery View //-->
+                        <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
+                                        [getImageSrc]="appUtils.getTechnologyImageSrcByDtoBig">
+                            <ng-template #titleTemplate let-item="item">
+                                {{item.name}}
+                            </ng-template>
+
+                            <ng-template #bodyTemplate let-item="item">
+                                {{item.name}}
+                            </ng-template>
+                        </grid-galleryview>
+
+                    </ng-template>
+                </grid>
+            </mat-tab>
+
+            <!-- Projects //-->
+            <mat-tab *ngIf="(item.position.projects ?? []).length>0">
+                <ng-template mat-tab-label>
+                    <i class="fa-icon fa-solid fa-puzzle-piece"></i>
+                    Projects
+                </ng-template>
+                <grid
+                    title="Projects"
+                    [viewTypes]="['list']"
+                    viewType="list"
+                    [showFilterRow]="false"
+                    [showHeaderRow]="true"
+                    [showCountBadge]="false"
+                    [items]="item.position.projects ?? []"
+                    [filterFields]="['name']">
+
+                    <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+                        <!-- List View //-->
+                        <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                            <grid-column name="title" title="Title">
+                                <ng-template #cellTemplate let-item="item">
+                                    {{ item.title }}
+                                </ng-template>
+                            </grid-column>
+                        </grid-listview>
+
+                    </ng-template>
+                </grid>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</app-details-page>

@@ -1,94 +1,45 @@
-.education-page {
-    position: relative;
-
-    .page-header {
-        display: flex;
-        flex-direction: row;
-        background-color: black;
-        color: white;
-        padding: 15px 20px;
-        font-size: 20px;
-        position: sticky;
-        top: 0px;
-        z-index: 999;
-
-        .header-buttons {
-            flex: 0 0 auto;
-
-            a, a:hover, a:visited {
-                color: white;
-            }
-
-            .icon {
-                font-size: 14px;
-                padding-right: 10px;
-            }
-
-            .btn-back {
-                cursor: pointer;
-                &:hover {
-                    color: orange;
-                }
-            }
-        }
-
-        .page-header-text {
-            font-size: 20px;
-            flex: 1;
-            text-align: center;
-        }
-
-        .site-owner {
-            flex: 0 0 auto;    
-        }
+:host ::ng-deep { 
+    .education-page {
+        flex: 1;
+        font-size: 14px;
+        padding: 10px 30px 60px 0px;
+        text-align: justify;
     }
 
-    .education {
-        padding: 40px;
+    .education-details {
+        flex: 0 0 250px;
+    }
 
-        .education-title-container {
-            height: 90px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid lightgray;
-
-            .education-logo {
-                position: absolute;
-                right: 40px;
-                img {
-                    height: 80px;
-                }
-            }
-
-            .education-date {
-                font-size: 12px;
-                color: gray;
-                padding-bottom: 5px;
-            }
-
-            .education-title {
-                font-size: 30px;
-            }
-        }
-
-        .education-content {
+    .table-props {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 10px 0px 35px 0px;
+    
+        .prop {
+            padding: 4px;
+            // border-top: 1px dashed lightgray;
             display: flex;
             flex-direction: row;
-
-            .education-summary {
-                flex: 1;
-                font-size: 14px;
-                padding: 10px 30px 60px 0px;
-                text-align: justify;
+            &:not(:first-child) {
+                border-top: 1px dashed lightgray;
+                // border-bottom: 1px dashed lightgray;
             }
-
-            .education-details {
-                flex: 0 0 250px;
+    
+            .prop-header {
+                // background-color: lightgray;
+                font-weight: bold;
+                padding: 5px;
+                flex: 1;
+            }
+    
+            .prop-value {
+                padding: 5px;
+                flex: 1;
             }
         }
     }
-}
 
-:host ::ng-deep { 
     .grid-technologies {
         .cell-icon {
             flex: 0 0 50px !important;
@@ -113,36 +64,6 @@
             img {
                 height: 150px !important;
             }
-        }
-    }
-}
-
-.table-props {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    margin: 10px 0px 35px 0px;
-
-    .prop {
-        padding: 4px;
-        // border-top: 1px dashed lightgray;
-        display: flex;
-        flex-direction: row;
-        &:not(:first-child) {
-            border-top: 1px dashed lightgray;
-            // border-bottom: 1px dashed lightgray;
-        }
-
-        .prop-header {
-            // background-color: lightgray;
-            font-weight: bold;
-            padding: 5px;
-            flex: 1;
-        }
-
-        .prop-value {
-            padding: 5px;
-            flex: 1;
         }
     }
 }

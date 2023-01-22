@@ -1,6 +1,7 @@
 export interface SkillItemDto {
     name: string;
     title: string;
+    type?: string;
     group?: string;
     value?: number;
     iconCss?: string;

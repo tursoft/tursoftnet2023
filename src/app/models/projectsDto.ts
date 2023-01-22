@@ -58,5 +58,5 @@ export interface ProjectsDto {
 
 export interface TechnologyDto {
   name: string;
-  type: string;
+  type?: string;
 }

@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 import utilsData from '../data/utils.json';
 
 @Injectable({ providedIn: 'root' })
@@ -36,5 +38,36 @@ export class Utils
         }
 
         return false;
+    }
+        
+    round(num: number, places: number) 
+	{
+	  if(!places)
+	  {
+       	return Math.round(num);
+      }
+
+      var val = Math.pow(10, places);
+      return Math.round(num * val) / val;
+    }
+
+    dateToText(dt: Date | null | undefined, defaultText: string)
+	{
+		if (!dt)
+			return defaultText;
+
+		var format="DD.MM.YYYY";
+		return dayjs(dt).format(format);
+    }
+
+    parseDateText(text: string | null | undefined): Date | null {
+        dayjs.extend(customParseFormat);
+        let date: Date | null = null;
+        if (!text)
+            date = null;
+        else
+            date = dayjs(text, 'DD.MM.YYYY', true).toDate();
+
+        return date;
     }
 }

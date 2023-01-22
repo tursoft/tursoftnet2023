@@ -9,66 +9,40 @@
         [viewTypes]="['list', 'card']"
         viewType="list"
         [showFilterRow]="true"
-        [showHeaderRow]="true"
+        [showHeaderRow]="false"
         [showCountBadge]="true"
-        [items]="items ?? []"
+        [items]="items"
         [filterFields]="['companyName']">
 
         <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
             <!-- List View //-->
-            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+            <grid-listview [showColumnHeaders]="false"
+                           [items]="filteredItems"
+                           *ngIf="viewType=='list'">
                 <grid-column name="icon" title="">
                     <ng-template #cellTemplate let-item="item">
-                        <img [src]="getExperienceImageName(item)">
+                        <img [src]="appUtils.getExperienceImageSrcByDto(item)">
                     </ng-template>
                 </grid-column>
 
                 <grid-column name="companyName" title="Company">
                     <ng-template #cellTemplate let-item="item">
                         <div style="display: flex; flex-direction: column;">
-                            <div style="font-weight: bold; text-transform: capitalize;">{{item.companyName}}</div>
+                            <div>
+                                <span style="font-weight: bold; text-transform: uppercase; padding-right: 10px;">{{item.companyName}}</span>
+                                <small>({{appUtils.getYearCountForPositions(item.positions)}})</small>
+                            </div>
                             <ul>
                                 <li *ngFor="let position of item.positions">
-                                    {{position.title}} <small>({{position.startDate}} - {{position.endDate ?? 'Present'}})</small>
+                                    <a [routerLink]="['experiences', position.id]">
+                                        {{position.title}} <small>({{position.startDate}} - {{position.endDate ?? 'Present'}})</small>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </ng-template>
                 </grid-column>
             </grid-listview>
-
-            <!-- Card View //-->
-            <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
-                        [getImageSrc]="getExperienceImageName">
-                <ng-template #titleTemplate let-item="item">
-                    {{item.companyName}}
-                </ng-template>
-            </grid-cardview>
-
-            <!-- SingleCard View //-->
-            <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
-                            [getImageSrc]="getExperienceImageName">
-                <ng-template #titleTemplate let-item="item">
-                    {{item.companyName}}
-                </ng-template>
-
-                <ng-template #bodyTemplate let-item="item">
-                    {{item.companyName}}
-                </ng-template>
-            </grid-singlecardview>
-
-            <!-- Gallery View //-->
-            <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
-                              [getImageSrc]="getExperienceImageName">
-                <ng-template #titleTemplate let-item="item">
-                    {{item.companyName}}
-                </ng-template>
-
-                <ng-template #bodyTemplate let-item="item">
-                    {{item.companyName}}
-                </ng-template>
-            </grid-galleryview>
-
         </ng-template>
     </grid>
 </div>

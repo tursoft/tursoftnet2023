@@ -1,0 +1,21 @@
+.summary {
+    padding-bottom: 30px;
+}
+
+:host ::ng-deep { 
+    .grid-technologies {
+        .cell-icon {
+            flex: 0 0 50px !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            img {
+                width: 30px;
+            }
+        }
+
+        .cell-name {
+            padding-left: 30px !important;
+        }
+    }
+}
