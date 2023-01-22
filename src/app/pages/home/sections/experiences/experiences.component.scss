@@ -6,12 +6,12 @@
 :host ::ng-deep { 
     .grid-experiences {
         .cell-icon {
-            flex: 0 0 80px !important;
+            flex: 0 0 140px !important;
             display: flex;
             flex-direction: row;
             justify-content: center;
             img {
-                width: 40px;
+                width: 80px;
             }
         }
 

@@ -25,7 +25,14 @@
 
                 <grid-column name="companyName" title="Company">
                     <ng-template #cellTemplate let-item="item">
-                        {{item.companyName}}
+                        <div style="display: flex; flex-direction: column;">
+                            <div style="font-weight: bold; text-transform: capitalize;">{{item.companyName}}</div>
+                            <ul>
+                                <li *ngFor="let position of item.positions">
+                                    {{position.title}} <small>({{position.startDate}} - {{position.endDate ?? 'Present'}})</small>
+                                </li>
+                            </ul>
+                        </div>
                     </ng-template>
                 </grid-column>
             </grid-listview>

@@ -466,7 +466,7 @@
 
 
          { 
-            "id": 213, "orderIndex":11, "icon": "jandarma.egitim.jpg",
+            "id": 213, "orderIndex":11, "icon": "jandarma.egitim.png",
             "companyCode": "JANDARMA", "companyName": "Gendarmerie Training Command", 
             "positions": [
                 {
@@ -626,7 +626,7 @@
 
 
         { 
-            "id": 205, "orderIndex":10, "icon": "metu.ceit.jpg",
+            "id": 205, "orderIndex":10, "icon": "metu.ceit.png",
             "companyCode": "METU.CEIT", "companyName": "METU Computer Education and Instructional Tech. Dep.", 
             "positions": [
                 {
@@ -667,7 +667,7 @@
         },
 
         { 
-            "id": 206, "orderIndex":9, "icon": "metu.ii.jpg",
+            "id": 206, "orderIndex":9, "icon": "metu.ii.png",
             "companyCode": "METU.II", "companyName": "METU Informatics Institute", 
             "positions": [
                 {
@@ -715,7 +715,7 @@
         },
 
         { 
-            "id": 207, "orderIndex":8, "icon": "metu.ii.jpg",
+            "id": 207, "orderIndex":8, "icon": "metu.ii.png",
             "companyCode": "METU.II", "companyName": "METU Informatics Institute", 
             "positions": [
                 {
@@ -785,7 +785,7 @@
         },
 
         { 
-            "id": 210, "orderIndex":5, "icon": "metu.com.jpg",
+            "id": 210, "orderIndex":5, "icon": "metu.com.png",
             "companyCode": "METU.COM", "companyName": "METU Communication Club", 
             "positions": [
                 {
@@ -829,7 +829,7 @@
         },
 
         { 
-            "id": 212, "orderIndex":3, "icon": "tbd.genc.jpg",
+            "id": 212, "orderIndex":3, "icon": "tbd.genc.png",
             "companyCode": "TBD.GENC", "companyName": "Informatics Association of Turkey / Youth Branch", 
             "positions": [
                 {
