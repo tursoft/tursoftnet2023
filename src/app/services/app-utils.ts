@@ -12,15 +12,6 @@ export class AppUtils {
   constructor(public utils: Utils) {
   }
 
-  getDomainImageSrcByDto = (item: TechnologyDto) => {
-    let name = item.name ?? '';
-    const imageName = name.replaceAll(' ','')
-                        .replace('.', '')
-                        .replace('#', 'sharp')
-                        .toLowerCase();
-    return `/assets/images/domains/${imageName}.png`;
-  }
-
   getProjectScreenshotPath = (fileDto: ProjectFileScreenshotDto) => {
     let path = (false ? fileDto.file_small : fileDto.file_big) ?? '';
     return `/assets/files/projects` + path;

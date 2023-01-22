@@ -42,6 +42,7 @@ import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-de
 import { AppUtils } from './services/app-utils';
 import { EducationsRepository } from './services/repositories/educationsRepository';
 import { SkillsRepository } from './services/repositories/skillsRepository';
+import { DomainsRepository } from './services/repositories/domainsRepository';
 import { ReferencesRepository } from './services/repositories/referencesRepository';
 import { ExperiencesRepository } from './services/repositories/experiencesRepository';
 import { ExperiencePositionsRepository } from './services/repositories/experiencePositionsRepository';
@@ -92,6 +93,7 @@ import { ExperiencePositionsRepository } from './services/repositories/experienc
     AppUtils,
     EducationsRepository,
     SkillsRepository,
+    DomainsRepository,
     ReferencesRepository,
     ExperiencesRepository,
     ExperiencePositionsRepository
