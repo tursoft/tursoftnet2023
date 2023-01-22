@@ -8,6 +8,7 @@ import { ProjectScreenshotDetailsComponent } from './screenshot-details/screensh
 import { AppUtils } from '../../services/app-utils';
 import projectsData from '../../data/projects.json';
 import projectFilesData from '../../data/project_files.json';
+import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
 
 @Component({
   selector: 'app-project',
@@ -25,6 +26,7 @@ export class ProjectComponent {
 
   constructor(
     public matDialog: MatDialog,
+    public repoSkills: SkillsRepository,
     public appUtils: AppUtils,
     public session: Session,
     public route: ActivatedRoute

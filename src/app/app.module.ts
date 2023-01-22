@@ -36,10 +36,13 @@ import { AngularMaterialModule } from './modules/angularmaterial.module';
 
 /* components */
 import { DetailsPage } from './components/details-page/details-page.component';
+import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-details/screenshot-details.component';
 
 /* providers */
 import { AppUtils } from './services/app-utils';
-import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-details/screenshot-details.component';
+import { EducationsRepository } from './services/repositories/educationsRepository';
+import { SkillsRepository } from './services/repositories/skillsRepository';
+import { ReferencesRepository } from './services/repositories/referencesRepository';
 
 @NgModule({
   declarations: [
@@ -84,7 +87,10 @@ import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-de
   ],
 
   providers: [
-    AppUtils
+    AppUtils,
+    EducationsRepository,
+    SkillsRepository,
+    ReferencesRepository
   ],
 
   bootstrap: [AppComponent]

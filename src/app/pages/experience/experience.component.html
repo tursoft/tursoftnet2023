@@ -34,7 +34,7 @@
                         <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
                             <grid-column name="icon" title="">
                                 <ng-template #cellTemplate let-item="item">
-                                    <img [src]="appUtils.getTechnologyImageSrcByDto(item)">
+                                    <img [src]="repoSkills.getImageSrcByDto(item)">
                                 </ng-template>
                             </grid-column>
 
@@ -47,7 +47,7 @@
 
                         <!-- Card View //-->
                         <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
-                                    [getImageSrc]="appUtils.getTechnologyImageSrcByDto">
+                                    [getImageSrc]="repoSkills.getImageSrcByDto">
                             <ng-template #titleTemplate let-item="item">
                                 {{item.name}}
                             </ng-template>
@@ -55,7 +55,7 @@
 
                         <!-- SingleCard View //-->
                         <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
-                                        [getImageSrc]="appUtils.getTechnologyImageSrcByDto">
+                                        [getImageSrc]="repoSkills.getImageSrcByDto">
                             <ng-template #titleTemplate let-item="item">
                                 {{item.name}}
                             </ng-template>
@@ -67,7 +67,7 @@
 
                         <!-- Gallery View //-->
                         <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
-                                        [getImageSrc]="appUtils.getTechnologyImageSrcByDtoBig">
+                                        [getImageSrc]="repoSkills.getImageSrcByDtoBig">
                             <ng-template #titleTemplate let-item="item">
                                 {{item.name}}
                             </ng-template>

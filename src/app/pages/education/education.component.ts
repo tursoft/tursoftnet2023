@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Session } from '../../modules/sharedmodule/services/session';
-import { EducationDto, EducationsDto } from '../../models/educationsDto';
-import educationsData from '../../data/education.json';
+import { EducationDto } from '../../models/educationsDto';
 import { AppUtils } from 'src/app/services/app-utils';
+import { EducationsRepository } from 'src/app/services/repositories/educationsRepository';
+import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
 
 @Component({
   selector: 'app-education',
@@ -12,7 +13,6 @@ import { AppUtils } from 'src/app/services/app-utils';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent {
-  allItems: EducationsDto = educationsData;
   item?: EducationDto;
   id?: number;
 
@@ -20,9 +20,11 @@ export class EducationComponent {
 
   constructor(
     public matDialog: MatDialog,
+    public repoSkills: SkillsRepository,
     public appUtils: AppUtils,
     public session: Session,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public repo: EducationsRepository
   ) {
     this.session.showTopMenu=false;
   }
@@ -36,6 +38,6 @@ export class EducationComponent {
 
   setById(id: number) {
     this.id = id;
-    this.item = this.allItems.items.find(p => p.id == this.id);
+    this.item = this.repo.getById(id);
   }
 }

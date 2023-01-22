@@ -10,7 +10,7 @@
 
         <div class="section-item">
             <div class="col1">
-                <img class="section-item-image" [src]="'/assets/images/references/' + item.icon">
+                <img class="section-item-image" [src]="repo.getImageSrcByDto(item)">
             </div>
             <div class="col2">
                 <div class="reference-name">

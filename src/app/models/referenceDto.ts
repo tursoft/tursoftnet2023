@@ -3,6 +3,7 @@ export interface ReferencesDto {
 }
 
 export interface ReferenceDto {
+    id: number;
     code: string,
     icon?: string,
     name: string, 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TimelineItem } from '../../../../modules/componentsmodule';
-import educationData from '../../../../data/education.json';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { EducationsRepository } from '../../../../services/repositories/educationsRepository';
 
 @Component({
   selector: 'app-educations',
@@ -9,10 +9,14 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./educations.component.scss']
 })
 export class EducationsComponent {
-  items: TimelineItem[] = [];
+  timelineItems: TimelineItem[] = [];
 
-  constructor(router: Router) {
-    this.items = educationData.items.map(item => <TimelineItem>{
+  constructor(
+    public repo: EducationsRepository,
+    router: Router
+  ) {
+    const items = repo.getItems();
+    this.timelineItems = items.map(item => <TimelineItem>{
       code: item.id.toString(),
       title1: item.level,
       title2: item.department,

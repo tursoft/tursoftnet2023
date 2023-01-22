@@ -1,4 +1,5 @@
-export interface SkillItemDto {
+export interface SkillDto {
+    id: number;
     name: string;
     title: string;
     type?: string;
@@ -25,5 +26,5 @@ export interface SkillItemDto {
           groups: SkillGroupDto[]
       },
         
-      items: SkillItemDto[]
+      items: SkillDto[]
   }

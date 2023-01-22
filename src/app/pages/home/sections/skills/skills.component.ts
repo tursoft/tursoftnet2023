@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { IHoverable } from 'src/app/models/shared';
-import { SkillGroupDto, SkillItemDto, SkillsDto } from '../../../../models/skillsDto';
-import skillsData from '../../../../data/skills.json';
-import { AppUtils } from 'src/app/services/app-utils';
-import { Utils } from 'src/app/modules/sharedmodule';
+import { IHoverable } from '../../../../models/shared';
+import { SkillGroupDto, SkillDto, SkillsDto } from '../../../../models/skillsDto';
+import { AppUtils } from '../../../../services/app-utils';
+import { Utils } from '../../../../modules/sharedmodule';
+import { SkillsRepository } from '../../../../services/repositories/skillsRepository';
 
 interface FilterDto {
   filterText?: string,
   group?: string
 }
 
-type SkillItem = SkillItemDto & IHoverable;
+type SkillItem = SkillDto & IHoverable;
 
 @Component({
   selector: 'app-skills',
@@ -18,7 +18,7 @@ type SkillItem = SkillItemDto & IHoverable;
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
-  data: SkillsDto = skillsData;
+  data: SkillsDto;
   
   groups: SkillGroupDto[] = [];
   allItems: SkillItem[] = [];
@@ -26,9 +26,12 @@ export class SkillsComponent {
   filter: FilterDto = {};
 
   constructor(
+    public repo: SkillsRepository,
     public utils: Utils,
     public appUtils: AppUtils)
   {
+    this.data = this.repo.getData();
+
     const groupAll: SkillGroupDto = {
         name: undefined,
         title: 'All',
@@ -38,7 +41,7 @@ export class SkillsComponent {
     this.groups = [groupAll, ...this.data.general.groups];
 
     // prepare items
-    const allItems = this.data.items.map(i => <SkillItem>i);
+    const allItems = this.repo.getItems().map(i => <SkillItem>i);
     this.allItems = allItems;
     
     this.filterItems();
@@ -46,7 +49,6 @@ export class SkillsComponent {
 
   filterItems = () => {
     const { filter: { filterText, group: filterGroup }, allItems} = this;
-    
     var filteredItems = this.utils.filterItemsByText(allItems, ['name', 'title', 'group'], filterText);
     
     if (!this.utils.isEmptyString(filterGroup)) {

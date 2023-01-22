@@ -5,7 +5,6 @@ import { ProjectFileScreenshotDto } from "../models/projectFileDto";
 import { ExperienceDto, ExperiencePositionDto } from "../models/experiencesData";
 import { TechnologyDto } from "../models/projectsDto";
 import { Utils } from "../modules/sharedmodule";
-import { EducationDto } from "../models/educationsDto";
 
 @Injectable()
 export class AppUtils {
@@ -22,18 +21,18 @@ export class AppUtils {
     return `/assets/images/domains/${imageName}.png`;
   }
 
-  getTechnologyImageSrcByDto = (item: TechnologyDto, big: boolean = false) => {
-    let name = item.name ?? '';
-    const imageName = name.replaceAll(' ','')
-                        .replace('.', '')
-                        .replace('#', 'sharp')
-                        .toLowerCase();
-    return `/assets/images/technologies/${big?'original':'small_50x50'}/${imageName}.png`;
-  }
+  // getTechnologyImageSrcByDto = (item: TechnologyDto, big: boolean = false) => {
+  //   let name = item.name ?? '';
+  //   const imageName = name.replaceAll(' ','')
+  //                       .replace('.', '')
+  //                       .replace('#', 'sharp')
+  //                       .toLowerCase();
+  //   return `/assets/images/technologies/${big?'original':'small_50x50'}/${imageName}.png`;
+  // }
 
-  getTechnologyImageSrcByDtoBig = (item: TechnologyDto) => {
-    return this.getTechnologyImageSrcByDto(item, true);
-  }
+  // getTechnologyImageSrcByDtoBig = (item: TechnologyDto) => {
+  //   return this.getTechnologyImageSrcByDto(item, true);
+  // }
 
   getProjectScreenshotPath = (fileDto: ProjectFileScreenshotDto) => {
     let path = (false ? fileDto.file_small : fileDto.file_big) ?? '';
@@ -42,10 +41,6 @@ export class AppUtils {
 
   getExperienceImageSrcByDto = (item: ExperienceDto) => {
     return `/assets/images/experiences/${item.icon}`;
-  }
-
-  getEducationImageSrcByDto = (item: EducationDto) => {
-    return `/assets/images/academic/${item.icon}`;
   }
 
   getDateRangeForPositions = (positions: ExperiencePositionDto[], returnNullForEndDateIfEmpty: boolean): { start: Date, end: Date | null } =>

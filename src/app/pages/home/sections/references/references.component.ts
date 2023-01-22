@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ReferenceDto } from '../../../../models/referenceDto';
 import { Utils } from '../../../../modules/sharedmodule';
-import referenceData from '../../../../data/references.json';
+import { ReferencesRepository } from '../../../../services/repositories/referencesRepository';
 
 @Component({
   selector: 'app-references',
@@ -13,10 +13,11 @@ export class ReferencesComponent {
   items: ReferenceDto[]=[];
   item?: ReferenceDto;
 
-  constructor(public utils: Utils) {
-    this.items = referenceData.items
-                    //.filter(p => p.isactive ?? false)
-                    .sort((r1, r2) => r1.orderIndex==r2.orderIndex ? 0 : r1.orderIndex>r2.orderIndex ? 1 : -1);
+  constructor(
+    public repo: ReferencesRepository,
+    public utils: Utils
+  ) {
+    this.items = repo.getItems();
     this.item = this.items[0];
   }
 

@@ -4,6 +4,7 @@ import { ExperienceDto, ExperiencePositionDto } from 'src/app/models/experiences
 import { Session, Utils } from '../../modules/sharedmodule';
 import { AppUtils } from '../../services/app-utils';
 import experiencesData from '../../data/experiences.json';
+import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
 
 interface ExperiencePositionItemDto {
   experience: ExperienceDto;
@@ -21,6 +22,7 @@ export class ExperienceComponent {
   id?: number;
 
   constructor(
+    public repoSkills: SkillsRepository,
     public utils: Utils,
     public appUtils: AppUtils,
     public session: Session,
