@@ -34,6 +34,9 @@ import { FooterComponent } from './sections/footer/footer.component';
 import { LoadingComponent } from './sections/loading/loading.component';
 import { AngularMaterialModule } from './modules/angularmaterial.module';
 
+/* components */
+import { DetailsPage } from './components/details-page/details-page.component';
+
 /* providers */
 import { AppUtils } from './services/app-utils';
 import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-details/screenshot-details.component';
@@ -66,7 +69,8 @@ import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-de
     LoadingComponent,
 
     /* shared */
-    ProjectScreenshotDetailsComponent
+    ProjectScreenshotDetailsComponent,
+    DetailsPage
   ],
 
   imports: [

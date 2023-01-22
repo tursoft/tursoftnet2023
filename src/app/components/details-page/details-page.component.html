@@ -1,0 +1,41 @@
+<div class="page">
+    <div class="header">
+        <div class="header-buttons">
+            <a class="btn-back" [routerLink]="['/']">
+                <i class="icon fa-solid fa-chevron-left"></i>
+                <span>Back</span>
+            </a>
+        </div>
+        
+        <div class="page-header-text">
+            {{ header }}
+        </div>
+        <div class="site-owner">Muhammet Turşak</div>
+    </div>
+
+    <div class="item" *ngIf="item">
+        <div class="title-container">
+            <div class="logo">
+                <img [src]="getImgSrc(item)">
+            </div>
+            <div class="top-title">
+                {{ topTitle }}
+            </div>
+            <div class="title">
+                {{ title }}
+            </div>
+            <div class="sub-title">
+                {{ subTitle }}
+            </div>
+        </div>
+
+        <div class="content">
+            <ng-content>
+            </ng-content>
+        </div>
+    </div>
+
+    <div class="not-found" *ngIf="!item">
+        Not found!
+    </div>
+</div>

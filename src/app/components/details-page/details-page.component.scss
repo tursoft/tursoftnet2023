@@ -1,0 +1,83 @@
+.page {
+    position: relative;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        color: white;
+        padding: 15px 20px;
+        font-size: 20px;
+        position: sticky;
+        top: 0px;
+        z-index: 999;
+
+        .header-buttons {
+            flex: 0 0 auto;
+
+            a, a:hover, a:visited {
+                color: white;
+            }
+
+            .icon {
+                font-size: 14px;
+                padding-right: 10px;
+            }
+
+            .btn-back {
+                cursor: pointer;
+                &:hover {
+                    color: orange;
+                }
+            }
+        }
+
+        .page-header-text {
+            font-size: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .site-owner {
+            flex: 0 0 auto;    
+        }
+    }
+
+    .item {
+        padding: 40px;
+
+        .title-container {
+            height: 90px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid lightgray;
+
+            .logo {
+                position: absolute;
+                right: 40px;
+                img {
+                    height: 80px;
+                }
+            }
+
+            .top-title {
+                font-size: 12px;
+                color: gray;
+                padding-bottom: 5px;
+            }
+
+            .title {
+                font-size: 30px;
+            }
+
+            .sub-title {
+                font-size: 12px;
+                padding-top: 5px;
+            }
+        }
+
+        .content {
+            flex: 1;
+            width: 100%;
+        }
+    }
+}
