@@ -1,8 +1,67 @@
-<!-- <div class="section section-experiences">
+<div class="section section-experiences">
     <div class="section-title">
         Experiences
     </div>
 
-    <app-verticaltimeline [items]="items">
-    </app-verticaltimeline>
-</div> -->
+    <grid 
+        title="Experiences"
+        customClass="grid-experiences"
+        [viewTypes]="['list', 'card']"
+        viewType="list"
+        [showFilterRow]="true"
+        [showHeaderRow]="true"
+        [showCountBadge]="true"
+        [items]="items ?? []"
+        [filterFields]="['companyName']">
+
+        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+            <!-- List View //-->
+            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                <grid-column name="icon" title="">
+                    <ng-template #cellTemplate let-item="item">
+                        <img [src]="getExperienceImageName(item)">
+                    </ng-template>
+                </grid-column>
+
+                <grid-column name="companyName" title="Company">
+                    <ng-template #cellTemplate let-item="item">
+                        {{item.companyName}}
+                    </ng-template>
+                </grid-column>
+            </grid-listview>
+
+            <!-- Card View //-->
+            <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
+                        [getImageSrc]="getExperienceImageName">
+                <ng-template #titleTemplate let-item="item">
+                    {{item.companyName}}
+                </ng-template>
+            </grid-cardview>
+
+            <!-- SingleCard View //-->
+            <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
+                            [getImageSrc]="getExperienceImageName">
+                <ng-template #titleTemplate let-item="item">
+                    {{item.companyName}}
+                </ng-template>
+
+                <ng-template #bodyTemplate let-item="item">
+                    {{item.companyName}}
+                </ng-template>
+            </grid-singlecardview>
+
+            <!-- Gallery View //-->
+            <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
+                              [getImageSrc]="getExperienceImageName">
+                <ng-template #titleTemplate let-item="item">
+                    {{item.companyName}}
+                </ng-template>
+
+                <ng-template #bodyTemplate let-item="item">
+                    {{item.companyName}}
+                </ng-template>
+            </grid-galleryview>
+
+        </ng-template>
+    </grid>
+</div>

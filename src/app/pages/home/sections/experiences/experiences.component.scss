@@ -1,3 +1,22 @@
 .section-experiences {
     min-height: 400px;
+    padding: 25px;
+}
+
+:host ::ng-deep { 
+    .grid-experiences {
+        .cell-icon {
+            flex: 0 0 80px !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            img {
+                width: 40px;
+            }
+        }
+
+        .cell-name {
+            padding-left: 70px !important;
+        }
+    }
 }

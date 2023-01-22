@@ -10,6 +10,7 @@ export class AppUtils {
   }
 
   getDomainImageByName(name: string) {
+    name =name ?? '';
     const imageName = name.replaceAll(' ','')
                         .replace('.', '')
                         .replace('#', 'sharp')
@@ -18,16 +19,21 @@ export class AppUtils {
   }
 
   getTechnologyImageByName(name: string, small: boolean) {
-      const imageName = name.replaceAll(' ','')
-                          .replace('.', '')
-                          .replace('#', 'sharp')
-                          .toLowerCase();
-      return `/assets/images/technologies/${small?'small_50x50':'original'}/${imageName}.png`;
+    name =name ?? '';
+    const imageName = name.replaceAll(' ','')
+                        .replace('.', '')
+                        .replace('#', 'sharp')
+                        .toLowerCase();
+    return `/assets/images/technologies/${small?'small_50x50':'original'}/${imageName}.png`;
+  }
+
+  getExperienceImageName(icon: string) {
+    return `/assets/images/experiences/${icon}`;
   }
 
   getDomainImage = (item: TechnologyDto) => {
     return this.getDomainImageByName(item.name);
-  }  
+  }
 
   getTechnologyImage = (item: TechnologyDto) => {
     return this.getTechnologyImageByName(item.name, true);

@@ -2,14 +2,14 @@
     "general": {
         "title": "Experiences",
         "summary": "Throughout 16 years of my professional career, I have work in various companies. There were national, international projects, while some of them are customer projects, the other ones were Research and Development projects. I have mostly undertook managerial and leading positions within projects teams.",
-        "total_years": "16",                
+        "total_years": 16,                
         "prop_subitems": "positions"
     },
     
     "items": [
         { 
             "id": 202, "orderIndex":16, "icon": "gamyte.png",
-            "companycode": "gamyte", "companyName": "Gamyte",                         
+            "companyCode": "gamyte", "companyName": "Gamyte",                         
             "positions": [
                 {
                     "id": 2019,
@@ -71,7 +71,7 @@
         },
         {
             "id": 201, "orderIndex":15, "icon": "erc.png",
-            "companycode": "ERC", "companyName": "ERC Group Engineering, Consultancy, R&D",                         
+            "companyCode": "ERC", "companyName": "ERC Group Engineering, Consultancy, R&D",                         
             "positions": [
                 {
                     "id": 2011,
@@ -209,7 +209,7 @@
 
         { 
             "id": 202, "orderIndex":14, "icon": "datasel.png",  
-            "companycode": "DATASEL", "companyName": "DataSel Information Systems Co.",                                                                       
+            "companyCode": "DATASEL", "companyName": "DataSel Information Systems Co.",                                                                       
             "positions": [
                 {
                     "id": 2021,
@@ -370,7 +370,7 @@
 
         { 
             "id": 203, "orderIndex":13, "icon": "fonet.png",
-            "companycode": "FONET", "companyName": "Fonet Software Co.",                         
+            "companyCode": "FONET", "companyName": "Fonet Software Co.",                         
             "positions": [
                 {
                     "id": 2031,
@@ -467,7 +467,7 @@
 
          { 
             "id": 213, "orderIndex":11, "icon": "jandarma.egitim.jpg",
-            "companycode": "JANDARMA", "companyName": "Gendarmerie Training Command", 
+            "companyCode": "JANDARMA", "companyName": "Gendarmerie Training Command", 
             "positions": [
                 {
                     "id": 2131,
@@ -491,7 +491,7 @@
 
         { 
             "id": 204, "orderIndex":11, "icon": "halici.png",
-            "companycode": "HALICI", "companyName": "Halıcı Informatics & Software Co.", 
+            "companyCode": "HALICI", "companyName": "Halıcı Informatics & Software Co.", 
             "positions": [
                 {
                     "id": 2041,
@@ -627,7 +627,7 @@
 
         { 
             "id": 205, "orderIndex":10, "icon": "metu.ceit.jpg",
-            "companycode": "METU.CEIT", "companyName": "METU Computer Education and Instructional Tech. Dep.", 
+            "companyCode": "METU.CEIT", "companyName": "METU Computer Education and Instructional Tech. Dep.", 
             "positions": [
                 {
                     "id": 2051,
@@ -668,7 +668,7 @@
 
         { 
             "id": 206, "orderIndex":9, "icon": "metu.ii.jpg",
-            "companycode": "METU.II", "companyName": "METU Informatics Institute", 
+            "companyCode": "METU.II", "companyName": "METU Informatics Institute", 
             "positions": [
                 {
                     "id": 2061,
@@ -716,7 +716,7 @@
 
         { 
             "id": 207, "orderIndex":8, "icon": "metu.ii.jpg",
-            "companycode": "METU.II", "companyName": "METU Informatics Institute", 
+            "companyCode": "METU.II", "companyName": "METU Informatics Institute", 
             "positions": [
                 {
                     "id": 2071,
@@ -738,7 +738,7 @@
 
         { 
             "id": 208, "orderIndex":7, "icon": "labris.png",
-            "companycode": "LABRIS", "companyName": "Labris Technology", 
+            "companyCode": "LABRIS", "companyName": "Labris Technology", 
             "positions": [
                 {
                     "id": 2081,
@@ -764,7 +764,7 @@
 
         { 
             "id": 209, "orderIndex":6, "icon": "metu.ieee.png",
-            "companycode": "METU.IEEE", "companyName": "IEEE METU Student Club", 
+            "companyCode": "METU.IEEE", "companyName": "IEEE METU Student Club", 
             "positions": [
                 {
                     "id": 2091,
@@ -786,7 +786,7 @@
 
         { 
             "id": 210, "orderIndex":5, "icon": "metu.com.jpg",
-            "companycode": "METU.COM", "companyName": "METU Communication Club", 
+            "companyCode": "METU.COM", "companyName": "METU Communication Club", 
             "positions": [
                 {
                     "id": 2101,
@@ -807,8 +807,8 @@
         },
 
         { 
-            "id": 211, "orderIndex":4, "icon": "netteyim.jpg",
-            "companycode": "NETTEYIM", "companyName": "Netteyim.net", 
+            "id": 211, "orderIndex":4, "icon": "netteyim.png",
+            "companyCode": "NETTEYIM", "companyName": "Netteyim.net", 
             "positions": [
                 {
                     "id": 2111,
@@ -830,7 +830,7 @@
 
         { 
             "id": 212, "orderIndex":3, "icon": "tbd.genc.jpg",
-            "companycode": "TBD.GENC", "companyName": "Informatics Association of Turkey / Youth Branch", 
+            "companyCode": "TBD.GENC", "companyName": "Informatics Association of Turkey / Youth Branch", 
             "positions": [
                 {
                     "id": 2121,
