@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { EducationDto, EducationsDto } from "src/app/models/educationsDto";
-import { BaseRepository } from "./baseReporistory";
+import { BaseRepository } from "./baseRepository";
 import data from '../../data/education.json';
 
 @Injectable()

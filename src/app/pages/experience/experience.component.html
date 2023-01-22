@@ -1,10 +1,10 @@
 <app-details-page
     header="Experience"
-    [topTitle]="appUtils.getDateRangeText(utils.parseDateText(item?.position?.startDate), utils.parseDateText(item?.position?.endDate))"
+    [topTitle]="repo.getDateRangeTextForPosition(item?.position)"
     [title]="item?.position?.title ?? ''"
     [subTitle]="item?.experience?.companyName ?? ''"
-    [item]="item?.experience"
-    [getImgSrc]="appUtils.getExperienceImageSrcByDto">
+    [item]="item"
+    [getImgSrc]="repo.getImageSrcByDto">
     
     <div class="experience-page" *ngIf="item">
         <div class="summary">{{ item.position.summary ?? '' }}</div>

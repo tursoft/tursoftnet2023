@@ -14,6 +14,5 @@ export class AboutMeComponent {
   }
 
   isIntersecting (status: boolean,) {
-    console.log('Element is intersecting ' + status)
   }
 }

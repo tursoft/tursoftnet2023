@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BaseRepository } from "./baseReporistory";
+import { BaseRepository } from "./baseRepository";
 import { ReferenceDto, ReferencesDto } from "src/app/models/referenceDto";
 import data from '../../data/references.json';
 

@@ -43,6 +43,8 @@ import { AppUtils } from './services/app-utils';
 import { EducationsRepository } from './services/repositories/educationsRepository';
 import { SkillsRepository } from './services/repositories/skillsRepository';
 import { ReferencesRepository } from './services/repositories/referencesRepository';
+import { ExperiencesRepository } from './services/repositories/experiencesRepository';
+import { ExperiencePositionsRepository } from './services/repositories/experiencePositionsRepository';
 
 @NgModule({
   declarations: [
@@ -90,7 +92,9 @@ import { ReferencesRepository } from './services/repositories/referencesReposito
     AppUtils,
     EducationsRepository,
     SkillsRepository,
-    ReferencesRepository
+    ReferencesRepository,
+    ExperiencesRepository,
+    ExperiencePositionsRepository
   ],
 
   bootstrap: [AppComponent]

@@ -43,3 +43,8 @@ export interface ExperiencePositionDto {
         type: string;
     }[]
 }
+
+export interface ExperiencePositionItemDto {
+    experience: ExperienceDto;
+    position: ExperiencePositionDto;
+}

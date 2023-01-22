@@ -29,7 +29,6 @@ export abstract class BaseGridViewComponent extends BaseComponent {
   onItemClick = async ($event:Event, item: ListItem) => {
     const { itemClick } = this;
     $event.stopPropagation();
-    console.log('onItemClick:', { $event, item, itemClick });
     await itemClick?.next(item);
   }
 

@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ExperienceDto, ExperiencePositionDto } from 'src/app/models/experiencesData';
+import { ExperiencePositionItemDto } from 'src/app/models/experiencesData';
 import { Session, Utils } from '../../modules/sharedmodule';
 import { AppUtils } from '../../services/app-utils';
-import experiencesData from '../../data/experiences.json';
 import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
-
-interface ExperiencePositionItemDto {
-  experience: ExperienceDto;
-  position: ExperiencePositionDto;
-}
+import { ExperiencePositionsRepository } from 'src/app/services/repositories/experiencePositionsRepository';
 
 @Component({
   selector: 'app-experience',
@@ -17,11 +12,11 @@ interface ExperiencePositionItemDto {
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-  items: ExperiencePositionItemDto[] = [];
   item?: ExperiencePositionItemDto;
   id?: number;
 
   constructor(
+    public repo: ExperiencePositionsRepository,
     public repoSkills: SkillsRepository,
     public utils: Utils,
     public appUtils: AppUtils,
@@ -29,16 +24,6 @@ export class ExperienceComponent {
     public route: ActivatedRoute
   ) {
     this.session.showTopMenu=false;
-
-    let items: ExperiencePositionItemDto[] = [];
-    for(const experience of experiencesData.items) {
-      if (experience.positions) {
-        for(const position of experience.positions) {
-          items.push({ experience, position });
-        }
-      }
-    }
-    this.items = items;
   }
 
   ngOnInit(){
@@ -50,7 +35,6 @@ export class ExperienceComponent {
 
   setById(id: number) {
     this.id = id;
-    this.item = this.items.find(p => p.position.id == this.id);
-    console.log('item:', { id, item: this.item, items: this.items });
+    this.item = this.repo.getById(id);
   }
 }

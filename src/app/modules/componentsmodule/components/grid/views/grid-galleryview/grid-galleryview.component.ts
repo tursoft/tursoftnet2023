@@ -46,8 +46,6 @@ export class GridGalleryViewComponent extends BaseGridViewComponent {
 
         visibleSmallItems.push(items[i]);
       }
-
-      console.log('updateVisibleItems:', { currentItem, index, items, visibleSmallItems });
     }
 
     this.visibleSmallItems = visibleSmallItems;
