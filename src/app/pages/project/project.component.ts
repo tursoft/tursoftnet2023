@@ -9,6 +9,7 @@ import { Session } from '../../modules/sharedmodule/services/session';
 import { SkillsRepository } from '../../services/repositories/skillsRepository';
 import { ProjectsRepository } from '../../services/repositories/projectsRepository';
 import { ProjectFilesRepository } from '../../services/repositories/projectFilesRepository';
+import { Utils } from 'src/app/modules/sharedmodule';
 
 @Component({
   selector: 'app-project',
@@ -27,6 +28,7 @@ export class ProjectComponent {
     public repo: ProjectsRepository,
     public repoProjectFiles: ProjectFilesRepository,
     public repoSkills: SkillsRepository,
+    public utils: Utils,
     public session: Session,
     public route: ActivatedRoute
   ) {

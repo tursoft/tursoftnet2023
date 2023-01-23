@@ -60,7 +60,7 @@ export class Utils
 		return dayjs(dt).format(format);
     }
 
-    parseDateText(text: string | null | undefined): Date | null {
+    parseDateText(text: (string | null | undefined)): Date | null {
         dayjs.extend(customParseFormat);
         let date: Date | null = null;
         if (!text)
@@ -71,7 +71,11 @@ export class Utils
         return date;
     }
 
-    getDateRangeText = (start: Date | null | undefined, end: Date | null | undefined) => {
+    getDateRangeText = (start: (Date | null | undefined), end: (Date | null | undefined)) => {
         return `${this.dateToText(start, '')} - ${this.dateToText(end, 'Present')}`;
     }
+
+    getDateRangeTextByDateText = (start: (string | null | undefined), end: (string | null | undefined)) => {
+        return this.getDateRangeText(this.parseDateText(start), this.parseDateText(end));
+    }    
 }
