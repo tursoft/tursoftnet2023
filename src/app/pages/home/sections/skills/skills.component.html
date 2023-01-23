@@ -6,19 +6,46 @@
         {{ data.general.summary }}
     </div>
 
-    <!-- <div class="section-groups" *ngIf="data.general.groups.length>0">
-      <div *ngFor="let group of groups"
-           [ngClass]="{
-             'section-group': true, 
-             'selected': group.name == filter.group, 
-             'no-select': true
-            }"
-           (click)="setGroup(group.name)">
-        {{group.title}}
-      </div>
-    </div> -->
+    <grid 
+        title="Skills"
+        customClass="grid-technologies"
+        [viewTypes]="['list', 'card']"
+        viewType="card"
+        [showFilterRow]="false"
+        [showStandaloneFilterRow]="true"
+        [showHeaderRow]="false"
+        [showCountBadge]="false"
+        [items]="items"
+        [filterFields]="['name','title', 'group']">
 
-    <div class="filter-input-row">
+        <ng-template #viewsTemplate let-filteredItems="filteredItems" let-viewType="viewType">
+            <!-- List View //-->
+            <grid-listview [showColumnHeaders]="false" [items]="filteredItems" *ngIf="viewType=='list'">
+                <grid-column name="icon" title="">
+                    <ng-template #cellTemplate let-item="item">
+                        <img [src]="repo.getImageSrcByDto(item)">
+                    </ng-template>
+                </grid-column>
+
+                <grid-column name="name" title="Name">
+                    <ng-template #cellTemplate let-item="item">
+                        {{item.name}}
+                    </ng-template>
+                </grid-column>
+            </grid-listview>
+
+            <!-- Card View //-->
+            <grid-cardview [items]="filteredItems" *ngIf="viewType=='card'"
+                        [getImageSrc]="repo.getImageSrcByDto">
+                <ng-template #titleTemplate let-item="item">
+                    {{item.name}}
+                </ng-template>
+            </grid-cardview>
+
+        </ng-template>
+    </grid>
+
+    <!-- <div class="filter-input-row">
       <div class="filter-input ui icon input">
         <input type="text" placeholder="Filter..."
                [(ngModel)]="filter.filterText"
@@ -37,5 +64,5 @@
               {{ item.title }}
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
