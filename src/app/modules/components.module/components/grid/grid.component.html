@@ -6,7 +6,7 @@
         <span class="spacer"></span>
 
         <!-- filter row //-->
-        <div class="filter-input-row" *ngIf="showFilterRow">
+        <div class="filter-input-row compact" *ngIf="showFilterRow">
             <div class="filter-input ui icon input">
                 <input type="text" placeholder="Filter..."
                         [(ngModel)]="filter.filterText"
@@ -26,8 +26,18 @@
             </ng-container>
         </div>
     </div>
+
+    <!-- standalone filter row //-->
+    <div class="filter-input-row standalone" *ngIf="showStandaloneFilterRow">
+        <div class="filter-input ui icon input">
+            <input type="text" placeholder="Filter..."
+                    [(ngModel)]="filter.filterText"
+                    (ngModelChange)="filterItems()">
+            <i class="search icon"></i>
+        </div>
+    </div>
       
-    <!-- grid view //-->
+    <!-- grid views //-->
     <div class="view-container" *ngIf="viewsTemplate">
         <ng-container *ngTemplateOutlet="viewsTemplate; context: { items, filteredItems, viewType, onItemClick }">
         </ng-container>

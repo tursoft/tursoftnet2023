@@ -14,6 +14,7 @@ export class GridComponent extends BaseComponent implements AfterViewInit, After
 
   @Input() showHeaderRow?: boolean = true;
   @Input() showFilterRow?: boolean = false;
+  @Input() showStandaloneFilterRow?: boolean = false;
   @Input() showCountBadge: boolean = true;
 
   @Input() viewTypes:GridViewType[] = ['card', 'list', 'singlecard', 'gallery'];
