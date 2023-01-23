@@ -39,7 +39,6 @@ import { DetailsPage } from './components/details-page/details-page.component';
 import { ProjectScreenshotDetailsComponent } from './pages/project/screenshot-details/screenshot-details.component';
 
 /* providers */
-import { AppUtils } from './services/app-utils';
 import { EducationsRepository } from './services/repositories/educationsRepository';
 import { SkillsRepository } from './services/repositories/skillsRepository';
 import { DomainsRepository } from './services/repositories/domainsRepository';
@@ -92,7 +91,6 @@ import { ProjectFilesRepository } from './services/repositories/projectFilesRepo
   ],
 
   providers: [
-    AppUtils,
     EducationsRepository,
     SkillsRepository,
     DomainsRepository,

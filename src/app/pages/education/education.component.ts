@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Session } from '../../modules/sharedmodule/services/session';
 import { EducationDto } from '../../models/educationsDto';
-import { AppUtils } from 'src/app/services/app-utils';
 import { EducationsRepository } from 'src/app/services/repositories/educationsRepository';
 import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
 
@@ -21,7 +20,6 @@ export class EducationComponent {
   constructor(
     public matDialog: MatDialog,
     public repoSkills: SkillsRepository,
-    public appUtils: AppUtils,
     public session: Session,
     public route: ActivatedRoute,
     public repo: EducationsRepository

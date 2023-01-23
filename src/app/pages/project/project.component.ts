@@ -6,7 +6,6 @@ import { ProjectScreenshotDetailsComponent } from './screenshot-details/screensh
 import { ProjectItemDto } from '../../models/projectsDto';
 import { ProjectFileScreenshotDto } from '../../models/projectFileDto';
 import { Session } from '../../modules/sharedmodule/services/session';
-import { AppUtils } from '../../services/app-utils';
 import { SkillsRepository } from '../../services/repositories/skillsRepository';
 import { ProjectsRepository } from '../../services/repositories/projectsRepository';
 import { ProjectFilesRepository } from '../../services/repositories/projectFilesRepository';
@@ -28,7 +27,6 @@ export class ProjectComponent {
     public repo: ProjectsRepository,
     public repoProjectFiles: ProjectFilesRepository,
     public repoSkills: SkillsRepository,
-    public appUtils: AppUtils,
     public session: Session,
     public route: ActivatedRoute
   ) {

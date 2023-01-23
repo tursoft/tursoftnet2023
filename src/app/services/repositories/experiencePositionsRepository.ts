@@ -1,16 +1,15 @@
 import { Injectable } from "@angular/core";
 import dayjs from "dayjs";
+
 import { BaseRepository } from "./baseRepository";
 import { Utils } from "../../modules/sharedmodule";
-import { AppUtils } from "../app-utils";
 import { ExperiencePositionDto, ExperiencePositionItemDto, ExperiencesDto } from "../../models/experiencesData";
 import data from '../../data/experiences.json';
 
 @Injectable()
 export class ExperiencePositionsRepository extends BaseRepository<ExperiencePositionItemDto, ExperiencesDto> {
     constructor(
-        public utils: Utils,
-        public appUtils: AppUtils
+        public utils: Utils
     ) {
         super();
     }
@@ -86,7 +85,7 @@ export class ExperiencePositionsRepository extends BaseRepository<ExperiencePosi
     getDateRangeForPositionsText = (positions: ExperiencePositionDto[]) =>
 	{
 		const range = this.getDateRangeForPositions(positions, true);
-		return this.appUtils.getDateRangeText(range.start, range.end);
+		return this.utils.getDateRangeText(range.start, range.end);
 	}
 
     getDateRangeTextForPosition(position?: ExperiencePositionDto) {
@@ -95,6 +94,6 @@ export class ExperiencePositionsRepository extends BaseRepository<ExperiencePosi
 
         const start = this.utils.parseDateText(position.startDate);
         const end = this.utils.parseDateText(position.endDate);
-        return this.appUtils.getDateRangeText(start, end);
+        return this.utils.getDateRangeText(start, end);
     }
 }

@@ -70,4 +70,8 @@ export class Utils
 
         return date;
     }
+
+    getDateRangeText = (start: Date | null | undefined, end: Date | null | undefined) => {
+        return `${this.dateToText(start, '')} - ${this.dateToText(end, 'Present')}`;
+    }
 }

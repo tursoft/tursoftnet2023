@@ -2,7 +2,6 @@ import { Component, Inject } from "@angular/core";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { ProjectFileScreenshotDto } from "src/app/models/projectFileDto";
 import { ProjectFilesRepository } from "src/app/services/repositories/projectFilesRepository";
-import { AppUtils } from "../../../services/app-utils";
 
 export interface ProjectScreenshotDetailsData {
     item: ProjectFileScreenshotDto;
@@ -19,7 +18,6 @@ export class ProjectScreenshotDetailsComponent {
 
     constructor(
         public repoProjectFiles: ProjectFilesRepository,
-        public appUtils: AppUtils,
         public dialogRef: MatDialogRef<ProjectScreenshotDetailsData>,
         @Inject(MAT_DIALOG_DATA) public data: ProjectScreenshotDetailsData,
     ) {

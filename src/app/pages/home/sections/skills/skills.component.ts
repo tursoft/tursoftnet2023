@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IHoverable } from '../../../../models/shared';
 import { SkillGroupDto, SkillDto, SkillsDto } from '../../../../models/skillsDto';
-import { AppUtils } from '../../../../services/app-utils';
 import { Utils } from '../../../../modules/sharedmodule';
 import { SkillsRepository } from '../../../../services/repositories/skillsRepository';
 
@@ -27,9 +26,8 @@ export class SkillsComponent {
 
   constructor(
     public repo: SkillsRepository,
-    public utils: Utils,
-    public appUtils: AppUtils)
-  {
+    public utils: Utils
+  ) {
     this.data = this.repo.getData();
 
     const groupAll: SkillGroupDto = {

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExperiencePositionItemDto } from 'src/app/models/experiencesData';
 import { Session, Utils } from '../../modules/sharedmodule';
-import { AppUtils } from '../../services/app-utils';
 import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
 import { ExperiencePositionsRepository } from 'src/app/services/repositories/experiencePositionsRepository';
 
@@ -19,7 +18,6 @@ export class ExperienceComponent {
     public repo: ExperiencePositionsRepository,
     public repoSkills: SkillsRepository,
     public utils: Utils,
-    public appUtils: AppUtils,
     public session: Session,
     public route: ActivatedRoute
   ) {
