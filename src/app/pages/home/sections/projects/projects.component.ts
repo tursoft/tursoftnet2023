@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from '../../../../models/projectsDto';
 import { IHoverable } from '../../../../models/shared';
-import { Utils } from '../../../../modules/sharedmodule';
+import { Utils } from '../../../../modules/shared.module';
 import projectsData from '../../../../data/projects.json';
 import { ProjectsRepository } from 'src/app/services/repositories/projectsRepository';
 
@@ -31,7 +31,7 @@ export class ProjectsComponent
       name: undefined,
       title: 'All'
     };
-    
+
     this.groups = [groupAll, ...this.data.general.groups];
     this.filterItems();
   }

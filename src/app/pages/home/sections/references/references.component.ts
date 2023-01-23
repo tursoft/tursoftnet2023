@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReferenceDto } from '../../../../models/referenceDto';
-import { Utils } from '../../../../modules/sharedmodule';
+import { Utils } from '../../../../modules/shared.module';
 import { ReferencesRepository } from '../../../../services/repositories/referencesRepository';
 
 @Component({

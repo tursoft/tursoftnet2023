@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Session } from 'src/app/modules/sharedmodule/services/session';
+import { Session } from 'src/app/modules/shared.module/services/session';
 
 @Component({
   selector: 'app-home',

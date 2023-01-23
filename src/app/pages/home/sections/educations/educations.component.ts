@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TimelineItem } from '../../../../modules/componentsmodule';
+import { TimelineItem } from '../../../../modules/components.module';
 import { Router } from '@angular/router';
 import { EducationsRepository } from '../../../../services/repositories/educationsRepository';
 

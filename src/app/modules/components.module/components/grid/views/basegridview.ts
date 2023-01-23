@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Inject, Input, Output } from "@angular/core";
 import { GridViewType, ListItem } from "..";
-import { BaseComponent } from "../../../../sharedmodule";
+import { BaseComponent } from "../../../../shared.module";
 
 @Component({
   template: ''

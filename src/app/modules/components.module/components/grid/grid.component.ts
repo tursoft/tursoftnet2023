@@ -1,6 +1,6 @@
 import { AfterContentInit, AfterViewInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef, ViewContainerRef } from '@angular/core';
 import { FilterListDto, GridViewType, ListItem } from './models';
-import { BaseComponent, Utils } from '../../../sharedmodule';
+import { BaseComponent, Utils } from '../../../shared.module';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

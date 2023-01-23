@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExperiencePositionItemDto } from 'src/app/models/experiencesData';
-import { Session, Utils } from '../../modules/sharedmodule';
+import { Session, Utils } from '../../modules/shared.module';
 import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
 import { ExperiencePositionsRepository } from 'src/app/services/repositories/experiencePositionsRepository';
 

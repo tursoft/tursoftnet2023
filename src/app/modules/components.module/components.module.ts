@@ -1,6 +1,6 @@
 /* modules */
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../sharedmodule/shared.module';
+import { SharedModule } from '../shared.module/shared.module';
 
 import * as fromComponents from './components';
 

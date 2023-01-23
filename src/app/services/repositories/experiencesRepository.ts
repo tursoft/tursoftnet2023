@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BaseRepository } from "./baseRepository";
-import { Utils } from "../../modules/sharedmodule";
+import { Utils } from "../../modules/shared.module";
 import { ExperienceDto, ExperiencesDto } from "../../models/experiencesData";
 import data from '../../data/experiences.json';
 

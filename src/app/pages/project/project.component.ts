@@ -5,11 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProjectScreenshotDetailsComponent } from './screenshot-details/screenshot-details.component';
 import { ProjectItemDto } from '../../models/projectsDto';
 import { ProjectFileScreenshotDto } from '../../models/projectFileDto';
-import { Session } from '../../modules/sharedmodule/services/session';
+import { Session } from '../../modules/shared.module/services/session';
 import { SkillsRepository } from '../../services/repositories/skillsRepository';
 import { ProjectsRepository } from '../../services/repositories/projectsRepository';
 import { ProjectFilesRepository } from '../../services/repositories/projectFilesRepository';
-import { Utils } from 'src/app/modules/sharedmodule';
+import { Utils } from 'src/app/modules/shared.module';
 
 @Component({
   selector: 'app-project',

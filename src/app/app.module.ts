@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
-import { SharedModule } from './modules/sharedmodule';
-import { ComponentsModule } from './modules/componentsmodule';
+import { SharedModule } from './modules/shared.module';
+import { ComponentsModule } from './modules/components.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';

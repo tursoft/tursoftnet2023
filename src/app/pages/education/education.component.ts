@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { Session } from '../../modules/sharedmodule/services/session';
+import { Session } from '../../modules/shared.module/services/session';
 import { EducationDto } from '../../models/educationsDto';
 import { EducationsRepository } from 'src/app/services/repositories/educationsRepository';
 import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';

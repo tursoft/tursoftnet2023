@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { BaseComponent } from '../../../sharedmodule';
+import { BaseComponent } from '../../../shared.module';
 import { TimelineItem } from './models/timelineitem';
 
 @Component({

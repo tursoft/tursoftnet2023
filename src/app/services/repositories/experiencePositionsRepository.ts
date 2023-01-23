@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import dayjs from "dayjs";
 
 import { BaseRepository } from "./baseRepository";
-import { Utils } from "../../modules/sharedmodule";
+import { Utils } from "../../modules/shared.module";
 import { ExperiencePositionDto, ExperiencePositionItemDto, ExperiencesDto } from "../../models/experiencesData";
 import data from '../../data/experiences.json';
 

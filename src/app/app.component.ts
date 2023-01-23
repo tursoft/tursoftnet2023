@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { routeTransitionAnimations } from './app.animations';
-import { Session } from './modules/sharedmodule/services/session';
+import { Session } from './modules/shared.module/services/session';
 
 @Component({
   selector: 'app-root',
