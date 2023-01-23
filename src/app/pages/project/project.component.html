@@ -73,7 +73,7 @@
                             <!-- Card View //-->
                             <grid-cardview *ngIf="viewType=='card'"
                                         [items]="filteredItems"
-                                        [getImageSrc]="appUtils.getProjectScreenshotPath"
+                                        [getImageSrc]="repoProjectFiles.getImageSrcByDto"
                                         (itemClick)="onItemClick($event)">
                                 <ng-template #titleTemplate let-item="item">
                                     {{item.title}}
@@ -82,7 +82,7 @@
 
                             <!-- SingleCard View //-->
                             <grid-singlecardview [items]="filteredItems" *ngIf="viewType=='singlecard'"
-                                                [getImageSrc]="appUtils.getProjectScreenshotPath"
+                                                [getImageSrc]="repoProjectFiles.getImageSrcByDto"
                                                 (itemClick)="onItemClick($event)">
                                     <ng-template #titleTemplate let-item="item">
                                         {{item.title}}
@@ -95,8 +95,8 @@
     
                                 <!-- Gallery View //-->
                                 <grid-galleryview [items]="filteredItems" *ngIf="viewType=='gallery'"
-                                                [getImageSrc]="appUtils.getProjectScreenshotPath"
-                                                (itemClick)="onItemClick($event)">
+                                                  [getImageSrc]="repoProjectFiles.getImageSrcByDtoBig"
+                                                  (itemClick)="onItemClick($event)">
                                     <ng-template #titleTemplate let-item="item">
                                         {{item.title}}
                                     </ng-template>

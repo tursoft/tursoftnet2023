@@ -1,5 +1,5 @@
 <app-details-page
-    header="Edcuation"
+    header="Education"
     [title]="item?.name ?? ''"
     [subTitle]="!item ? '' : (item.datePeriod.startDate + ' - ' + (item.datePeriod.endDate ?? 'Present'))"
     [item]="item"
@@ -47,7 +47,7 @@
                         </ng-template>
                     </grid-column>
 
-                    <grid-column name="content" title="Content">
+                    <grid-column name="content" title="Scope">
                         <ng-template #cellTemplate let-item="item">
                             {{ item.content }}
                         </ng-template>

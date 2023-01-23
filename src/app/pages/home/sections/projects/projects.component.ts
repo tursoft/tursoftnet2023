@@ -3,6 +3,7 @@ import { ProjectGroupDto, ProjectItemDto, ProjectsDto } from '../../../../models
 import { IHoverable } from '../../../../models/shared';
 import { Utils } from '../../../../modules/sharedmodule';
 import projectsData from '../../../../data/projects.json';
+import { ProjectsRepository } from 'src/app/services/repositories/projectsRepository';
 
 interface FilterDto {
   filterText?: string,
@@ -22,11 +23,15 @@ export class ProjectsComponent
   filteredItems: ProjectItem[] = [];
   filter: FilterDto = {};
 
-  constructor(public utils: Utils) {
+  constructor(
+    public repo: ProjectsRepository,
+    public utils: Utils
+  ) {
     const groupAll: ProjectGroupDto = {
       name: undefined,
       title: 'All'
     };
+    
     this.groups = [groupAll, ...this.data.general.groups];
     this.filterItems();
   }

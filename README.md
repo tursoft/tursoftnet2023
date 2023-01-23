@@ -15,6 +15,7 @@ This is the new version of my personal website.
 * convert home sections to grid component
 * convert references to grid with gallery view
 * add cross links
+* mobile friendliness
 
 * register website to google
 * add blog / medium articles page

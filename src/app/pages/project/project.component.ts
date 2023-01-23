@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { ProjectItemDto, ProjectsDto } from '../../models/projectsDto';
-import { ProjectFileScreenshotDto, ProjectFilesDto } from '../../models/projectFileDto';
-import { Session } from '../../modules/sharedmodule/services/session';
+
 import { ProjectScreenshotDetailsComponent } from './screenshot-details/screenshot-details.component';
+import { ProjectItemDto } from '../../models/projectsDto';
+import { ProjectFileScreenshotDto } from '../../models/projectFileDto';
+import { Session } from '../../modules/sharedmodule/services/session';
 import { AppUtils } from '../../services/app-utils';
-import projectsData from '../../data/projects.json';
-import projectFilesData from '../../data/project_files.json';
-import { SkillsRepository } from 'src/app/services/repositories/skillsRepository';
+import { SkillsRepository } from '../../services/repositories/skillsRepository';
+import { ProjectsRepository } from '../../services/repositories/projectsRepository';
+import { ProjectFilesRepository } from '../../services/repositories/projectFilesRepository';
 
 @Component({
   selector: 'app-project',
@@ -16,8 +17,6 @@ import { SkillsRepository } from 'src/app/services/repositories/skillsRepository
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent {
-  allProjects: ProjectsDto = projectsData;
-  allProjectFiles: ProjectFilesDto = projectFilesData;
   projectScreenshots: ProjectFileScreenshotDto[] = [];
   item?: ProjectItemDto;
   id?: number;
@@ -26,6 +25,8 @@ export class ProjectComponent {
 
   constructor(
     public matDialog: MatDialog,
+    public repo: ProjectsRepository,
+    public repoProjectFiles: ProjectFilesRepository,
     public repoSkills: SkillsRepository,
     public appUtils: AppUtils,
     public session: Session,
@@ -43,8 +44,8 @@ export class ProjectComponent {
 
   setProjectById(id: number) {
     this.id = id;
-    this.item = this.allProjects.items.find(p => p.id == this.id);
-    this.projectScreenshots = this.allProjectFiles.general[this.item?.name ?? '']?.screenshoots ?? [];
+    this.item = this.repo.getById(this.id);
+    this.projectScreenshots = this.repoProjectFiles.getScreenshotsByProjectName(this.item?.name ?? '');
   }
 
   onScreenshotClick(screenshot: ProjectFileScreenshotDto) {

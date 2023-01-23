@@ -46,6 +46,8 @@ import { DomainsRepository } from './services/repositories/domainsRepository';
 import { ReferencesRepository } from './services/repositories/referencesRepository';
 import { ExperiencesRepository } from './services/repositories/experiencesRepository';
 import { ExperiencePositionsRepository } from './services/repositories/experiencePositionsRepository';
+import { ProjectsRepository } from './services/repositories/projectsRepository';
+import { ProjectFilesRepository } from './services/repositories/projectFilesRepository';
 
 @NgModule({
   declarations: [
@@ -96,7 +98,9 @@ import { ExperiencePositionsRepository } from './services/repositories/experienc
     DomainsRepository,
     ReferencesRepository,
     ExperiencesRepository,
-    ExperiencePositionsRepository
+    ExperiencePositionsRepository,
+    ProjectsRepository,
+    ProjectFilesRepository
   ],
 
   bootstrap: [AppComponent]
