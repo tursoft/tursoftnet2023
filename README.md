@@ -3,6 +3,9 @@
 This is the new version of my personal website.
 
 # Roadmap
+* add highlight part
+* add icon to vertical timeline instead of numbers 1,2,3...
+* implement timelinejs and use on projects etc.
 * add repository for each data types and user them in components
 * add repo for projects
 * highlight top menu if content for menu item is visible
