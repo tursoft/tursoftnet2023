@@ -20,9 +20,4 @@ export class ExperiencesComponent {
   {
     this.items = repo.getItems();
   }
-
-  // @HostListener('window:scroll', ['$event'])
-  // onScroll(e:any) {
-  //   console.log('onScroll', e);
-  // }
 }

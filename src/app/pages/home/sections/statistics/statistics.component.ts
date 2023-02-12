@@ -13,7 +13,6 @@ export class StatisticsComponent {
 
 
   isIntersecting(status: boolean) {
-    console.log('isIntersecting:', status);
     if (status) {
       this.isVisible = status;
     }
