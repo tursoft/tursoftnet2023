@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ExperienceDto } from '../../../../models/experiencesData';
@@ -20,4 +20,9 @@ export class ExperiencesComponent {
   {
     this.items = repo.getItems();
   }
+
+  // @HostListener('window:scroll', ['$event'])
+  // onScroll(e:any) {
+  //   console.log('onScroll', e);
+  // }
 }
