@@ -25,6 +25,8 @@ export class GridComponent extends BaseComponent implements AfterViewInit, After
 
   @Output() itemClick = new EventEmitter<any>();
 
+  filterFocused: boolean = false;
+
   filteredItems!: any[];
   filter: FilterListDto = {
     filterText: ""

@@ -33,7 +33,7 @@ $title-bgcolor: lightgray;
             display: flex;
             flex-direction: row;
             flex: 0 0 auto;
-            margin-right: 3px 8px;
+            margin: 3px 3px 3px 12px;
 
             .view-type {
                 cursor: pointer;
@@ -82,11 +82,13 @@ $title-bgcolor: lightgray;
         }
 
         &.compact {
-            flex: 0 0 30%;
+            flex: 0 0 35px;
             border-radius: 0px 10px 0px 0px;
 
             .filter-input {
-                flex: 0 0 20%;
+                flex: 0 0 35px;
+                border-radius: 4px;
+                content: '';
 
                 &:focus-within {
                     flex: 0 0 100%;
