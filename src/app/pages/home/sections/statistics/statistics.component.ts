@@ -9,4 +9,13 @@ import statisticsData from '../../../../data/statistics.json';
 })
 export class StatisticsComponent {
   data: StatisticsDto = statisticsData;
+  isVisible: boolean = false;
+
+
+  isIntersecting(status: boolean) {
+    console.log('isIntersecting:', status);
+    if (status) {
+      this.isVisible = status;
+    }
+  }
 }

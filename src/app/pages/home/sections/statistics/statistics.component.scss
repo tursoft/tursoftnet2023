@@ -5,8 +5,13 @@
     color: white;
     justify-content: center;
     padding: 35px 30px;
+    min-height: 125px;
 
-    .item {
+    .content {
+      display: flex;
+      flex-direction: row;
+
+      .item {
         color: white;
         letter-spacing: 0.5;
         margin: 0px 25px;
@@ -54,50 +59,7 @@
                     align-self: flex-end;
                 }
             }
-
-            .counterbox {
-              --num {
-                syntax: '<integer>';
-                inherits: false;
-                initial-value: 0;
-              }
-              
-              &::after {
-                counter-reset: my-counter var(--num);
-                content: counter(my-counter);
-                animation: count 10s ease-in-out infinite alternate;
-              }
-              
-              @keyframes count {
-                to { --num: var(--lastNum); }
-              }
-            }
-
-
-            // --val {
-            //     syntax: "<integer>";
-            //     initial-value: 0;
-            //     inherits: false;
-            //  }
-
-            //  @keyframes counter_anim {
-            //     from {
-            //       --val: 0;
-            //     }
-            //     to {
-            //       --val: var(--finalValue);
-            //     }
-            //   }
-             
-            //  .counter {
-            //    // animation: counter_anim 5s infinite alternate ease-in-out;
-            //    transition: --val 5s;
-            //    counter-set: val var(--val);
-            //  }
-             
-            //  .counter::after {
-            //    content: counter(--val);
-            //  }
         }
+      }
     }
 }

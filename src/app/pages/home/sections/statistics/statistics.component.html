@@ -1,15 +1,24 @@
-<div class="section section-statistics">
-    <div *ngFor="let item of data.items"
-         class="item">
-        <div class="item-icon">
-            <i class="{{item.iconCss}}"></i>
-        </div>
-        <div class="item-value-cells">
-            <div class="item-value-cell">
-                <div class="item-value counterbox" [style.--num]="item.value"></div>
-                <div class="item-subtitle">{{item.subTitle}}</div>
+<div class="section section-statistics"
+     appObserveElement
+     #intersection="intersection"
+     (isIntersecting)="isIntersecting($event)">
+    <div class="content" *ngIf="isVisible">
+        <div *ngFor="let item of data.items"
+            class="item">
+            <div class="item-icon">
+                <i class="{{item.iconCss}}"></i>
             </div>
-            <div class="item-title">{{item.title}}</div>
+            <div class="item-value-cells">
+                <div class="item-value-cell">
+                    <app-animatednumber
+                        class="item-value"
+                        [digit]="item.value"
+                        [duration]="0">
+                    </app-animatednumber>
+                    <div class="item-subtitle">{{item.subTitle}}</div>
+                </div>
+                <div class="item-title">{{item.title}}</div>
+            </div>
         </div>
     </div>
 </div>
