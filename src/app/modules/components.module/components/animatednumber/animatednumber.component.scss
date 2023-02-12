@@ -1,0 +1,23 @@
+:host {
+  --value: 100;
+  --valueStart: 50;
+  --valueEnd: 100;
+
+  div.inited {
+    animation: counter 10s ease-in-out;
+    counter-reset: value var(--value);
+
+    &::after {
+        content: counter(value);
+    }
+  }
+}
+
+@keyframes counter {
+    from {
+      --value: var(--valueStart);
+    }
+    to {
+      --value: var(--valueEnd);
+    }
+}

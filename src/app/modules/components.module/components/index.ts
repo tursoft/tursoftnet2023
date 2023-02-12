@@ -1,6 +1,8 @@
 export * from './grid';
 export * from './verticaltimeline';
 
+import { AnimatedNumberComponent } from './animatednumber';
+import { VerticaltimelineComponent } from './verticaltimeline';
 import { 
     GridComponent, 
     GridCardViewComponent, 
@@ -9,8 +11,6 @@ import {
     GridGalleryViewComponent,
     GridColumnComponent
 } from './grid';
-
-import { VerticaltimelineComponent } from './verticaltimeline';
 
 export const components: any[] = [
     GridComponent,
@@ -22,5 +22,7 @@ export const components: any[] = [
 
     GridColumnComponent,
     
-    VerticaltimelineComponent
+    VerticaltimelineComponent,
+
+    AnimatedNumberComponent
 ];
